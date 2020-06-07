@@ -1,0 +1,434 @@
+[
+  {
+    "id": 1,
+    "state": "Alabama",
+    "city": "Montgomery",
+    "name": "The Montgomery Bail Out",
+    "number": 3342636635,
+    "url": "https://www.mgmbailout.com/new-page"
+  },
+  {
+    "id": 2,
+    "state": "Arizona",
+    "city": "Tucson",
+    "name": "Tucson Second Chance Community Bail Fund",
+    "number": null,
+    "url": "https://watchtucson.com/"
+  },
+  {
+    "id": 3,
+    "state": "Arizona",
+    "city": "Tucson",
+    "name": "Bond Fund for Immigrants",
+    "number": 5202164022,
+    "url": "https://www.pmm.life/MAC-updates"
+  },
+  {
+    "id": 4,
+    "state": "Arizona",
+    "city": "Phoenix",
+    "name": "Black People’s Justice Fund",
+    "number": null,
+    "url": "https://secure.everyaction.com/lFZFGA1BpUa9kyYYgSxSKw2?fbclid=IwAR3YvwJy2ZFuGfVk0BL1rWX8UYOOx2Mbv8NVEV4MjlEXCSHDv-lx8l1H6IM"
+  },
+  {
+    "id": 5,
+    "state": "Colorado",
+    "city": "Denver",
+    "name": "Colorado Freedom Fund",
+    "number": 7202630111,
+    "url": "http://www.blackbailout.org/"
+  },
+  {
+    "id": 6,
+    "state": "California",
+    "city": "Costa Mesa",
+    "name": "Orange County Bail Fund",
+    "number": 7143405469,
+    "url": "https://ocjusticefund.org/"
+  },
+  {
+    "id": 7,
+    "state": "California",
+    "city": "San Francisco",
+    "name": "Freedom for immigrants",
+    "number": 2097573733,
+    "url": "https://www.freedomforimmigrants.org/contact-us-2"
+  },
+  {
+    "id": 8,
+    "state": "California",
+    "city": "San Francisco",
+    "name": "The San Francisco Bay Area NLG",
+    "number": 4152855067,
+    "url": "https://nlgsf.org/"
+  },
+  {
+    "id": 9,
+    "state": "California",
+    "city": "Los Angeles",
+    "name": "Compton Bail Project",
+    "number": 8334256827,
+    "url": "https://bailproject.org/"
+  },
+  {
+    "id": 10,
+    "state": "California",
+    "city": "Oakland",
+    "name": "Bail Support from Hella Black Pod",
+    "number": 4085026605,
+    "url": "https://www.hellablackpod.com/"
+  },
+  {
+    "id": 11,
+    "state": "California",
+    "city": "Sacramento",
+    "name": "Sacramento Bail Fund",
+    "number": 9163820256,
+    "url": "https://www.norcalresist.org/"
+  },
+  {
+    "id": 12,
+    "state": "Connecticut",
+    "city": "New Haven",
+    "name": "Connecticut Bail Fund",
+    "number": 2033401116,
+    "url": "http://www.ctbailfund.org/contact"
+  },
+  {
+    "id": 13,
+    "state": "Delaware",
+    "city": "Wilmington",
+    "name": "FNB Bail Fund",
+    "number": 8333629456,
+    "url": "https://twitter.com/FnbWilmington"
+  },
+  {
+    "id": 14,
+    "state": "D.C",
+    "city": "Washington",
+    "name": "Legal Aid Society",
+    "number": 2026281161,
+    "url": "https://www.legalaiddc.org/"
+  },
+  {
+    "id": 15,
+    "state": "Kentucky",
+    "city": "Lexington",
+    "name": "Lexington Bail Fund",
+    "number": 8557362800,
+    "url": "https://lexingtonbail.governmentwindow.com/bail.html"
+  },
+  {
+    "id": 16,
+    "state": "Florida",
+    "city": "Miami",
+    "name": "FemPower Bail Fund",
+    "number": 7866768806,
+    "url": "https://linktr.ee/MiamiDreamDefenders"
+  },
+  {
+    "id": 17,
+    "state": "Florida",
+    "city": "Jacksonville",
+    "name": "The Community Foundation for Northeast Florida",
+    "number": 9043564483,
+    "url": "https://www.jaxcf.org/"
+  },
+  {
+    "id": 18,
+    "state": "Florida",
+    "city": "Tallahassee",
+    "name": "Tallahassee Bail Fund",
+    "number": 35235424803,
+    "url": "https://hrcalachua.com/contact/"
+  },
+  {
+    "id": 19,
+    "state": "Georgia",
+    "city": "Athens",
+    "name": "Georgia Immigration Bond Fund",
+    "number": 8009408889,
+    "url": "https://www.actionbail.com/locations/immigration-bail-bonds-georgia"
+  },
+  {
+    "id": 20,
+    "state": "Georgia",
+    "city": "Athens",
+    "name": "TAthens Anti-Discrimination Movement",
+    "number": 7063894129,
+    "url": "hhttps://www.aadmovement.org/"
+  },
+  {
+    "id": 21,
+    "state": "Illinois",
+    "city": "Chicago",
+    "name": "Chicago Community Bond Fund",
+    "number": 7733091198,
+    "url": "https://chicagobond.org/about-us#contact"
+  },
+  {
+    "id": 22,
+    "state": "Illinois",
+    "city": "Urbana",
+    "name": "Champaign County Bailout Coalition",
+    "number": 7652315682,
+    "url": "https://champaigncountybailoutcoalition.wordpress.com/contact/"
+  },
+  {
+    "id": 23,
+    "state": "Indiana",
+    "city": "Indianapolis",
+    "name": "The bail project",
+    "number": 3233660799,
+    "url": "https://bailproject.org/our-work/"
+  },
+  {
+    "id": 24,
+    "state": "Iowa",
+    "city": "Postville",
+    "name": "Eastern Iowa Community Bond Project",
+    "number": 3195352209,
+    "url": "https://communitybondproject.org/"
+  },
+  {
+    "id": 25,
+    "state": "Louisiana",
+    "city": "Baton Roug",
+    "name": "YWCA Greater Baton Rouge Community Bail Fund",
+    "number": 2253830681,
+    "url": "https://www.ywca-br.org/contact-us-1"
+  },
+  {
+    "id": 26,
+    "state": "Missouri",
+    "city": "Kansas City",
+    "name": "Kansas City Community Bail Fund",
+    "number": 8165620952,
+    "url": "https://www.kccommunitybailfund.com/"
+  },
+  {
+    "id": 27,
+    "state": "Missouri",
+    "city": "Kansas City",
+    "name": "Missouri Black Protester Relief Fund - contact via website and look for support on ground.",
+    "number": null,
+    "url": "https://actionnetwork.org/"
+  },
+  {
+    "id": 28,
+    "state": "Minnesota",
+    "city": "Minneapolis",
+    "name": "Centro de Trabajadores Unidos en La Lucha",
+    "number": 6123320663,
+    "url": "https://ctul.net/"
+  },
+  {
+    "id": 29,
+    "state": "Minnesota",
+    "city": "Minneapolis",
+    "name": "Minneapolis Freedom Fund",
+    "number": 6124442654,
+    "url": "https://minnesotafreedomfund.org/bailbond-referral"
+  },
+  {
+    "id": 30,
+    "state": "Maryland",
+    "city": "Baltimore",
+    "name": "Baltimore Action Legal Team's Bail Fund",
+    "number": 4102022323, 
+    "url": "https://www.baltimoreactionlegal.org/contact"
+  },
+  {
+    "id": 31,
+    "state": "Michigan",
+    "city": "Detroit",
+    "name": "Detroit Justice Center",
+    "number": 3137365957, 
+    "url": "https://www.detroitjustice.org/contact-us"
+  },
+  {
+    "id": 32,
+    "state": "Michigan",
+    "city": "Detroit",
+    "name": "The Bail Project",
+    "number": 3233660799, 
+    "url": "https://bailproject.org/our-work/"
+  },
+  {
+    "id": 33,
+    "state": "Massachusetts",
+    "city": "Boston",
+    "name": "Beyond Bail & Legal Defense Fund",
+    "number":6173967143, 
+    "url": "https://www.beyondbondboston.org/"
+  },
+  {
+    "id": 34,
+    "state": "Massachusetts",
+    "city": "Boston",
+    "name": "Massachusetts Bail Fund",
+    "number": null, 
+    "url": "https://www.massbailfund.org/"
+  },
+  {
+    "id": 35,
+    "state": "New York",
+    "city": "Brooklyn",
+    "name": "Brooklyn Community Bail Fund",
+    "number": 3473916299,
+    "url": "https://brooklynbailfund.org/contact"
+  },
+  {
+    "id": 36,
+    "state": "New York",
+    "city": "The Bronx",
+    "name": "The Bronx Freedom Fund",
+    "number": 7185885005,
+    "url": "http://www.thebronxfreedomfund.org/"
+  },
+  {
+    "id": 37,
+    "state": "New York",
+    "city": "New York City",
+    "name": "Trans Emergency Release Fund",
+    "number": 9292866985, 
+    "url": "https://emergencyreleasefund.com/"
+  },
+  {
+    "id": 38,
+    "state": "North Carolina",
+    "city": "Durham",
+    "name": "North Carolina Community Bail Fund",
+    "number": 9192861972,
+    "url": "https://www.nccbailfund.org/"
+  },
+  {
+    "id": 39,
+    "state": "North Carolina",
+    "city": "Charlotte",
+    "name": "Charlotte Bail Support",
+    "number": 7043238918,
+    "url": "https://charlottebailbonds.us/"
+  },
+  {
+    "id": 40,
+    "state": "Ohaio",
+    "city": "Cincinnati",
+    "name": "Cincinnati Bail Fund",
+    "number": 5139466010,
+    "url": "https://www.courtclerk.org/frequently-asked-questions-bond-information/"
+  },
+  {
+    "id": 41,
+    "state": "Oregon",
+    "city": "Eugene",
+    "name": "Eugene Bail fund",
+    "number": 5415155721,
+    "url": null
+  },
+  {
+    "id": 42,
+    "state": "Oregon",
+    "city": "Portland",
+    "name": "PDX Protest Bail Fund",
+    "number": 5034420866,
+    "url": null
+  },
+  {
+    "id": 43,
+    "state": "Pennsylvania",
+    "city": "Pittsburg",
+    "name": "Bukit Bail Fund of Pittsburgh",
+    "number": 4125934355,
+    "url": "https://www.bukitbailfund.org/"
+  },
+  {
+    "id": 44,
+    "state": "Pennsylvania",
+    "city": "Philadelphia",
+    "name": "Philadelphia Bail Fund",
+    "number": 2679613391,
+    "url": "https://www.phillybailfund.org/contact-us"
+  },
+  {
+    "id": 45,
+    "state": "Tennessee",
+    "city": "Nashville",
+    "name": "Nashville Community Bail Fund",
+    "number": 6154551875,
+    "url": "https://nashvillebailfund.org/"
+  },
+  {
+    "id": 46,
+    "state": "Tennessee",
+    "city": "Memphis",
+    "name": "Just city",
+    "number": 9012062226,
+    "url": "https://justcity.org/what-we-do/mcbfund/"
+  },
+  {
+    "id": 47,
+    "state": "Texas",
+    "city": "Houston",
+    "name": "Community Bail Fund",
+    "number": 8447373363,
+    "url": "https://www.restoringjustice.org/about"
+  },
+  {
+    "id": 48,
+    "state": "Texas",
+    "city": "Dallas",
+    "name": "The Luke 4:18 Bail Fund by Faith",
+    "number": 9728038783,
+    "url": "https://faithintx.org/bailfund/"
+  },
+  {
+    "id": 49,
+    "state": "Texas",
+    "city": "Dallas",
+    "name": "Dallas Bail Fund for Protesters",
+    "number": 4695469181,
+    "url": null
+  },
+  {
+    "id": 50,
+    "state": "Virginia",
+    "city": "Richmond",
+    "name": "Richmond Community Bail Fund",
+    "number": 8046014944,
+    "url": "https://rvabailfund.org/contact"
+  },
+  {
+    "id": 51,
+    "state": "Virginia",
+    "city": "Roanoke",
+    "name": "Roanoke Community Bail Fund",
+    "number": 5404042023,
+    "url": "https://roanokepeoplespower.wordpress.com/roanoke-community-bail-fund/"
+  },
+  {
+    "id": 52,
+    "state": "Washington",
+    "city": "Seattle",
+    "name": "The Northwest Community Bail Fund",
+    "number": 8776226223,
+    "url":"https://www.nwcombailfund.org/contact/"
+  },
+  {
+    "id": 53,
+    "state": "Washington",
+    "city": "Seattle",
+    "name": "The BLM Seattle Freedom Fund",
+    "number": 4132742016,
+    "url":"https://blacklivesseattle.org/bail-fund/"
+  },
+  {
+    "id": 54,
+    "state": "Washington",
+    "city": "Burien",
+    "name": "Fair Fight Immigrant Bond Fund ",
+    "number": 8447243737,
+    "url":"https://fairfightbondfund.org/about/"
+  }
+]
