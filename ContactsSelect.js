@@ -2,19 +2,38 @@ export default class ContactSelect {
   constructor(cb) {
     this.cb = cb;
     this.el = document.createElement('div');
+    this.loaded = false;
+    this.contacts = [];
+    this.loadContacts();
   }
 
+  async loadContacts() {
+    const resp = await fetch('https://draketalley.com/contacts')
+    if (resp.ok) {
+      const data = await resp.json();
+      this.contacts = data.users;
+      this.render();
+    }
+  }
   listener() {
     console.log('button clicked');
     //this.cb();
   }
 
+  getList() {
+    if (this.loaded) {
+      return `${this.contacts.map(contact => `<pre>${contact.name}</pre>`)}`;
+    } else {
+      return '';
+    }
+  }
   render() {
-    this.el.innerHTML = `
+      this.el.innerHTML = `
       <p>hey there</p>
       <input type="text" name="contact" />
       <button>Click Me</button>
       <button class="remove">remove</button>
+      ${this.getList()}
     `;
 
     this.el.querySelector('button').addEventListener('click', this.listener);

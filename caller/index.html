@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <script type="module" defer src="main.js" charset="utf-8"></script>
     <link rel="manifest" href="/caller/manifest.json">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <title>caller</title>
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/caller/style.css">
+    <link rel="stylesheet" href="style.css" >
+
     <script type="application/javascript" defer>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js')
@@ -22,10 +21,16 @@
           });
       }
     </script>
-
-    <title>Demo</title>
   </head>
   <body>
-    <div class="root"></div>
+    <main>
+      <h1>hey there</h1>
+      <a href="tel:+1-617-417-3836">shirin</a>
+      <a href="tel:+1-617-417-3836">
+        <button>omg</button>
+      </a>
+      <img src="android-chrome-192x192.png" />
+      <img src="android-chrome-512x512.png" />
+    </main>
   </body>
 </html>

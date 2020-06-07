@@ -13,7 +13,8 @@ export default class Login {
     2) Select a bail fund near your location.</p> 
     </div>
     <h2>Login</h2>
-    <button>Login</button>
+    <a href="/bail/login">Login with Twitter</a>
+    <button>Go To Next</button>
     `
 
     this.el.querySelector('button').addEventListener("click", this.goToNext);
