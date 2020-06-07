@@ -1,5 +1,5 @@
 export default class SelectFund {
-  constructor(selectHandler) {
+  constructor(selectHandler, goToNext) {
     this.el = document.createElement('div');
     this.funds = [];
     this.searchText = '';
@@ -8,6 +8,7 @@ export default class SelectFund {
       .catch(err => console.error(err));
     this.selectedFund = null;
     this.selectHandler = selectHandler;
+    this.goToNext = goToNext;
   }
 
   async loadJSON (url) {
@@ -78,11 +79,15 @@ export default class SelectFund {
         const id = parseInt(e.target.value);
         const fund = this.funds.find(currentFund => currentFund.id === id);
         this.handleFundSelection(fund);
+        this.goToNext()
+
       }
     })
-
-
     return this.el;
+  }
+
+  unmount() {
+    this.el.querySelector('.selectFundBtn').removeEventListener('click', this.goToNext);
   }
 
   handleFundSelection(fund) {

@@ -2,10 +2,12 @@ const WELCOME = 'welcome';
 const SELECT_CONTACTS = 'select_contacts';
 const LOGIN = 'login';
 const SELECT_FUND = 'select_fund';
+const BUTTONS = 'buttons';
 import Welcome from './Welcome.js';
 import Login from './Login.js';
 import SelectContacts from './SelectContacts.js';
 import SelectFund from './SelectFund.js';
+import Buttons from './Buttons.js';
 
 class ViewManager {
   constructor(rootEl) {
@@ -56,7 +58,10 @@ class ViewManager {
           this.render();
         }, this.handleSelectContactIds.bind(this));
       case SELECT_FUND:
-        return new SelectFund(this.handleSelectFund.bind(this));
+        return new SelectFund(this.handleSelectFund.bind(this), () =>{
+          this.current = BUTTONS;
+          this.render()
+        });
     }
   }
 }

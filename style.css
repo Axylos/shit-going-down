@@ -87,7 +87,7 @@ body {
 .download {
   display: block;
   margin-left: 48%;
-  background-color: #2F363E;
+  background-color: rgb(63, 74, 87);
   border: 2px solid rgb(255, 69, 1);
   color: #fff;
   font-weight: 500;
@@ -210,7 +210,7 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 600;
-  background-color: #2F363E;
+  background-color: rgb(63, 74, 87);
   margin-left: 2%;
   margin-top: 1%;
   padding: 4px;
@@ -227,6 +227,7 @@ body {
 .selectFundBtn:hover {
   border: 1px solid rgb(223, 255, 127);
   cursor: pointer;
+  background-color: #2F363E;
 }
 
 .search-form {
@@ -283,26 +284,6 @@ input.contactSearch {
   width: 350px;
 }
 
-.done {
-  margin-top: 15%;
-  margin-left: 75%;
-  color: #FF4C18;
-  letter-spacing: 2px;
-  font-size: 14px;
-  padding: 12px;
-  width: 120px;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(255, 188, 87, 0.19);
-}
-
-.done:hover {
-  background-color: #FF4C18;
-  border: 2px solid #000;
-  color: #fff;
-}
-
 .listResults {
   display: flex;
 }
@@ -323,7 +304,8 @@ a:link {
 }
 
 span.place {
-  line-height: 2rem;
+  line-height: 1.6rem;
+  margin-right: 1%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
