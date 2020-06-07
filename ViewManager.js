@@ -58,10 +58,15 @@ class ViewManager {
           this.render();
         }, this.handleSelectContactIds.bind(this));
       case SELECT_FUND:
-        return new SelectFund(this.handleSelectFund.bind(this), () =>{
+        return new SelectFund(this.handleSelectFund.bind(this), () => {
           this.current = BUTTONS;
           this.render()
         });
+      case BUTTONS:
+        return new Buttons(() => {
+          this.current = BUTTONS;
+          this.render()
+        })
     }
   }
 }

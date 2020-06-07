@@ -1,6 +1,5 @@
 export default class Welcome {
   constructor(goToNext) {
-    console.log('instantiating a welcome view');
     this.handleClick = this.handleClick.bind(this);
     this.el = document.createElement('div');
     this.goToNext = goToNext;
