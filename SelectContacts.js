@@ -19,13 +19,13 @@ export default class SelectContacts {
   render() {
     this.el.innerHTML = `
       <div class='thirdPage'>
-        <form class="search-form">
-          <p class="step">Step two</p>
-          <input name="selectedContact" type="text" required class="contactSearch" placeholder="Select Emergency contact">
-          <button value="submit">Select Contact</button>
+        <form class="search-form" autocomplete="off">
+          <p class="step">Step one:</br> Select emergency friend to DM in case of a need</p>
+          <input name="selectedContact" type="text" required class="contactSearch" placeholder="Type ____ to start">
+          <button value="submit">Select contact</button>
         </form>
-        <div class="contactSuggestions"></div>
-        <button class="next">Go To Select Fund</button>
+
+        <button class="next">Next ► </button>
         ${this.contentSelectedIds.map(contact => `<div>${contact}</div>`)}
       </div>
     `;

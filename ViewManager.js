@@ -1,15 +1,11 @@
 const WELCOME = 'welcome';
-const CONTACT_SELECT = 'contact_select';
 const SELECT_CONTACTS = 'select_contacts';
 const LOGIN = 'login';
-const INSTRUCTIONS = 'instructions';
 const SELECT_FUND = 'select_fund';
-import ContactSelect from './ContactsSelect.js';
 import Welcome from './Welcome.js';
 import Login from './Login.js';
 import SelectContacts from './SelectContacts.js';
 import SelectFund from './SelectFund.js';
-//import Instructions from './Instructions.js';
 
 class ViewManager {
   constructor(rootEl) {

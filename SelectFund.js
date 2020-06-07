@@ -37,30 +37,31 @@ export default class SelectFund {
       const regex = new RegExp(value, 'gi');
       const cityName = fund.city.replace(regex, `<span class="hl">${value}</span>`)
       const stateName = fund.state.replace(regex, `<span class="hl">${value}</span>`)
-      return `
+      if(fund.number === null) {
+        return '';
+      } else {
+        return `
       <p class='listResults'>
         <span class='place'>${cityName}, ${stateName}:</br> </span>
-        <button class='selectFundBtn' value="${fund.id}">${fund.name} - 
-        <a class='phone' href="${fund.number}">${fund.number}</a>
+        <button class='selectFundBtn' value="${fund.id}">${fund.name} -
+         <span class='phone'>${fund.number}</span>
         </button>
       </p>
       `
+    }
     }).join('');
     return html;
   }
 
   render() {
     this.el.innerHTML = `
-    <h2>Select Fund</h2>
     <div class='secondPage'>
       <form class="search-form">
-        <p class="step">Step one</p>
+        <p class="step">Step two: </br>
+        select local bail fund near you</p>
         <input type="text" class="search" placeholder="Type City or State">
       </form>
-      <p>here is a thing</p>
-      <div>
-      <div class="suggestions">
-      </div>
+      <div class="suggestions"></div>
     </div>
     `
     const search = this.el.querySelector('.search')

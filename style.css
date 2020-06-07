@@ -307,6 +307,13 @@ input.contactSearch {
   display: flex;
 }
 
+span.phone {
+  color: rgb(206, 206, 206);
+  font-weight: 500; 
+  letter-spacing: 1px;
+  /* padding-top: 2%; */
+}
+
 a:link {
   text-decoration: none;
   color: rgb(206, 206, 206);
