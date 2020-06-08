@@ -25,12 +25,12 @@ export default class Login {
     <button class="start">next</button>
     `
 
-    this.el.querySelector('button').addEventListener("click", this.goToNext);
+    this.el.querySelector('.start').addEventListener("click", this.goToNext);
 
     return this.el;
   }
 
   unmount() {
-    this.el.querySelector('button').removeEventListener("click", this.goToNext);
+    this.el.querySelector('.start').removeEventListener("click", this.goToNext);
   }
 } 

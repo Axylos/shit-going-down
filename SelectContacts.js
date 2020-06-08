@@ -9,6 +9,7 @@ export default class SelectContacts {
     this.loaded = false;
     this.contacts = [];
     this.loadContacts();
+    this.goBack = goBack;
   }
 
   async loadContacts() {
@@ -30,7 +31,7 @@ export default class SelectContacts {
       const contacts = this.filterContacts(queryTerm);
       return `${contacts.map(contact => `
         <button value="${contact.id}" class="contact-detail">
-          <p>Name: ${contact.name}</p>
+          <p>Name: ${contact.name} <span class="hl">${queryTerm}</span> </p>
           <p>Username: ${contact.screen_name}</p>
         </button>
           `).join('')}`
@@ -41,18 +42,21 @@ export default class SelectContacts {
   }
   render() {
     this.el.innerHTML = `
+      <div class="upButtons">
+         <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+      </div>
+      <div class="navLinks">
+          <a class="goToNext" href="#"> « next </back> 
+           <a class="goBack" href="#"> back »</back> 
+        </div>
+
       <div class='thirdPage'>
         <form class="search-form" autocomplete="off">
-          <p class="step">Step one:</br> Select emergency friend to DM in case of a need</p>
-          <input name="selectedContact" type="text" required class="contactSearch" placeholder="Type ____ to start">
-          <button value="submit">Select contact</button>
+          <p class="step"><strong>Step one:</strong></br> Select emergency contacts to DM in case of a need</p>
+          <input name="selectedContact" type="text" required class="contactSearch" placeholder="Type name or user name">
         </form>
-
-        <button class="next">Next ► </button>
         ${this.contentSelectedIds.map(contact => `<div>${contact}</div>`)}
-        <pre>test</pre>
-        <div class="contact-list">
-        </div>
+        <div class="contact-list"></div>
         <div class="chosen-contacts"></div>
       </div>
     `;
@@ -71,7 +75,8 @@ export default class SelectContacts {
       }
     });
 
-    this.el.querySelector('.next').addEventListener('click', this.goToNext);
+    this.el.querySelector('.goToNext').addEventListener('click', this.goToNext);
+    this.el.querySelector('.goBack').addEventListener('click', this.goBack);
     this.el.querySelector('.contact-list').addEventListener('click', async (ev) => {
       if (ev.target.classList.contains('message')) {
         const id = ev.target.value;
@@ -82,8 +87,6 @@ export default class SelectContacts {
         }
       }
     })
-
-
     return this.el;
   }
 
@@ -100,12 +103,16 @@ export default class SelectContacts {
 
   updateContacts() {
     const el = this.chosenContacts();
-
     const markup = this.contentSelectedIds.map(contact => {
       return `
       <div class="chosen-contact">
-        <div><strong>${contact.screen_name}:</strong> ${contact.name}</div>
-        <button class="remove" value="${contact.id}">Remove ${contact.name}</button> 
+        <div class="chosen-contactsNames">
+         <ui>
+          <li>${contact.screen_name}: ${contact.name}
+            <button class="remove" value="${contact.id}"><img src="./images/removeIcon_white.svg" alt="remove" height="28"/></button> 
+           </li>
+          </ui>  
+         </div>
       </div>
       `
     }).join('');
@@ -115,6 +122,7 @@ export default class SelectContacts {
   }
 
   unmount() {
-    this.el.querySelector('.next').removeEventListener('click', this.goToNext);
+    this.el.querySelector('.goToNext').removeEventListener('click', this.goToNext);
+    this.el.querySelector('.goBack').removeEventListener('click', this.goBack);
   }
 }

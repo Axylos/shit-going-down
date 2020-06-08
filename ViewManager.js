@@ -44,6 +44,7 @@ class ViewManager {
 
   getView() {
     let goForward;
+    let goBack;
     switch(this.current) {
       case WELCOME:
         goForward = () => {
@@ -62,7 +63,11 @@ class ViewManager {
           this.current = SELECT_FUND;
           this.render();
         }
-        return new SelectContacts(goForward, this.handleSelectContactIds.bind(this));
+        goBack = () => {
+          this.current = LOGIN;
+          this.render();
+        }
+        return new SelectContacts(goForward, this.handleSelectContactIds.bind(this), goBack);
       case SELECT_FUND:
         goForward = () => {
           this.current = BUTTONS;
