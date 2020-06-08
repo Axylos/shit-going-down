@@ -7,6 +7,8 @@ import qs from 'querystring';
 import { storeToken, getSecretFromToken, getUser } from './db.js';
 import { getToken } from './token.js';
 import { getOauthToken, getClient, getUserContacts, sendMsg } from './auth_client.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 

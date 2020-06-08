@@ -1,12 +1,14 @@
 import axios from 'axios';
 import crypto from 'crypto';
 import Twitter from 'twitter-lite';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const oauth_timestamp = Math.round((new Date()).getTime() / 1000);
 const hash = crypto.createHash('md5').update(oauth_timestamp.toString()).digest('hex');
 const url = 'https://api.twitter.com/oauth/request_token';
-const consumer_key = 'UVLOsSPlrwd9RVxuRLwc4fj3O';
-const consumer_secret = 'zBM3QERiDYmM8UD45ZIe6qVr8leCYZFUiE8yUujyGNb3A8ekdS';
+const consumer_key = process.env.TWITTER_CONSUMER_KEY;
+const consumer_secret = process.env.TWITTER_CONSUMER_SECRET;
 const signing_key = encodeURIComponent(consumer_secret) + '&';
 
 
@@ -53,7 +55,7 @@ export async function getOauthToken() {
     });
     return resp.data;
   } catch (e) {
-    console.error('err: ', e);
+    console.error('err: ', e.message);
     console.log(e.response.data);
   } 
 }
