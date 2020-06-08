@@ -25,15 +25,16 @@ body {
 
 .textHome {
   margin-left: 12%;
-  margin-top: 25%;
+  /* margin-top: 25%; */
+  
 }
 
-.call {
+.shit {
   text-align: left;
-  margin-top: 22%;
-  margin-left: 12%;
+  margin-top: -50%;
+  margin-left: 45%;
   letter-spacing: 4px;
-  display: block;
+  display: inline-block;
   width: 50px;
   background-color: rgb(255, 69, 1);
   color: #fff;
@@ -41,10 +42,10 @@ body {
   padding: 12%;
   padding-right: 18%;
   padding-top: 22%;
-  font-size: 38px;
+  font-size: 36px;
 }
 
-.bail {
+.going {
   letter-spacing: 4px;
   display: block;
   width: 100px;
@@ -59,49 +60,92 @@ body {
   margin-left: 22%;
 }
 
-.me {
+
+
+.down {
   letter-spacing: 4px;
-  display: block;
+  display: inline-block;
   width: 30px;
-  margin-left: 2%;
+  margin-left: 8%;
   margin-top:-10%;
   background-color: #000;
   color: white;
-  font-size: 20px;
+  font-size: 32px;
   padding: 12%;
-  padding-bottom: 28%;
+  padding-right: 15%;
+  padding-bottom: 45%;
   border: 2px solid #fff;
+  text-align: right;
 }
 
-.homeInstruction {
-  font-size: 14px;
+.homeInstructionOne {
+  font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-left: 48%;
-  margin-top: -25%;
+  margin-left: 2%;
+  margin-top: 20%;
   margin-bottom: 3%;
   color: white;
-  line-height: 1.2rem;
+  line-height: 1.4rem;
+  width: 180px;
+}
+
+.homeInstructionTwo {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 60%;
+  margin-top: -50%;
+  margin-bottom: 3%;
+  color: white;
+  line-height: 1.4rem;
+  width: 210px;
+}
+
+span.before {
+  background-color:  black;
+  /* color: #000; */
+  /* font-weight: 600; */
+  /* font-size: 14px; */
+}
+
+.homeInstructionThree {
+  font-size: 10px;
+  letter-spacing: 1px;
+  /* margin-bottom: 3%; */
+  color: #b4c0df;
+  line-height: 1rem;
+  width: 380px;
+  margin-left: 20%;
+  margin-top: 6%;
+}
+
+.icon {
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-bottom: 1px;
+  margin-left: 2px;
 }
 
 .download {
   display: block;
-  margin-left: 48%;
+  margin-left: 60%;
+  margin-top: 5%;
   background-color: rgb(63, 74, 87);
   border: 2px solid rgb(255, 69, 1);
   color: #fff;
   font-weight: 500;
   letter-spacing: 2px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5rem;
-  padding: 14px;
+  padding: 10px;
   width: 180px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(255, 188, 87, 0.19);
 }
 
 .download:hover {
-  background-color: rgb(255, 69, 1);
+  background-color: rgb(255, 69, 1, 0.8);
   cursor: pointer;
 
 }
@@ -367,7 +411,6 @@ span.site {
   color: white;
   font-size: 14px;
   width: 200px;
-  /* margin-top: 5%; */
   margin-left: 5%;
 }
 
@@ -378,7 +421,6 @@ span.site {
 
 .SMS {
   transform: rotate(-5deg);
-
   font-size: 15px;
   width: 160px;
   color: #fff;
@@ -427,14 +469,4 @@ span.site {
   border-radius: 5px; */
 }
 
-.modal {
-  position: absolute;
-  width: 80%;
-  height: 90%;
-  background: orange;
-  top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-}
+

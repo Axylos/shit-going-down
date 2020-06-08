@@ -7,14 +7,15 @@ export default class Login {
   render() {
     this.el.innerHTML = `
     <div>
-    <h4 class='loginInstruction'> While NONE of your information is being stored</h4>
-    <h4 class="loginSecInstruction">After login you will be required to: </br></h4>
-    <p> 1) Select a contact emergency from your personal twitter contacts so <span class="dm"> a quick DM </span> can be sent in case something gets wrong.</br> 
-    2) Select a bail fund near your location.</p> 
-    </div>
-    <h2>Login</h2>
-    <a href="/bail/login">Login with Twitter</a>
-    <button>Go To Next</button>
+    <h2>Going in</h2>
+    <h4 class='loginInstruction'>To get you a quick aceess to your friends - we ask you to login via twitter. </br>
+    & </br> 
+    We will not share your information anywhere outside this application. </br>
+    &</br>
+     We are not storing your selection information anywhere in our application. </h4>
+    <a href="/bail/login">Click to login with Twitter</a>
+    
+    <button>I'm all set</button>
     `
 
     this.el.querySelector('button').addEventListener("click", this.goToNext);
