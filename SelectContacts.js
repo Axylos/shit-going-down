@@ -1,10 +1,11 @@
 export default class SelectContacts {
-  constructor(goToNext, submitIds) {
+  constructor(goToNext, submitIds, goBack) {
     this.el = document.createElement('div');
     this.contentSelectedIds = [];
-    this.handleSelect = this.handleSelect.bind(this);
-    this.submitItds = submitIds;
-    this.goToNext = goToNext;
+    this.goToNext = () => {
+      submitIds(this.contentSelectedIds);
+      goToNext();
+    }
     this.loaded = false;
     this.contacts = [];
     this.loadContacts();
@@ -20,20 +21,18 @@ export default class SelectContacts {
     }
   }
 
-  handleSelect(ev) {
-    ev.preventDefault(); 
-    const form = ev.target;
-    const data = new FormData(form);
-    const newContact = data.get('selectedContact');
-    this.contentSelectedIds.push(newContact);
-    this.render();
+  filterContacts(term) {
+    return this.contacts.filter(contact => contact.name.match(term) || contact.screen_name.match(term));
   }
 
-  getList() {
-    if (this.loaded) {
-      return `${this.contacts.slice(0, 1).map(contact => `
-          <pre>${JSON.stringify(contact)}</pre>
-          <button class="message" value=${contact.id}>Send ${contact.name} a Message</pre>
+  getList(queryTerm) {
+    if (this.loaded && queryTerm) {
+      const contacts = this.filterContacts(queryTerm);
+      return `${contacts.map(contact => `
+        <button value="${contact.id}" class="contact-detail">
+          <p>Name: ${contact.name}</p>
+          <p>Username: ${contact.screen_name}</p>
+        </button>
           `).join('')}`
 
     } else {
@@ -53,12 +52,25 @@ export default class SelectContacts {
         ${this.contentSelectedIds.map(contact => `<div>${contact}</div>`)}
         <pre>test</pre>
         <div class="contact-list">
-        ${this.getList()}
         </div>
+        <div class="chosen-contacts"></div>
       </div>
     `;
+    const search = this.el.querySelector('input');
+    const contactList = this.el.querySelector('.contact-list');
+    search.addEventListener("input", (ev) => {
+      const suggestions = this.getList(ev.target.value);
+      contactList.innerHTML = suggestions
+      for (let child of contactList.children) {
+        child.addEventListener('click', this.contactHandler.bind(this));
+      }
+    });
 
-    this.el.querySelector('form').onsubmit = this.handleSelect;
+    contactList.addEventListener('click', ev => {
+      if (ev.target.classList.contains('contact-list')) {
+      }
+    });
+
     this.el.querySelector('.next').addEventListener('click', this.goToNext);
     this.el.querySelector('.contact-list').addEventListener('click', async (ev) => {
       if (ev.target.classList.contains('message')) {
@@ -73,6 +85,33 @@ export default class SelectContacts {
 
 
     return this.el;
+  }
+
+  contactHandler(ev) {
+    const id = ev.currentTarget.value;
+    const contact = this.contacts.find(contact => contact.id === parseInt(id));
+    this.contentSelectedIds.push(contact);
+    this.updateContacts();
+  }
+
+  chosenContacts() {
+    return this.el.querySelector('.chosen-contacts');
+  }
+
+  updateContacts() {
+    const el = this.chosenContacts();
+
+    const markup = this.contentSelectedIds.map(contact => {
+      return `
+      <div class="chosen-contact">
+        <div><strong>${contact.screen_name}:</strong> ${contact.name}</div>
+        <button class="remove" value="${contact.id}">Remove ${contact.name}</button> 
+      </div>
+      `
+    }).join('');
+    this.el.querySelector('input').value = '';
+    this.el.querySelector('.contact-list').innerHTML = ''; 
+    el.innerHTML = markup;
   }
 
   unmount() {

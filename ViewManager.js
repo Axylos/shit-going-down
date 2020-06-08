@@ -9,13 +9,15 @@ import SelectContacts from './SelectContacts.js';
 import SelectFund from './SelectFund.js';
 import Buttons from './Buttons.js';
 
+const initial = WELCOME;
 class ViewManager {
   constructor(rootEl) {
     this.rootEl = rootEl;
-    this.current = WELCOME;
+    this.current = initial;
     this.view = null;
-    this.contactIds = [];
-    this.fund = null;
+    this.contacts = [];
+    this.fund = { name: 'fucker', phone: '9014844933' };
+    this.selectedContacts = [];
   }
 
   init() {
@@ -33,7 +35,7 @@ class ViewManager {
   }
 
   handleSelectContactIds(ids) {
-    this.contactIds = ids;
+    this.selectedContacts = ids;
   }
 
   handleSelectFund(fund) {
@@ -41,32 +43,38 @@ class ViewManager {
   }
 
   getView() {
+    let goForward;
     switch(this.current) {
       case WELCOME:
-        return new Welcome(() => {
+        goForward = () => {
           this.current = LOGIN;
           this.render();
-        });
+        };
+        return new Welcome(goForward);
       case LOGIN:
-        return new Login(() => {
+        goForward = () => {
           this.current = SELECT_CONTACTS;
           this.render();
-        })
+        } 
+        return new Login(goForward);
       case SELECT_CONTACTS: 
-        return new SelectContacts(() => {
+        goForward = () => {
           this.current = SELECT_FUND;
           this.render();
-        }, this.handleSelectContactIds.bind(this));
+        }
+        return new SelectContacts(goForward, this.handleSelectContactIds.bind(this));
       case SELECT_FUND:
-        return new SelectFund(this.handleSelectFund.bind(this), () => {
+        goForward = () => {
           this.current = BUTTONS;
           this.render()
-        });
+        }
+        return new SelectFund(this.handleSelectFund.bind(this), goForward);
       case BUTTONS:
-        return new Buttons(() => {
+        goForward = () => {
           this.current = BUTTONS;
           this.render()
-        })
+        }
+        return new Buttons(this.selectedContacts, this.fund, goForward);
     }
   }
 }

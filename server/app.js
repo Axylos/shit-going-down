@@ -17,13 +17,25 @@ app.use(cors());
 app.use(cookieParser());
 
 app.post('/message', async (req, res) => {
-  console.log(req.body);
-  const { recipientId } = req.body;
-  const { hash } = req.cookies;
-  const { oauth_token, oauth_secret } = await getUser(hash);
-  const response = await sendMsg(oauth_token, oauth_secret, recipientId);
+  try {
+    console.log(req.body);
+    const { recipients } = req.body;
+    const { hash } = req.cookies;
+    const { oauth_token, oauth_secret } = await getUser(hash);
+    console.log('reps: ', recipients);
+    const promises = recipients.map(async ({ id }) => {
+      console.log(id);
+      const response = await sendMsg(oauth_token, oauth_secret, id);
+      console.log(response);
+    })
 
-  res.json(response);
+    await Promise.all(promises);
+
+    res.json('yay');
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
 });
 
 app.get('/callback', async (req, res) => {
@@ -46,23 +58,30 @@ app.get('/callback', async (req, res) => {
 });
 
 app.get('/contacts', async (req, res) => {
-  const { hash } = req.cookies;
-  console.log(hash);
-  const { oauth_token, oauth_secret } = await getUser(hash);
+  try {
 
-  const contacts = await getUserContacts(oauth_token, oauth_secret);
-  res.json(contacts);
+    const { hash } = req.cookies;
+    console.log(hash);
+    const { oauth_token, oauth_secret } = await getUser(hash);
+
+    const contacts = await getUserContacts(oauth_token, oauth_secret);
+    res.json(contacts);
+  } catch (e) {
+    console.log(e);
+    console.error('error: ', e.message);
+    res.send(502);
+  }
 });
 
 app.get('/login', async (req, res) => {
   const token = await getOauthToken();
- 
+
   try {
 
-  const { oauth_token, oauth_token_secret } = qs.decode(token);
-  const baseUrl = 'https://api.twitter.com/oauth/authorize?'
-  const url = `${baseUrl}${token}`;
-  res.redirect(url);
+    const { oauth_token, oauth_token_secret } = qs.decode(token);
+    const baseUrl = 'https://api.twitter.com/oauth/authorize?'
+    const url = `${baseUrl}${token}`;
+    res.redirect(url);
   } catch (e) {
     console.log(e);
     res.status(404).send();

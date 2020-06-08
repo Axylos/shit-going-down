@@ -427,4 +427,14 @@ span.site {
   border-radius: 5px; */
 }
 
-
+.modal {
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  background: orange;
+  top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
