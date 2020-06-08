@@ -60,8 +60,6 @@ body {
   margin-left: 22%;
 }
 
-
-
 .down {
   letter-spacing: 4px;
   display: inline-block;
@@ -104,15 +102,12 @@ body {
 
 span.before {
   background-color:  black;
-  /* color: #000; */
-  /* font-weight: 600; */
-  /* font-size: 14px; */
+  padding: 2px;
 }
 
 .homeInstructionThree {
   font-size: 10px;
   letter-spacing: 1px;
-  /* margin-bottom: 3%; */
   color: #b4c0df;
   line-height: 1rem;
   width: 380px;
@@ -121,10 +116,9 @@ span.before {
 }
 
 .icon {
-  padding-right: 4px;
-  padding-left: 4px;
-  padding-bottom: 1px;
+  padding: 4px;
   margin-left: 2px;
+  border: 1px solid #b5c0dd3b;
 }
 
 .download {
@@ -142,16 +136,28 @@ span.before {
   width: 180px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(255, 188, 87, 0.19);
+  transition: 0.3s;
+}
+
+.download:after {
+  content: 'I DID IT!';
+}
+
+.download:hover:after{
+  content: 'STAY SAFE ♡';
+  font-size: 12px;
 }
 
 .download:hover {
-  background-color: rgb(255, 69, 1, 0.8);
+  background-color: rgb(255, 69, 1, 0.7);
   cursor: pointer;
-
+}
+.upButtons {
+  width: 100%;
+  background-color: rgb(255, 69, 1, 0.8);
 }
 
 .logo {
-  background-color: rgb(255, 69, 1, 0.8);
   color: #2F363E;
   font-size: 20px;
   margin-top: 0;
@@ -159,10 +165,17 @@ span.before {
   padding: 2%;
   padding-left: 5%;
   letter-spacing: 2px;
-  font-size: 13px;
+  font-size: 11px;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-.firstPage {
+.logo:hover {
+  color: white;
+}
+
+.loginPage {
   margin-top: 6%;
   max-width: 550px;
   margin-left: auto;
@@ -170,63 +183,81 @@ span.before {
   color: #fff;
 }
 
-.instruction {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  line-height: 2rem;
-  font-weight: 500;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-bottom: 5%;
-  width: 400px;
-  margin-left: 5%;
-}
-
-.secInstruction {
-  width: 370px;
-  border-top: 2px dotted  rgb(223, 255, 127);
-  padding-top: 8%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 14px;
-  font-weight: 200;
-  line-height: 2rem;
-  margin-top: 2%;
-  margin-left: 12%;
-  padding-right: 8%;
-}
-
-.subInstruction {
-  width: 370px;
-  font-size: 13px;
-  font-weight: 200;
-  margin-top: 2%;
-  margin-left: 3%;
-  line-height: 1.8rem;
-  padding-left: 12%;
-  padding-right:10%;
-}
-
-.start {
-  margin-left: 35%;
-  margin-top: 4%;
+.twitterLogin {
+  text-transform: uppercase;
+  margin-left: 25%;
+  margin-top: 12%;
   background-color: #2F363E;
   border: 2px solid rgb(255, 69, 1);
   color: #fff;
   font-weight: 500;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5rem;
-  padding: 12px;
-  width: 150px;
+  padding: 15px;
+  width: 260px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(255, 188, 87, 0.19);
+  transition: 0.3s;
 }
 
-.start:hover {
-  background-color: rgb(255, 69, 1);
+.twitterLogin:after {
+  content: 'Login with Twitter';
+}
+
+.twitterLogin:hover:after {
+  content: 'Login with Twitter »';
+}
+
+.twitterLogin:hover {
+  background-color: rgb(255, 69, 1, 0.8);
   cursor: pointer;
-
 }
+
+.loginInstruction {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-left: 22%;
+  text-align: center;
+  margin-top: 4%;
+  color: white;
+  line-height: 1.2rem;
+  width: 280px;
+}
+
+  /* .promise {
+    border: 1px dotted rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    width: 250px;
+    margin-left: 25%;
+    padding-left: 5%;
+    padding-top:5%;
+    margin-top: 5%;
+  } */
+
+.loginInstructionTwo {
+  font-size: 12px;
+  letter-spacing: 2px;
+  /* text-transform: uppercase;  */
+   margin-left: 24%;
+  margin-top: 5%;
+  color:  #b4c0df;
+  line-height: 1.2rem;
+  width: 250px;
+  text-align: center;
+}
+
+.twitter {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 3%;
+  color: white;
+  line-height: 1.4rem;
+  width: 210px; 
+  text-decoration: none;
+}
+
 
 .secondPage {
   max-width: 500px;
@@ -339,13 +370,13 @@ span.phone {
   /* padding-top: 2%; */
 }
 
-a:link {
+/* a:link {
   text-decoration: none;
   color: rgb(206, 206, 206);
   font-weight: 500; 
   letter-spacing: 1px;
   padding-top: 2%;
-}
+} */
 
 span.place {
   line-height: 1.6rem;

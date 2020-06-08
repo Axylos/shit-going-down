@@ -6,16 +6,23 @@ export default class Login {
 
   render() {
     this.el.innerHTML = `
-    <div>
-    <h2>Going in</h2>
-    <h4 class='loginInstruction'>To get you a quick aceess to your friends - we ask you to login via twitter. </br>
-    & </br> 
-    We will not share your information anywhere outside this application. </br>
-    &</br>
-     We are not storing your selection information anywhere in our application. </h4>
-    <a href="/bail/login">Click to login with Twitter</a>
+  
+    <div class="upButtons">
+      <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+    </div>
     
-    <button>I'm all set</button>
+    <div class="loginPage">
+    <button class="twitterLogin" onclick="location.href='/bail/login'"></button>
+    <p class='loginInstruction'>to retrieve your contacts.</p>
+    
+    <div class="promise">
+    <p class='loginInstructionTwo'>Your information will not be shared outside this application. </br>
+    & </br> Your activties are not stored anywhere in this application. </p>
+   </div>
+    </div>
+    
+    
+    <button class="start">next</button>
     `
 
     this.el.querySelector('button').addEventListener("click", this.goToNext);
