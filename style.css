@@ -317,8 +317,6 @@ span.before {
 .selectFundBtn {
   cursor: pointer;
   font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 600;
   background-color: rgb(63, 74, 87);
   margin-left: 2%;
   margin-top: 1%;
@@ -372,11 +370,11 @@ input.contactSearch {
 }
 
  .suggestions {
-  margin-left: 15%;
+  margin-left: 13%;
   margin-bottom: 10%;
   color: white;
-  font-size: 16px;
-  line-height: 1.5rem;
+  font-size: 12px;
+  line-height: 1.2rem;
   padding-left: 1%;
   padding-right: 3%;
   width: 350px;
@@ -386,8 +384,8 @@ input.contactSearch {
   margin-left: 15%;
   margin-bottom: 10%;
   color: white;
-  font-size: 16px;
-  line-height: 1.5rem;
+  font-size: 14px;
+  line-height: 1.4rem;
   padding-left: 1%;
   padding-right: 3%;
   width: 350px;
@@ -404,24 +402,18 @@ span.phone {
   /* padding-top: 2%; */
 }
 
-/* a:link {
-  text-decoration: none;
-  color: rgb(206, 206, 206);
-  font-weight: 500; 
-  letter-spacing: 1px;
-  padding-top: 2%;
-} */
-
 span.place {
-  line-height: 1.6rem;
+  line-height: 1.2rem;
   margin-right: 1%;
+  margin-top: 1%;
+  padding: 2%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
 span.site {
   font-size: 12px;
-  color: white
+  color: white;
 }
 
 .hl {
@@ -441,7 +433,7 @@ input.selectedContact {
 }
 
 .contact-list {
-  margin-left: 5%;
+  margin-left: 10%;
   width: 450px;
   background-color: #2F363E;
   color: #fff;
@@ -454,7 +446,7 @@ input.selectedContact {
   border: 1px solid rgb(255, 69, 1);
   border-radius: 5px;
   margin-top: 5%;
-  margin-left: 10%;
+  margin-left: 2%;
   cursor: pointer;
   text-align: left;
 }
@@ -473,7 +465,7 @@ input.selectedContact {
 }
 
 .chosen-contactsNames {
-  width: 340px;
+  width: 350px;
   margin-top: 5%;
   font-size: 12px;
   padding-top: 4%;
@@ -484,7 +476,7 @@ input.selectedContact {
   background-color: #2F363E;
   border: none;
   margin-left: 2%;
-  margin-top: 1%;
+  padding-top: 1%;
 }
 
 .remove:hover {

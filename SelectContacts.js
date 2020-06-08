@@ -109,7 +109,7 @@ export default class SelectContacts {
         <div class="chosen-contactsNames">
          <ui>
           <li>${contact.screen_name}: ${contact.name}
-            <button class="remove" value="${contact.id}"><img src="./images/removeIcon_white.svg" alt="remove" height="28"/></button> 
+            <button class="remove" value="${contact.id}"><img src="./images/removeIcon_white.svg" alt="remove" height="18"/></button> 
            </li>
           </ui>  
          </div>

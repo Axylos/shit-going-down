@@ -71,9 +71,13 @@ class ViewManager {
       case SELECT_FUND:
         goForward = () => {
           this.current = BUTTONS;
-          this.render()
+          this.render();
         }
-        return new SelectFund(this.handleSelectFund.bind(this), goForward);
+        goBack = () => {
+          this.current = SELECT_CONTACTS;
+          this.render();
+        }
+        return new SelectFund(this.handleSelectFund.bind(this), goForward, goBack);
       case BUTTONS:
         goForward = () => {
           this.current = BUTTONS;

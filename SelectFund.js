@@ -1,5 +1,5 @@
 export default class SelectFund {
-  constructor(selectHandler, goToNext) {
+  constructor(selectHandler, goToNext, goBack) {
     this.el = document.createElement('div');
     this.funds = [];
     this.searchText = '';
@@ -9,6 +9,7 @@ export default class SelectFund {
     this.selectedFund = null;
     this.selectHandler = selectHandler;
     this.goToNext = goToNext;
+    this.goBack = goBack;
   }
 
   async loadJSON (url) {
@@ -56,6 +57,14 @@ export default class SelectFund {
 
   render() {
     this.el.innerHTML = `
+    <div class="upButtons">
+         <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+      </div>
+      <div class="navLinks">
+          <a class="goToNext" href="#"> « next </back> 
+          <a class="goBack" href="#"> back »</back> 
+      </div>
+
     <div class='secondPage'>
       <form class="search-form">
         <p class="step">Step two: </br>
@@ -65,14 +74,20 @@ export default class SelectFund {
       <div class="suggestions"></div>
     </div>
     `
-    const search = this.el.querySelector('.search')
+
+    const search = this.el.querySelector('.search');
     const suggestionsEl = this.el.querySelector('.suggestions');
 
+    this.el.querySelector('.goBack').addEventListener('click', this.goBack);
+    this.el.querySelector('.goToNext').addEventListener('click', this.goToNext);
+    
     search.addEventListener("input", () => {
       const value = this.getValue();
       const suggestions = this.displayMatches(value);
       suggestionsEl.innerHTML = suggestions
     });
+
+    
 
     suggestionsEl.addEventListener('click', e => {
       if (e.target.tagName == 'BUTTON') {
@@ -87,7 +102,10 @@ export default class SelectFund {
   }
 
   unmount() {
+    this.el.querySelector('.goToNext').removeEventListener('click', this.goToNext);
     this.el.querySelector('.selectFundBtn').removeEventListener('click', this.goToNext);
+    this.el.querySelector('.goBack').removeEventListener('click', this.goBack);
+
   }
 
   handleFundSelection(fund) {
