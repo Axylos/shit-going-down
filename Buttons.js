@@ -67,13 +67,12 @@ export default class Buttons {
 
   render() {
     this.el.innerHTML = `
-
     <div class="generalpage">
        <div class="upButtons">
          <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
        </div>
        <div class="navLinks">
-          <a class="goBack" href="#"> back »</a> 
+          <a class="goBackEnd" href="#"> back »</a> 
         </div>
 
       <div class='finalPage'>
@@ -87,7 +86,7 @@ export default class Buttons {
         </div>
         <div class='smsDiv'>
         <button class="SMS">DM Emergency Contacts</button>
-        <p class="contact-listAlert"> your message will be sent to the contacts you chooce: </br>
+        <p class="contact-listAlert"> <span class="contartsMSG">your contacts info:<span> </br>
         ${this.getContactList()}
         </p>
         </div>
@@ -95,7 +94,7 @@ export default class Buttons {
       </div>
       </div>
     `;
-    this.el.querySelector('.goBack').addEventListener('click', this.goBack)
+    this.el.querySelector('.goBackEnd').addEventListener('click', this.goBack)
     //this.el.querySelector('.callBail').addEventListener('click', this.handleCall);
     this.el.querySelector('.SMS').addEventListener('click', e  => {
       this.openModal(e);
@@ -108,7 +107,7 @@ export default class Buttons {
   unmount() {
     this.el.querySelector('.callBail').removeEventListener('click', this.handleCall);
     this.el.querySelector('.SMS').removeEventListener('click', this.openModal);
-    this.el.querySelector('.goBack').removeEventListener('click', this.goBack);
+    this.el.querySelector('.goBackEnd').removeEventListener('click', this.goBack);
 
   }
 }
