@@ -13,7 +13,7 @@ export default class SelectContacts {
   }
 
   async loadContacts() {
-    const resp = await fetch('https://draketalley.com/bail/contacts')
+    const resp = await fetch('https://shitgoingdown.com/api/contacts')
     if (resp.ok) {
       const data = await resp.json();
       this.loaded = true;
@@ -91,7 +91,7 @@ export default class SelectContacts {
     this.el.querySelector('.contact-list').addEventListener('click', async (ev) => {
       if (ev.target.classList.contains('message')) {
         const id = ev.target.value;
-        const resp = await fetch('https://draketalley.com/bail/message', {method: 'POST', body: JSON.stringify({recipientId: id}), headers: { 'Content-Type': 'application/json' }});
+        const resp = await fetch('https://shitgoingdown.com/api/message', {method: 'POST', body: JSON.stringify({recipientId: id}), headers: { 'Content-Type': 'application/json' }});
         if (resp.ok) {
           const data = await resp.json();
           console.log(data);

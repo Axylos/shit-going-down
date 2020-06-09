@@ -11,23 +11,39 @@ import SelectFund from './SelectFund.js';
 import Buttons from './Buttons.js';
 import Instructions from './Instructions.js';
 
-const initial = WELCOME;
 class ViewManager {
   constructor(rootEl) {
+    const localFund = JSON.parse(localStorage.getItem('fund'));
+    const localContacts = JSON.parse(localStorage.getItem('contacts'));
+    this.fund = localFund !== null ? localFund : null;
+    this.selectedContacts = localContacts !== null? localContacts : [];
+
     this.rootEl = rootEl;
-    this.current = initial;
+    this.current = null;
     this.view = null;
-    this.contacts = [];
-    this.fund = { name: 'fucker', phone: '9014844933' };
-    this.selectedContacts = [];
   }
 
-  init() {
+  getInitial(verified) {
+    if (!verified) {
+      return WELCOME;
+    } else if (this.fund !== null && this.selectedContacts !== null && this.selectedContacts.length > 0) {
+      return BUTTONS;
+    } else if (this.selectedContacts.length < 1) {
+      return SELECT_CONTACTS;
+    } else {
+      return SELECT_FUND;
+    }
+  }
+
+  init(verified) {
+    const initial = this.getInitial(verified)
+    this.initial = initial;
+    this.current = this.initial;
     this.render(); 
   }
 
   render() {
-    if (this.view !== null) {
+    if (this.current !== this.initial) {
       this.view.unmount();
     }
     this.rootEl.innerHTML = '';
@@ -38,10 +54,12 @@ class ViewManager {
 
   handleSelectContactIds(ids) {
     this.selectedContacts = ids;
+    localStorage.setItem('contacts', JSON.stringify(this.selectedContacts))
   }
 
   handleSelectFund(fund) {
     this.fund = fund;
+    localStorage.setItem('fund', JSON.stringify(fund));
   }
 
   getView() {

@@ -8,7 +8,7 @@ export default class ContactSelect {
   }
 
   async loadContacts() {
-    const resp = await fetch('https://draketalley.com/contacts')
+    const resp = await fetch('https://shitgoingdown.com/api/contacts')
     if (resp.ok) {
       const data = await resp.json();
       this.contacts = data.users;

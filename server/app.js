@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser'
 import qs from 'querystring';
 import { storeToken, getSecretFromToken, getUser } from './db.js';
 import { getToken } from './token.js';
-import { getOauthToken, getClient, getUserContacts, sendMsg } from './auth_client.js';
+import { getOauthToken, getClient, getUserContacts, sendMsg, verify } from './auth_client.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -21,13 +21,12 @@ app.use(cookieParser());
 app.post('/message', async (req, res) => {
   try {
     console.log(req.body);
-    const { recipients } = req.body;
+    const { recipients, fund } = req.body;
     const { hash } = req.cookies;
-    const { oauth_token, oauth_secret } = await getUser(hash);
+    const { oauth_token, oauth_secret, name } = await getUser(hash);
     console.log('reps: ', recipients);
-    const promises = recipients.map(async ({ id }) => {
-      console.log(id);
-      const response = await sendMsg(oauth_token, oauth_secret, id);
+    const promises = recipients.map(async (recipient) => {
+      const response = await sendMsg(oauth_token, oauth_secret, recipient.id, recipient.name, fund, name);
       console.log(response);
     })
 
@@ -37,6 +36,23 @@ app.post('/message', async (req, res) => {
   } catch (e) {
     console.log(e);
     res.sendStatus(500);
+  }
+});
+
+app.get('/verify', async (req, res) => {
+  try {
+    const { hash } = req.cookies;
+    console.log('ash: ', hash);
+    if (!hash) {
+      throw new Error('did not receive hash');
+    }
+    const { oauth_token, oauth_secret } = await getUser(hash);
+    const verified = await verify(oauth_token, oauth_secret);
+    console.log('verified: ', verified);
+    res.json({ verified });
+  } catch (e) {
+    console.log(e);
+    res.json({ verified: false });
   }
 });
 
@@ -56,7 +72,7 @@ app.get('/callback', async (req, res) => {
   res.cookie('hash', userData.hash, {
     maxAge: 86_400_000,
     httpOnly: true
-  }).redirect('/caller');
+  }).redirect('/');
 });
 
 app.get('/contacts', async (req, res) => {

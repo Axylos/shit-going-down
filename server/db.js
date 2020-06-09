@@ -8,8 +8,9 @@ function getHash() {
 }
 
 const db = pgp()({
-  host: 'localhost',
   database: 'bail',
+  user: 'bail',
+  password: 'bail'
 });
 
 export async function getUser(hash) {

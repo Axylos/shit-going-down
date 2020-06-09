@@ -10,9 +10,10 @@ const precacheResources = [
   'Login.js',
   'phones.json',
   'main.js',
+  'Buttons.js',
   'SelectFund.js',
   'run.js',
-  'https://draketalley.com/caller/manifest.json'
+  'https://shitgoingdown.com/manifest.json'
 ];
 
 self.addEventListener('install', event => {

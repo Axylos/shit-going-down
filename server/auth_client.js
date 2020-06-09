@@ -13,7 +13,7 @@ const signing_key = encodeURIComponent(consumer_secret) + '&';
 
 
 const params = {
-  oauth_callback: 'https://draketalley.com/bail/callback',
+  oauth_callback: process.env.OAUTH_CALLBACK,
   oauth_nonce: hash,
   oauth_signature_method: 'HMAC-SHA1',
   oauth_timestamp,
@@ -83,7 +83,7 @@ export async function getClient(tokenKey, secret) {
   }
 }
 
-export async function sendMsg(tokenKey, secret, recipientId) {
+export async function sendMsg(tokenKey, secret, recipientId, name, fund, userName) {
   const client = await getClient(tokenKey, secret);
   console.log('send msg: ', tokenKey, secret, recipientId)
   try {
@@ -94,7 +94,17 @@ export async function sendMsg(tokenKey, secret, recipientId) {
       message_create: {
         target: { recipient_id: recipientId },
         message_data: {
-          text: "Shit Goin' Down!!!"
+          text: `Hey, ${name}!
+I may be having (or soon have) an engagement with law enforcement.
+I have selected ${fund.name} as a go-to for assistance in the event
+that something like this happens.
+The fund can be reached at: (${fund.url}) ${fund.number}
+
+Any help you or someone we know can offer would be greatly appreciated!
+Thank you for taking the time to read this.
+
+${userName}`
+
         }
       },
     }
@@ -102,6 +112,19 @@ export async function sendMsg(tokenKey, secret, recipientId) {
   return response;
   } catch (e) {
     console.log(e);
+  }
+}
+
+export async function verify(token, secret) {
+  console.log(token, secret);
+  const client = await getClient(token, secret);
+  console.log(client);
+  try {
+    const resp = await client.get("/account/verify_credentials");
+    return true;
+  } catch (e) {
+    console.log(e);
+    return false;
   }
 }
 

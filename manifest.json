@@ -2,14 +2,13 @@
   "short_name": "Call Bail Me",
   "name": "bail me out",
   "description": "call for bail assistance",
-  "start_url": "https://draketalley.com/caller/",
+  "start_url": "https://shitgoingdown.com",
   "background_color": "#3367D6",
   "display": "fullscreen",
   "scope": "/",
   "theme_color": "#3367D6",
   "icons": [
     {
-
     "src": "android-chrome-192x192.png",
     "type": "image/png",
     "size": "192x192"

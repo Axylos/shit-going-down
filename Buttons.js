@@ -12,7 +12,11 @@ export default class Buttons {
   }
 
   async handleDM() {
-    const resp = await fetch('https://draketalley.com/bail/message', { method: 'POST', body: JSON.stringify({ recipients: this.recipients }), headers: { 'Content-Type': 'application/json' } });
+    const payload = {
+      recipients: this.recipients,
+      fund: this.fund
+    }
+    const resp = await fetch('https://shitgoingdown.com/api/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json' }});
     if (resp.ok) {
       const data = resp.json();
       console.log(data);
