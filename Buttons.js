@@ -1,6 +1,6 @@
 import MessageModal from './MessageModal.js';
 export default class Buttons {
-  constructor(recipients, fund, call, goBack)  {
+  constructor(recipients, fund, contacts, call, goBack)  {
     this.el = document.createElement('div');
     this.getLocation = this.getLocation;
     this.call = call;
@@ -8,6 +8,7 @@ export default class Buttons {
     this.handleDM = this.handleDM.bind(this);
     this.goBack = goBack;
     this.recipients = recipients;
+    this.contacts = contacts;
     this.fund = fund;
   }
 
@@ -36,6 +37,16 @@ export default class Buttons {
     console.log('Calling bail');
   }
 
+  // getContactList() {
+  //   return this.contacts.map(contact => {
+  //     return `
+  //     <div class="contact-reminder">
+  //       ${contact.name} -- ${contact.screen_name}
+  //     </div>
+  //     `;
+  //   }).join('');
+  // }
+
   //   getLocation() {
   //     if(navigator.geolocation) {
   //       navigator.geolocation.getCurrentPosition(showPosition);
@@ -58,24 +69,28 @@ export default class Buttons {
   render() {
     this.el.innerHTML = `
 
-    <div class="upButtons">
-      <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
-    </div>
-    <div class="navLinks">
-     <a class="goBack" href="#"> back »</back> 
-    </div>
+    <div class="generalpage">
+       <div class="upButtons">
+         <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+       </div>
+       <div class="navLinks">
+          <a class="goBack" href="#"> back »</a> 
+        </div>
 
       <div class='finalPage'>
       <div class='buttons'>
         <div class='bailDiv'>
-          <a href="tel:+1${this.fund.phone}"><button class="callBail">Call Bail Fund</button></a>
-          <p class='storedData'>The bail fund info:</p>
-          <div>You chose ${this.fund.name}</div>
+          <a class="telBail" href="tel:+1${this.fund.phone}"><button class="callBail">Call Bail Fund</button></a>
+          <p class='storedDataInfo'>The bail fund info:</p>
+          <p class='storedData'><strong>Name:</strong> ${this.fund.name}, </br>
+          <strong>Tel:</strong> +1${this.fund.phone}</br>
+          ${this.fund.city}, ${this.fund.state}</p>
         </div>
         <div class='smsDiv'>
-        <button class="SMS">SMS Emergency Contacts</button>
-
+        <button class="SMS">DM Emergency Contacts</button>
+        
         </div>
+      </div>
       </div>
       </div>
     `;
