@@ -11,19 +11,20 @@ export default class Login {
         <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
       </div>
         
-      <div class="loginPage">
+     <div class="loginPage">
+      <div class="center">
         <button class="twitterLogin" onclick="location.href='/bail/login'"></button>
         <p class='loginInstruction'>to retrieve your contacts.</p>
-        
-        <div class="promise">
-        <p class='loginInstructionTwo'>Your information will not be shared outside this application. </br>
-        & </br> Your activties are not stored anywhere in this application. </p>
-        </div>
+        <p class='loginInstructionTwo'>Your information will not be shared outside this application.
+        & your activties are not stored anywhere in this application. </p>
+      </div>
       </div>
     </div>
+ 
     
     
     <button class="start">next</button>
+    
     `
 
     this.el.querySelector('.start').addEventListener("click", this.goToNext);

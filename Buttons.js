@@ -1,6 +1,6 @@
 import MessageModal from './MessageModal.js';
 export default class Buttons {
-  constructor(recipients, fund, contacts, call, goBack)  {
+  constructor(recipients, fund, call, goBack)  {
     this.el = document.createElement('div');
     this.getLocation = this.getLocation;
     this.call = call;
@@ -8,7 +8,6 @@ export default class Buttons {
     this.handleDM = this.handleDM.bind(this);
     this.goBack = goBack;
     this.recipients = recipients;
-    this.contacts = contacts;
     this.fund = fund;
   }
 
@@ -37,15 +36,15 @@ export default class Buttons {
     console.log('Calling bail');
   }
 
-  // getContactList() {
-  //   return this.contacts.map(contact => {
-  //     return `
-  //     <div class="contact-reminder">
-  //       ${contact.name} -- ${contact.screen_name}
-  //     </div>
-  //     `;
-  //   }).join('');
-  // }
+  getContactList() {
+    return this.recipients.map(contact => {
+      return `
+      <div class="contact-reminder">
+        ${contact.name} -- ${contact.screen_name}
+      </div>
+      `;
+    }).join('');
+  }
 
   //   getLocation() {
   //     if(navigator.geolocation) {
@@ -88,7 +87,9 @@ export default class Buttons {
         </div>
         <div class='smsDiv'>
         <button class="SMS">DM Emergency Contacts</button>
-        
+        <p class="contact-listAlert"> your message will be sent to the contacts you chooce: </br>
+        ${this.getContactList()}
+        </p>
         </div>
       </div>
       </div>

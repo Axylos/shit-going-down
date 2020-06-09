@@ -3,11 +3,13 @@ const SELECT_CONTACTS = 'select_contacts';
 const LOGIN = 'login';
 const SELECT_FUND = 'select_fund';
 const BUTTONS = 'buttons';
+const INSTRUCTIONS = 'instructions';
 import Welcome from './Welcome.js';
 import Login from './Login.js';
 import SelectContacts from './SelectContacts.js';
 import SelectFund from './SelectFund.js';
 import Buttons from './Buttons.js';
+import Instructions from './Instructions.js';
 
 const initial = WELCOME;
 class ViewManager {
@@ -48,10 +50,16 @@ class ViewManager {
     switch(this.current) {
       case WELCOME:
         goForward = () => {
-          this.current = LOGIN;
+          this.current = INSTRUCTIONS;
           this.render();
         };
         return new Welcome(goForward);
+        case INSTRUCTIONS:
+          goForward = () => {
+            this.current = LOGIN;
+            this.render();
+          };
+          return new Instructions(goForward);
       case LOGIN:
         goForward = () => {
           this.current = SELECT_CONTACTS;
