@@ -54,7 +54,7 @@ class ViewManager {
           this.render();
         };
         return new Welcome(goForward);
-        case INSTRUCTIONS:
+      case INSTRUCTIONS:
           goForward = () => {
             this.current = LOGIN;
             this.render();

@@ -44,8 +44,9 @@ export default class SelectFund {
       } else {
         return `
       <p class='listResults'>
+      <button class='selectFundBtn' value="${fund.id}">
         <span class='place'>${cityName}, ${stateName}:</br> </span>
-        <button class='selectFundBtn' value="${fund.id}">${fund.name} -
+        ${fund.name} -
          <span class='phone'>${fund.number}</span>
         </button>
       </p>
@@ -64,15 +65,17 @@ export default class SelectFund {
        <div class="navLinks">
           <a class="goToNext" href="#"> « next </a> 
           <a class="goBack" href="#"> back »</a> 
-        </div>
+       </div>
 
     <div class='secondPage'>
       <form class="search-form">
-        <p class="step"><strong>Step two:</strong> </br>
+        <p class="step">Step two: </br>
         select local bail fund </br> near your location</p>
         <input type="text" class="search" placeholder="Type City or State">
       </form>
-      <div class="suggestions"></div>
+      <div class="list">
+        <div class="suggestions"></div>
+      </div>
     </div>
     </div>
     `
@@ -90,7 +93,6 @@ export default class SelectFund {
     });
 
     
-
     suggestionsEl.addEventListener('click', e => {
       if (e.target.tagName == 'BUTTON') {
         const id = parseInt(e.target.value);
@@ -103,13 +105,10 @@ export default class SelectFund {
     return this.el;
   }
 
-  unmount() {
-   
-  }
-
   handleFundSelection(fund) {
     this.selectedFund = fund.id;
     this.selectHandler(fund);
     console.log('the selected fund is: ', fund.id);
   }
+  unmount() {}
 }

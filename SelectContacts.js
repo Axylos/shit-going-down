@@ -60,15 +60,15 @@ export default class SelectContacts {
 
        <div class='thirdPage'>
         <form class="search-form" autocomplete="off">
-          <p class="step"><strong>Step one:</strong></br> Select emergency contacts to DM in case of a need</p>
+          <p class="step">Step one:</br> Select emergency contacts to DM in case of a need</p>
           <input name="selectedContact" type="text" required class="contactSearch" placeholder="Type name or user name">
         </form>
         ${this.contentSelectedIds.map(contact => `<div>${contact}</div>`)}
         <div class="contact-list"></div>
         <div class="chosen-contacts"></div>
+        <button class="goToNextTwo"> DONE </button> 
       </div>
 
-      <button class="goToNextTwo"> DONE </button> 
     </div>
     `;
     const search = this.el.querySelector('input');
@@ -120,7 +120,7 @@ export default class SelectContacts {
         <div class="chosen-contactsNames">
          <ui>
           <li>${contact.screen_name}: ${contact.name}
-            <button class="remove" value="${contact.id}"><img src="./images/removeIcon_white.svg" alt="remove" height="18"/></button> 
+            <button class="remove" value="${contact.id}"><img src="./images/removeIcon.svg" alt="remove" height="22"/></button> 
            </li>
           </ui>  
          </div>
