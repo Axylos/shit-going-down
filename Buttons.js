@@ -1,13 +1,12 @@
 import MessageModal from './MessageModal.js';
 export default class Buttons {
-  constructor(recipients, fund, goBack, call)  {
+  constructor(recipients, fund, call, goBack)  {
     this.el = document.createElement('div');
     this.getLocation = this.getLocation;
-    // this.dm = dm;
     this.call = call;
     this.handleCall = this.handleCall.bind(this);
     this.handleDM = this.handleDM.bind(this);
-    //this.goBack = goBack;
+    this.goBack = goBack;
     this.recipients = recipients;
     this.fund = fund;
   }
@@ -30,18 +29,11 @@ export default class Buttons {
     const modal = new MessageModal(this.recipients, this.handleDM.bind(this));
     this.el.append(modal.render());
     console.log('MSG DM');
-    // this.dm();
   }
 
   handleCall(e) {
     e.preventDefault();
     console.log('Calling bail');
-    // this.call()
-  }
-
-  handleBack(e) {
-    e.preventDefault();
-    console.log('back');
   }
 
   //   getLocation() {
@@ -65,13 +57,15 @@ export default class Buttons {
 
   render() {
     this.el.innerHTML = `
+
+    <div class="upButtons">
+      <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+    </div>
+    <div class="navLinks">
+     <a class="goBack" href="#"> back »</back> 
+    </div>
+
       <div class='finalPage'>
-
-      <div class="upButtons">
-      <h1 class="logo">CALLBAIL.ME</h1>
-      <button class="backBtn">back</button>
-      </div>
-
       <div class='buttons'>
         <div class='bailDiv'>
           <a href="tel:+1${this.fund.phone}"><button class="callBail">Call Bail Fund</button></a>
@@ -83,10 +77,9 @@ export default class Buttons {
 
         </div>
       </div>
-
       </div>
     `;
-    this.el.querySelector('.backBtn').addEventListener('click', this.handleBack)
+    this.el.querySelector('.goBack').addEventListener('click', this.goBack)
     //this.el.querySelector('.callBail').addEventListener('click', this.handleCall);
     this.el.querySelector('.SMS').addEventListener('click', e  => {
       this.openModal(e);
@@ -99,7 +92,7 @@ export default class Buttons {
   unmount() {
     this.el.querySelector('.callBail').removeEventListener('click', this.handleCall);
     this.el.querySelector('.SMS').removeEventListener('click', this.openModal);
-    this.el.querySelector('backBtn').removeEventListener('click', this.handleBack);
+    this.el.querySelector('.goBack').removeEventListener('click', this.goBack);
 
   }
 }

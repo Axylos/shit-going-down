@@ -18,27 +18,39 @@ export default class MessageModal {
 
   render() {
     this.el.innerHTML = `
-    <div>
-      <h3>Are you Sure?</h3>
-      <button class="send">Send Alerts</button>
-      <button class="close">Cancel</button>
-      <p class='msg'>Contact of massege: hey, I think I need you to check on me and contact...  </p>
-      <div class="contact-list">
-        ${this.getContactList()}
-      </div>
+    <div class="alert">
+      <h3 class="OnNo">OH NO! </br>
+      Making you didn't pressed by mistake</br> Are you sure you want to sent DM S.O.S?</h3>
+      <p class="contact-listAlert"> your message will be sent to the contacts you chooce: </br>
+      ${this.getContactList()}
+      </p>
+      <p class='msgContent'><strong>Contact of the massege:</strong> </br> 
+      hey {name}, I'm sending you this message as my emergency contact - I have a reason to believe that something is about to happened. </br>
+      Please cheack on me soon! If I'm not answering there is a chance I just got arrested. </br>
+      I chooce this local {bail fund} in advance, let them know about me please?</p>
+      <button class="alertBtnClose">Cancel</button>
+      <button class="alertBtn">Send Alerts</button>
     </div>
     `
 
-    this.el.querySelector('.send').addEventListener('click', async () => {
-      await this.onSubmit();
-      this.close();
+    this.el.querySelector('.alertBtn').addEventListener('click', async () => {
+      //await this.onSubmit();
+      this.confirmSent();
     });
 
-    this.el.querySelector('.close').addEventListener('click', () => this.close());
+    this.el.querySelector('.alertBtnClose').addEventListener('click', () => this.close());
     return this.el;
   }
 
   close() {
     this.el.hidden = true;
+  }
+
+  confirmSent() {
+    this.el.querySelector('.alert').innerHTML = `
+    <h2>Message Sent</h2>
+    <h3>Stay Safe!</h3>
+    <p>The app will close in 30 seconds</p>
+    `
   }
 }

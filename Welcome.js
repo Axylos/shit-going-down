@@ -25,10 +25,10 @@ export default class Welcome {
       <button class="download"></button>
       <div>
         <h5 class="homeInstructionThree"><strong>*</strong> ANDROID USERS: look for this icon-> 
-        <img class="icon" src="./images/androidAddHomeScreen_white.svg" alt="android" width="14" height="18"/> then slide to the right and “Add to Home Screen.” 
+        <img class="icon" src="./images/androidAddHomeScreen_white.svg" alt="android" width="14" height="18"/> </br>then slide to the right and “Add to Home Screen.” 
         </br>
         <strong>*</strong> IOS USERS:, look for this icon-> 
-        <img class="icon" src="./images/iosAddHomeScreen_white.svg" alt="ios" width="18" height="18" /> then tap Settings on the top right corner and “Add to Home Screen.”</h5>
+        <img class="icon" src="./images/iosAddHomeScreen_white.svg" alt="ios" width="18" height="18" /> </br> then tap Settings on the top right corner and “Add to Home Screen.”</h5>
       </div>
     </div>
     `;

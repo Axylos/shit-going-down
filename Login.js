@@ -6,19 +6,20 @@ export default class Login {
 
   render() {
     this.el.innerHTML = `
-  
-    <div class="upButtons">
-      <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
-    </div>
-    
-    <div class="loginPage">
-    <button class="twitterLogin" onclick="location.href='/bail/login'"></button>
-    <p class='loginInstruction'>to retrieve your contacts.</p>
-    
-    <div class="promise">
-    <p class='loginInstructionTwo'>Your information will not be shared outside this application. </br>
-    & </br> Your activties are not stored anywhere in this application. </p>
-   </div>
+    <div class="generalpage">
+      <div class="upButtons">
+        <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+      </div>
+        
+      <div class="loginPage">
+        <button class="twitterLogin" onclick="location.href='/bail/login'"></button>
+        <p class='loginInstruction'>to retrieve your contacts.</p>
+        
+        <div class="promise">
+        <p class='loginInstructionTwo'>Your information will not be shared outside this application. </br>
+        & </br> Your activties are not stored anywhere in this application. </p>
+        </div>
+      </div>
     </div>
     
     

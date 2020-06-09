@@ -57,21 +57,23 @@ export default class SelectFund {
 
   render() {
     this.el.innerHTML = `
-    <div class="upButtons">
+    <div class="generalpage">
+       <div class="upButtons">
          <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
-      </div>
-      <div class="navLinks">
-          <a class="goToNext" href="#"> « next </back> 
-          <a class="goBack" href="#"> back »</back> 
-      </div>
+       </div>
+       <div class="navLinks">
+          <a class="goToNext" href="#"> « next </a> 
+          <a class="goBack" href="#"> back »</a> 
+        </div>
 
     <div class='secondPage'>
       <form class="search-form">
-        <p class="step">Step two: </br>
-        select local bail fund near you</p>
+        <p class="step"><strong>Step two:</strong> </br>
+        select local bail fund </br> near your location</p>
         <input type="text" class="search" placeholder="Type City or State">
       </form>
       <div class="suggestions"></div>
+    </div>
     </div>
     `
 
@@ -80,7 +82,7 @@ export default class SelectFund {
 
     this.el.querySelector('.goBack').addEventListener('click', this.goBack);
     this.el.querySelector('.goToNext').addEventListener('click', this.goToNext);
-    
+
     search.addEventListener("input", () => {
       const value = this.getValue();
       const suggestions = this.displayMatches(value);
@@ -102,10 +104,7 @@ export default class SelectFund {
   }
 
   unmount() {
-    this.el.querySelector('.goToNext').removeEventListener('click', this.goToNext);
-    this.el.querySelector('.selectFundBtn').removeEventListener('click', this.goToNext);
-    this.el.querySelector('.goBack').removeEventListener('click', this.goBack);
-
+   
   }
 
   handleFundSelection(fund) {
