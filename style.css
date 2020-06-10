@@ -700,7 +700,7 @@ input.selectedContact {
 
 .buttons {
   display: flex;
-  margin-top: 35%;
+  margin-top: 28%;
 }
 
 .bailDiv {
@@ -709,8 +709,8 @@ input.selectedContact {
 }
 
 .smsDiv {
-margin-left: 4%;
-margin-right: 3%;
+margin-left: 3%;
+margin-right: 4%;
 }
 
 .telBail {
