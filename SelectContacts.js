@@ -24,7 +24,8 @@ export default class SelectContacts {
 
   filterContacts(term) {
     const regex = new RegExp(term, 'gi');
-    return this.contacts.filter(contact => contact.name.match(regex) || contact.screen_name.match(regex));
+    return this.contacts.filter(contact => contact.name.match(regex) || contact.screen_name.match(regex))
+      .filter(contact => this.contentSelectedIds.map(sel => sel.id_str).indexOf(contact.id_str) < 0);
   }
 
   getList(queryTerm) {
@@ -37,7 +38,7 @@ export default class SelectContacts {
         const screen_name = contact.screen_name.replace(regex, `<span class="hl">${queryTerm}</span>`)
       
       return `
-        <button value="${contact.id}" class="contact-detail">
+        <button value="${contact.id_str}" class="contact-detail">
           <p>Name: ${name}</p>
           <p>Username: ${screen_name}</p>
         </button>
@@ -103,7 +104,7 @@ export default class SelectContacts {
 
   contactHandler(ev) {
     const id = ev.currentTarget.value;
-    const contact = this.contacts.find(contact => contact.id === parseInt(id));
+    const contact = this.contacts.find(contact => contact.id_str === id);
     this.contentSelectedIds.push(contact);
     this.updateContacts();
   }
@@ -120,7 +121,7 @@ export default class SelectContacts {
         <div class="chosen-contactsNames">
          <ui>
           <li>${contact.screen_name}: ${contact.name}
-            <button class="remove" value="${contact.id}"><img src="./images/removeIcon.svg" alt="remove" height="22"/></button> 
+            <button class="remove" value="${contact.id_str}"><img src="./images/removeIcon.svg" alt="remove" height="22"/></button>
            </li>
           </ui>  
          </div>
@@ -130,6 +131,13 @@ export default class SelectContacts {
     this.el.querySelector('input').value = '';
     this.el.querySelector('.contact-list').innerHTML = ''; 
     el.innerHTML = markup;
+    el.querySelectorAll('button.remove').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        const id_str = ev.currentTarget.value;
+        this.contentSelectedIds = this.contentSelectedIds.filter(contact => contact.id_str !== id_str);
+        this.updateContacts();
+      });
+    })
   }
 
   unmount() {

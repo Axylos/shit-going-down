@@ -28,7 +28,7 @@ app.post('/message', async (req, res) => {
     const { oauth_token, oauth_secret, name } = await getUser(hash);
     console.log('reps: ', recipients);
     const promises = recipients.map(async (recipient) => {
-      const response = await sendMsg(oauth_token, oauth_secret, recipient.id, recipient.name, fund, name);
+      const response = await sendMsg(oauth_token, oauth_secret, recipient.id_str, recipient.name, fund, name);
       console.log(response);
     })
 
