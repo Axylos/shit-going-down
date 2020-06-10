@@ -420,7 +420,8 @@ span.before {
   margin-left: 2%;
   text-align: left;
   font-family: 'Roboto', sans-serif;
-  width: 150px;
+  width: 165px;
+  line-height: 1.3rem;
   display: inline-block;
   padding-bottom: 4%;
 }
@@ -464,13 +465,15 @@ input.contactSearch {
   font-weight: 500;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(255, 188, 87, 0.19);
 }
+
 .list {
-  display: flex;
+  margin-left: 16%;
 }
 
  .suggestions {
-  width: 280px;
-  margin-left: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
   margin-bottom: 10%;
   color: #E3E3E3;
   font-size: 14px;
@@ -479,10 +482,9 @@ input.contactSearch {
   padding-right: 3%;
 } 
 
-/* .listResults {
-  margin-top: 2%;
-
-} */
+.listResults {
+  margin-right: 4%;
+}
 
 .contactSuggestions {
   margin-left: 2%;
