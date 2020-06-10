@@ -21,7 +21,7 @@ export default class MessageModal {
     <div class="alert">
       <h3 class="OnNo"><span class="oh">OH NO! </span></br>
       Are you sure you want to sent DM S.O.S?</h3>
-      <p class='msgContent'><strong>Contact of the massege:</strong> </br>
+      <p class='msgContent'><strong>Contact of the message:</strong> </br> 
         Hey, {name}! <br />
         I'm sending you this message as a trusted friend - I have reason to believe that I may very soon have an encounter with law enforcement. <br />
         Please cheack on me soon! If I'm not answering there is a chance I just got arrested. <br />

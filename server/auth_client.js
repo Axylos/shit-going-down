@@ -94,17 +94,18 @@ export async function sendMsg(tokenKey, secret, recipientId, name, fund, userNam
       message_create: {
         target: { recipient_id: recipientId },
         message_data: {
-          text: `Hey, ${name}!
-I may be having (or soon have) an engagement with law enforcement.
-I have selected ${fund.name} as a go-to for assistance in the event
-that something like this happens.
-The fund can be reached at: (${fund.url}) ${fund.number}
+          text: `
+Hey, ${name}!
+I'm sending you this message as a trusted friend - I have reason to believe that I may very soon have an encounter with law enforcement.
 
-Any help you or someone we know can offer would be greatly appreciated!
-Thank you for taking the time to read this.
+Please cheack on me soon! If I'm not answering there is a chance I just got arrested.
+
+I chose the local bail fund below in advance, please contact them on my behalf
+if you feel comfortable.
+${fund.name} in ${fund.city}, ${fund.state}
+${fund.number} -- ${fund.url}
 
 ${userName}`
-
         }
       },
     }
