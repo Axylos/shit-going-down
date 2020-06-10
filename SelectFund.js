@@ -12,7 +12,7 @@ export default class SelectFund {
     this.goBack = goBack;
   }
 
-  async loadJSON (url) {
+  async loadJSON(url) {
     const res = await fetch(url);
     return await res.json();
   }
@@ -28,7 +28,7 @@ export default class SelectFund {
     const input = this.el.querySelector('input')
     if (input === null) {
       return '';
-    } else  {
+    } else {
       return input.value;
     }
   }
@@ -39,7 +39,7 @@ export default class SelectFund {
       const regex = new RegExp(value, 'gi');
       const cityName = fund.city.replace(regex, `<span class="hl">${value}</span>`)
       const stateName = fund.state.replace(regex, `<span class="hl">${value}</span>`)
-      if(fund.number === null) {
+      if (fund.number === null) {
         return '';
       } else {
         return `
@@ -51,7 +51,7 @@ export default class SelectFund {
         </button>
       </p>
       `
-    }
+      }
     }).join('');
     return html;
   }
@@ -89,19 +89,17 @@ export default class SelectFund {
     search.addEventListener("input", () => {
       const value = this.getValue();
       const suggestions = this.displayMatches(value);
+
       suggestionsEl.innerHTML = suggestions
+      suggestionsEl.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', (ev) => {
+          const id = parseInt(ev.target.value);
+          const fund = this.funds.find(currentFund => currentFund.id === id);
+          this.handleFundSelection(fund);
+          this.goToNext()
+        })
+      });
     });
-
-    
-    suggestionsEl.addEventListener('click', e => {
-      if (e.currentTarget.tagName == 'BUTTON') {
-        const id = parseInt(e.target.value);
-        const fund = this.funds.find(currentFund => currentFund.id === id);
-        this.handleFundSelection(fund);
-        this.goToNext()
-
-      }
-    })
     return this.el;
   }
 
@@ -110,5 +108,5 @@ export default class SelectFund {
     this.selectHandler(fund);
     console.log('the selected fund is: ', fund.id);
   }
-  unmount() {}
+  unmount() { }
 }
