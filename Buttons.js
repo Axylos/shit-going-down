@@ -19,7 +19,6 @@ export default class Buttons {
     const resp = await fetch('https://shitgoingdown.com/api/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json' }});
     if (resp.ok) {
       const data = resp.json();
-      console.log(data);
     }
   }
 

@@ -19,5 +19,7 @@ export default class Login {
       </div>
     </div>
     `
+
+    return this.el;
   }
 }
