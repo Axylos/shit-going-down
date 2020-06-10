@@ -89,16 +89,6 @@ export default class SelectContacts {
     this.el.querySelector('.goToNextTwo').addEventListener('click', this.goToNext);
     this.el.querySelector('.goToNext').addEventListener('click', this.goToNext);
     this.el.querySelector('.goBack').addEventListener('click', this.goBack);
-    this.el.querySelector('.contact-list').addEventListener('click', async (ev) => {
-      if (ev.target.classList.contains('message')) {
-        const id = ev.target.value;
-        const resp = await fetch('https://shitgoingdown.com/api/message', {method: 'POST', body: JSON.stringify({recipientId: id}), headers: { 'Content-Type': 'application/json' }});
-        if (resp.ok) {
-          const data = await resp.json();
-          console.log(data);
-        }
-      }
-    })
     return this.el;
   }
 

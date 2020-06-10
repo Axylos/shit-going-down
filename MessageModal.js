@@ -36,8 +36,17 @@ export default class MessageModal {
     `
 
     this.el.querySelector('.alertBtn').addEventListener('click', async () => {
-      //await this.onSubmit();
-      this.confirmSent();
+      try {
+        await this.onSubmit();
+        const errorEl = this.el.querySelector('.error-alert');
+        !!errorEl &&  errorEl.remove();
+        this.confirmSent();
+      } catch (e) {
+        const markup = `
+        <p class="error-alert" style="color: red;">It looks like something went wrong.  Try re-submitting</p>
+        `;
+        this.el.querySelector('.msgContent').innerHTML = markup;
+      }
     });
 
     this.el.querySelector('.alertBtnClose').addEventListener('click', () => this.close());

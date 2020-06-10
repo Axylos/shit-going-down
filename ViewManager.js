@@ -24,7 +24,7 @@ class ViewManager {
   }
 
   getInitial(verified) {
-    if (!verified) {
+    if (!verified && this.selectedContacts === null && this.fund === null) {
       return WELCOME;
     } else if (this.fund !== null && this.selectedContacts !== null && this.selectedContacts.length > 0) {
       return BUTTONS;
