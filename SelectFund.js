@@ -70,7 +70,7 @@ export default class SelectFund {
       <div class='secondPage'>
         <form class="search-form">
           <p class="step">Step two: </br>
-          select local bail fund </br> near your location</p>
+          select local bail fund near your location</p>
           <input type="text" class="search" placeholder="Type City or State">
         </form>
         <div class="list">

@@ -21,10 +21,13 @@ export default class MessageModal {
     <div class="alert">
       <h3 class="OnNo"><span class="oh">OH NO! </span></br>
       Are you sure you want to sent DM S.O.S?</h3>
-      <p class='msgContent'><strong>Contact of the massege:</strong> </br> 
-      hey {name}, I'm sending you this message as my emergency contact - I have a reason to believe that something is about to happened. </br>
-      Please cheack on me soon! If I'm not answering there is a chance I just got arrested. </br>
-      I chooce this local {bail fund} in advance, let them know about me please?</p>
+      <p class='msgContent'><strong>Contact of the massege:</strong> </br>
+        Hey, {name}! <br />
+        I'm sending you this message as a trusted friend - I have reason to believe that I may very soon have an encounter with law enforcement. <br />
+        Please cheack on me soon! If I'm not answering there is a chance I just got arrested. <br />
+        I chose the local bail fund below in advance, please contact them on my behalf at <br />
+        if you feel comfortable. <br />
+        {fund contact info} <br />
       <div class="alertBtnDiv">
       <button class="alertBtnClose">Cancel</button>
       <button class="alertBtn">Send Alerts</button>

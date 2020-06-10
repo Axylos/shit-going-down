@@ -420,7 +420,7 @@ span.before {
   margin-left: 2%;
   text-align: left;
   font-family: 'Roboto', sans-serif;
-  width: 165px;
+  width: 160px;
   line-height: 1.3rem;
   display: inline-block;
   padding-bottom: 4%;
@@ -467,7 +467,7 @@ input.contactSearch {
 }
 
 .list {
-  margin-left: 16%;
+  margin-left: 5%;
 }
 
  .suggestions {
@@ -619,13 +619,13 @@ input.selectedContact {
 
 .buttons {
   display: flex;
-  margin-left: 5%;
+  /* margin-left: 5%; */
   margin-top: 70%;
 }
 
 .bailDiv {
   margin-right: 3%;
-  margin-left: 4%;
+  margin-left: 3%;
 }
 
 .smsDiv {
@@ -740,11 +740,11 @@ margin-left: 5%;
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
+  bottom: 2%;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.89);
+  background-color: rgba(255, 255, 255, 0.94);
   width: 350px;
-  height: 450px;
+  height: 470px;
   border: 3px solid #0EFEF9;
   border-radius: 5px;
 }
@@ -806,8 +806,8 @@ margin-left: 5%;
   color: #252423;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  margin-left: 6%;
-  width: 280px;
+  margin-left: 4%;
+  width: 290px;
   line-height: 1.3rem;
   font-weight: 500;
 }
@@ -816,7 +816,7 @@ margin-left: 5%;
   max-width: 350px;
   display: flex;
   margin-left: 10%;
-  margin-top: 5%;
+  margin-top: 7%;
 }
 
 .alertBtn {

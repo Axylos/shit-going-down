@@ -85,7 +85,7 @@ export default class Buttons {
           ${this.fund.city}, ${this.fund.state}</p>
         </div>
         <div class='smsDiv'>
-        <button class="SMS">DM Emergency Contacts</button>
+        <button class="SMS">DM trusted friends</button>
         <p class="contact-listAlert"> <span class="contartsMSG">your contacts info:<span> </br>
         ${this.getContactList()}
         </p>
