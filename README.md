@@ -9,4 +9,4 @@ The goal is to make people feel safer with a faster mean of communication in tim
 2. Currently the app is using Twitter API, we would love to know if there might a need to an addinoal third-party service.
 3. There are additional feature that yet we had the chance to develop, such as: sending location to the trusted friends, having the app works offline and so on.
 
-### If you run into any issues or have concerns please use the issues tab on the github repo.
+#### If you run into any issues or have concerns please use the issues tab on the github repo.
