@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <script type="module" defer src="main.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+    <script type="module" async defer src="main.js" charset="utf-8"></script>
+    
     <link rel="manifest" href="/caller/manifest.json">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/caller/style.css">
+    
     <script type="application/javascript" defer>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js')
@@ -23,10 +28,14 @@
           });
       }
     </script>
-
-    <title>Demo</title>
+    
+    <title>SHIT GOING DOWN</title>
   </head>
-  <body>
-    <div class="root"></div>
+  <body data-barba="wrapper">
+  
+    <div class="load-container">
+      <div class="loading-screen"></div>
+    </div>
+      <div class="root"></div>
   </body>
 </html>
