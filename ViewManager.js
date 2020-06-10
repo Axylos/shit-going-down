@@ -17,21 +17,31 @@ class ViewManager {
     const localContacts = JSON.parse(localStorage.getItem('contacts'));
     this.fund = localFund !== null ? localFund : null;
     this.selectedContacts = localContacts !== null? localContacts : [];
+    this.verifiedFailure = false;
 
     this.rootEl = rootEl;
     this.current = null;
     this.view = null;
   }
 
-  getInitial(verified) {
-    if (!verified && this.selectedContacts === null && this.fund === null) {
+  getInitial(verifiedResponse) {
+    if (verifiedResponse === "verified") {
+      if (this.selectedContacts.length === 0) {
+        return SELECT_CONTACTS;
+      } else if (this.fund === null) {
+        return SELECT_FUND;
+      } else {
+        return BUTTONS;
+      }
+    } else if (verifiedResponse === "unverified") {
       return WELCOME;
-    } else if (this.fund !== null && this.selectedContacts !== null && this.selectedContacts.length > 0) {
+    } else if (verifiedResponse === "failed") {
+      this.verifiedFailure = true;
+      return LOGIN;
+    } else if (this.fund !== null && this.selectedContacts.length > 0) {
       return BUTTONS;
-    } else if (this.selectedContacts.length < 1) {
-      return SELECT_CONTACTS;
     } else {
-      return SELECT_FUND;
+      return SELECT_CONTACTS;
     }
   }
 
@@ -83,7 +93,7 @@ class ViewManager {
           this.current = SELECT_CONTACTS;
           this.render();
         } 
-        return new Login(goForward);
+        return new Login(goForward, this.verifiedFailure);
       case SELECT_CONTACTS: 
         goForward = () => {
           this.current = SELECT_FUND;

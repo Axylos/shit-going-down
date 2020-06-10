@@ -8,10 +8,12 @@ async function main() {
     const resp = await fetch('https://shitgoingdown.com/api/verify');
     if (resp.ok) {
       const data = await resp.json();
-      verified = data.verified;
+      verified = data.verified ? "verified" : "unverified";
+    } else {
+      verified = "failed"
     }
   } catch (e) {
-    verified = false;
+    verified = "failed";
   }
   vm.init(verified);
 }

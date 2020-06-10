@@ -1,7 +1,9 @@
 export default class Login {
-  constructor(goToNext) {
+  constructor(goToNext, verifiedFailed) {
     this.el = document.createElement('div');
     this.goToNext = goToNext;
+
+    this.verifiedFailed = verifiedFailed;
   }
 
   isInstalled() {
@@ -11,9 +13,28 @@ export default class Login {
       document.referrer.includes('android-app://');
   }
 
+  handleVerifiedFailure() {
+    if (this.verifiedFailed) {
+      const node = document.createElement('div');
+      node.classList.add('alert');
+      node.innerHTML = `
+        Uh Oh! It looks like you are offline <br />
+        Log In Please Before Continuing <br />
+        <button class="close-modal">Ok I'm connected</button>
+      `
+      node.addEventListener('click', ev => {
+        const node = this.el.querySelector('.alert');
+        node.remove();
+      });
+
+      this.verifiedFailed = false;
+      this.el.prepend(node);
+    }
+
+  }
+
   render() {
     if (!this.isInstalled()) {
-
       this.el.innerHTML = `
     <div class="generalpage">
       <div class="upButtons">
@@ -28,6 +49,8 @@ export default class Login {
       </div>
     </div>
     `
+
+      this.handleVerifiedFailure();
     } else {
       this.el.innerHTML = `
     <div class="generalpage">
@@ -36,6 +59,7 @@ export default class Login {
       </div>
       `
     }
+
 
     return this.el;
   }
