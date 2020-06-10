@@ -8,6 +8,8 @@ import { storeToken, getSecretFromToken, getUser } from './db.js';
 import { getToken } from './token.js';
 import { getOauthToken, getClient, getUserContacts, sendMsg, verify } from './auth_client.js';
 import dotenv from 'dotenv';
+import path from 'path';
+import fs from 'fs';
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -66,13 +68,12 @@ app.get('/callback', async (req, res) => {
     user_id,
     screen_name
   );
-  console.log('from callback: ', oauth_token, oauth_token_secret);
   const data = await getClient(oauth_token, oauth_token_secret);
   console.log(data);
   res.cookie('hash', userData.hash, {
     maxAge: 86_400_000,
     httpOnly: true
-  }).redirect('/');
+  }).sendFile(path.join(path.resolve(path.dirname('')) + '/redirect.html'));
 });
 
 app.get('/contacts', async (req, res) => {
