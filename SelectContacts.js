@@ -13,7 +13,7 @@ export default class SelectContacts {
   }
 
   async loadContacts() {
-    const resp = await fetch('https://shitgoingdown.com/api/contacts')
+    const resp = await fetch('https://draketalley.com/caller/contacts')
     if (resp.ok) {
       const data = await resp.json();
       this.loaded = true;

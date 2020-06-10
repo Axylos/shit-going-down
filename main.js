@@ -5,7 +5,7 @@ async function main() {
   const vm = new ViewManager(root);
   let verified;
   try {
-    const resp = await fetch('https://shitgoingdown.com/api/verify');
+    const resp = await fetch('https://draketalley.com.com/caller/verify');
     if (resp.ok) {
       const data = await resp.json();
       verified = data.verified ? "verified" : "unverified";
