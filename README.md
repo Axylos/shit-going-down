@@ -4,7 +4,7 @@ The goal is to make people feel safer with a faster mean of communication in tim
 ![Select fund screen](https://i.imgur.com/WuqYQYi.jpg)
 
 ## Contributing / Future Roadmap:
-1. Our bail fund list is in complete and limited to USA - this can be expanded easily.
+1. [Our bail fund list](https://github.com/Axylos/shit-going-down/blob/master/phones.json) is in complete and limited to USA - this can be expanded easily.
 2. Currently the app is using Twitter API, we would love to know if there might a need to an addinoal third-party service.
 3. There are additional feature that yet we had the chance to develop, such as: sending location to the trusted friends, having the app works offline and so on.
 
