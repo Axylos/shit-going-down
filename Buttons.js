@@ -1,6 +1,6 @@
 import MessageModal from './MessageModal.js';
 export default class Buttons {
-  constructor(recipients, fund, call, goBack)  {
+  constructor(recipients, fund, call, goBack) {
     this.el = document.createElement('div');
     this.getLocation = this.getLocation;
     this.call = call;
@@ -12,7 +12,7 @@ export default class Buttons {
   }
 
   async handleDM() {
-    const resp = await fetch('https://draketalley.com/bail/message', {method: 'POST', body: JSON.stringify({recipients: this.recipients}), headers: { 'Content-Type': 'application/json' }});
+    const resp = await fetch('https://draketalley.com/bail/message', { method: 'POST', body: JSON.stringify({ recipients: this.recipients }), headers: { 'Content-Type': 'application/json' } });
     if (resp.ok) {
       const data = resp.json();
       console.log(data);
@@ -68,35 +68,35 @@ export default class Buttons {
   render() {
     this.el.innerHTML = `
     <div class="generalpage">
-       <div class="upButtons">
-         <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
-       </div>
-       <div class="navLinks">
-          <a class="goBackEnd" href="#"> back »</a> 
-        </div>
-
+      <div class="upButtons">
+       <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+      </div>
+      <div class="navLinks">
+        <a class="goBackEnd" href="#"> back »</a> 
+      </div>
       <div class='finalPage'>
-      <div class='buttons'>
+      <h1 class="safe">stay safe</h1>
+       <div class='buttons'>
         <div class='bailDiv'>
-          <a class="telBail" href="tel:+1${this.fund.phone}"><button class="callBail">Call Bail Fund</button></a>
+          <a class="telBail" href="tel:+1${this.fund.number}"><button class="callBail">Call</br> Bail</br> Fund</button></a>
           <p class='storedDataInfo'>The bail fund info:</p>
           <p class='storedData'><strong>Name:</strong> ${this.fund.name}, </br>
-          <strong>Tel:</strong> +1${this.fund.phone}</br>
-          ${this.fund.city}, ${this.fund.state}</p>
+           <strong>Tel:</strong> <a class="storedData" href="tel:+1${this.fund.number}">+1${this.fund.number}</a></br>
+           ${this.fund.city}, ${this.fund.state}</p>
+         </div>
+         <div class='smsDiv'>
+          <button class="SMS">DM trusted friends</button>
+          <p class="contact-listAlert"> <span class="contartsMSG">your contacts info:<span> </br>
+           ${this.getContactList()}
+          </p>
+         </div>
         </div>
-        <div class='smsDiv'>
-        <button class="SMS">DM trusted friends</button>
-        <p class="contact-listAlert"> <span class="contartsMSG">your contacts info:<span> </br>
-        ${this.getContactList()}
-        </p>
-        </div>
-      </div>
-      </div>
+       </div>
       </div>
     `;
     this.el.querySelector('.goBackEnd').addEventListener('click', this.goBack)
     //this.el.querySelector('.callBail').addEventListener('click', this.handleCall);
-    this.el.querySelector('.SMS').addEventListener('click', e  => {
+    this.el.querySelector('.SMS').addEventListener('click', e => {
       this.openModal(e);
     });
 

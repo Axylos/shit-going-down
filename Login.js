@@ -9,8 +9,7 @@ export default class Login {
     <div class="generalpage">
       <div class="upButtons">
         <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
-      </div>
-        
+      </div>  
      <div class="loginPage">
       <div class="center">
         <button class="twitterLogin" onclick="location.href='/bail/login'"></button>
@@ -20,15 +19,11 @@ export default class Login {
       </div>
       </div>
     </div>
- 
-    
-    
+
     <button class="start">next</button>
-    
     `
 
     this.el.querySelector('.start').addEventListener("click", this.goToNext);
-
     return this.el;
   }
 

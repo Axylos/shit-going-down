@@ -93,7 +93,7 @@ export default class SelectFund {
       suggestionsEl.innerHTML = suggestions
       suggestionsEl.querySelectorAll('button').forEach(btn => {
         btn.addEventListener('click', (ev) => {
-          const id = parseInt(ev.target.value);
+          const id = parseInt(ev.currentTarget.value);
           const fund = this.funds.find(currentFund => currentFund.id === id);
           this.handleFundSelection(fund);
           this.goToNext()
