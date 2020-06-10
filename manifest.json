@@ -9,12 +9,12 @@
   "theme_color": "#3367D6",
   "icons": [
     {
-    "src": "android-chrome-192x192.png",
+    "src": "images/icon_text_192X192_new.png",
     "type": "image/png",
     "size": "192x192"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/images/icon_text_512x512_new.png",
       "type": "image/png",
       "sizes": "192x192"
     },

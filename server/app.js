@@ -43,8 +43,8 @@ app.post('/message', async (req, res) => {
 
 app.get('/verify', async (req, res) => {
   try {
-    const { hash } = req.cookies;
-    console.log('ash: ', hash);
+    const hash = req.cookies.hash;
+    console.log('hash: ', hash);
     if (!hash) {
       throw new Error('did not receive hash');
     }

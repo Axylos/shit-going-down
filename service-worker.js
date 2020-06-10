@@ -1,26 +1,31 @@
-const cacheName = 'cache-v1';
-console.log('yay');
+const cacheName = 'cache-v10';
 const precacheResources = [
   '/',
   'index.html',
-  'style.css',
-  'ContactsSelect.js',
-  'ViewManager.js',
-  'Welcome.js',
-  'Login.js',
-  'phones.json',
-  'main.js',
-  'Buttons.js',
-  'SelectFund.js',
-  'run.js',
-  'https://shitgoingdown.com/manifest.json'
+  '/images/icon_text_192X192_new.png',
+  '/images/icon_text_512x512_new.png',
+  '/style.css',
+  '/Buttons.js',
+  '/Instructions.js',
+  '/Login.js',
+  '/main.js',
+  '/manifest.json',
+  '/MessageModal.js',
+  '/phones.json',
+  '/SelectContacts.js',
+  '/SelectFund.js',
+  '/ViewManager.js',
+  '/Welcome.js',
 ];
 
 self.addEventListener('install', event => {
   console.log('service worker installed');
   event.waitUntil(
     caches.open(cacheName)
-    .then(cache => cache.addAll(precacheResources)));
+    .then(cache => {
+      console.log('caching');
+      cache.addAll(precacheResources)
+    }));
 });
 
 self.addEventListener('activate', ev => {
@@ -29,7 +34,7 @@ self.addEventListener('activate', ev => {
 
 self.addEventListener('fetch', ev => {
   console.log('fetch intercepted for: ', ev.request.url);
-  ev.respondWith(caches.match(ev.request)
+  ev.respondWith(caches.match(ev.request, { ignoreSearch: true })
     .then(cachedResponse => {
       if (cachedResponse) {
         return cachedResponse;
