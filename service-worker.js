@@ -1,4 +1,4 @@
-const cacheName = 'cache-v10';
+const cacheName = 'cache-v12';
 const precacheResources = [
   '/',
   'index.html',
@@ -33,12 +33,21 @@ self.addEventListener('activate', ev => {
 });
 
 self.addEventListener('fetch', ev => {
+  if (!/twitter/.test(ev.request.url) && !/verify/.test(ev.request.url)) {
   console.log('fetch intercepted for: ', ev.request.url);
   ev.respondWith(caches.match(ev.request, { ignoreSearch: true })
     .then(cachedResponse => {
       if (cachedResponse) {
         return cachedResponse;
       }
-      return fetch(ev.request);
+      return fetch(ev.request)
+        .then(response => {
+          return caches.open(cacheName).then(cache => {
+            console.log('caching new resource: ', ev.request.url);
+            cache.put(ev.request, response.clone());
+            return response;
+          });
+        });
     }));
+  }
 });
