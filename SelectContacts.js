@@ -1,7 +1,7 @@
 export default class SelectContacts {
-  constructor(goToNext, submitIds, goBack) {
+  constructor(goToNext, submitIds, goBack, selectedContacts) {
     this.el = document.createElement('div');
-    this.contentSelectedIds = [];
+    this.contentSelectedIds = selectedContacts;
     this.goToNext = () => {
       submitIds(this.contentSelectedIds);
       goToNext();
@@ -19,6 +19,7 @@ export default class SelectContacts {
       this.loaded = true;
       this.contacts = data.users;
       this.render();
+      this.updateContacts();
     }
   }
 
@@ -55,8 +56,8 @@ export default class SelectContacts {
          <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
        </div>
        <div class="navLinks">
-          <a class="goToNext" href="#"> « next </a> 
-          <a class="goBack" href="#"> back »</a> 
+          <a class="goBack" href="#">« back </a>
+          <a class="goToNext" href="#">next »</a>
         </div>
 
        <div class='thirdPage'>
@@ -64,7 +65,6 @@ export default class SelectContacts {
           <p class="step">Step one:</br> Select trusted friends to DM in case of a need</p>
           <input name="selectedContact" type="text" required class="contactSearch" placeholder="Type name or user name">
         </form>
-        ${this.contentSelectedIds.map(contact => `<div>${contact}</div>`)}
         <div class="contact-list"></div>
         <div class="chosen-contacts"></div>
         <button class="goToNextTwo"> DONE </button> 

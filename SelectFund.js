@@ -1,12 +1,12 @@
 export default class SelectFund {
-  constructor(selectHandler, goToNext, goBack) {
+  constructor(selectHandler, goToNext, goBack, fund) {
     this.el = document.createElement('div');
     this.funds = [];
     this.searchText = '';
     this.loadJSON('./phones.json')
       .then(data => this.funds.push(...data))
       .catch(err => console.error(err));
-    this.selectedFund = null;
+    this.selectedFund = fund;
     this.selectHandler = selectHandler;
     this.goToNext = goToNext;
     this.goBack = goBack;
@@ -56,6 +56,14 @@ export default class SelectFund {
     return html;
   }
 
+  getFundDisplay() {
+    return `
+    <div>
+    <h3>You have selected: ${this.selectedFund.name}</h3>
+    </div>
+    `
+  }
+
   render() {
     this.el.innerHTML = `
     <div class="generalpage">
@@ -63,8 +71,8 @@ export default class SelectFund {
          <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
        </div>
        <div class="navLinks">
-          <a class="goToNext" href="#"> « next </a> 
-          <a class="goBack" href="#"> back »</a> 
+          <a class="goBack" href="#">« back </a>
+          <a class="goToNext" href="#">next »</a>
        </div>
 
       <div class='secondPage'>
@@ -73,6 +81,7 @@ export default class SelectFund {
           select local bail fund near your location</p>
           <input type="text" class="search" placeholder="Type City or State">
         </form>
+        ${this.selectedFund !== null ? this.getFundDisplay() : ''}
         <div class="list">
           <div class="suggestions"></div>
         </div>

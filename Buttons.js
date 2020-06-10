@@ -75,7 +75,7 @@ export default class Buttons {
        <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
       </div>
       <div class="navLinks">
-        <a class="goBackEnd" href="#"> back »</a> 
+        <a class="goBackEnd" href="#">« back</a>
       </div>
       <div class='finalPage'>
       <h1 class="safe">stay safe</h1>

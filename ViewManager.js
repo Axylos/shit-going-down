@@ -93,7 +93,7 @@ class ViewManager {
           this.current = LOGIN;
           this.render();
         }
-        return new SelectContacts(goForward, this.handleSelectContactIds.bind(this), goBack);
+        return new SelectContacts(goForward, this.handleSelectContactIds.bind(this), goBack, this.selectedContacts);
       case SELECT_FUND:
         goForward = () => {
           this.current = BUTTONS;
@@ -103,7 +103,7 @@ class ViewManager {
           this.current = SELECT_CONTACTS;
           this.render();
         }
-        return new SelectFund(this.handleSelectFund.bind(this), goForward, goBack);
+        return new SelectFund(this.handleSelectFund.bind(this), goForward, goBack, this.fund);
       case BUTTONS:
         goForward = () => {
           this.current = BUTTONS;

@@ -4,8 +4,17 @@ export default class Login {
     this.goToNext = goToNext;
   }
 
+  isInstalled() {
+    return (
+      window.matchMedia('(display-mode: standalone)').matches) ||
+      (window.navigator.standalone) ||
+      document.referrer.includes('android-app://');
+  }
+
   render() {
-    this.el.innerHTML = `
+    if (!this.isInstalled()) {
+
+      this.el.innerHTML = `
     <div class="generalpage">
       <div class="upButtons">
         <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
@@ -19,6 +28,14 @@ export default class Login {
       </div>
     </div>
     `
+    } else {
+      this.el.innerHTML = `
+    <div class="generalpage">
+      <div style="color: red">Please install this app by adding it to home screen before continuing</div>
+      <p><a style="color: lightgreen" href="https://natomasunified.org/kb/add-website-to-mobile-device-home-screen/">Instructions Here</a></p>
+      </div>
+      `
+    }
 
     return this.el;
   }
