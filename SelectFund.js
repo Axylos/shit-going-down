@@ -67,16 +67,16 @@ export default class SelectFund {
           <a class="goBack" href="#"> back »</a> 
        </div>
 
-    <div class='secondPage'>
-      <form class="search-form">
-        <p class="step">Step two: </br>
-        select local bail fund </br> near your location</p>
-        <input type="text" class="search" placeholder="Type City or State">
-      </form>
-      <div class="list">
-        <div class="suggestions"></div>
+      <div class='secondPage'>
+        <form class="search-form">
+          <p class="step">Step two: </br>
+          select local bail fund </br> near your location</p>
+          <input type="text" class="search" placeholder="Type City or State">
+        </form>
+        <div class="list">
+          <div class="suggestions"></div>
+        </div>
       </div>
-    </div>
     </div>
     `
 
@@ -94,7 +94,7 @@ export default class SelectFund {
 
     
     suggestionsEl.addEventListener('click', e => {
-      if (e.target.tagName == 'BUTTON') {
+      if (e.currentTarget.tagName == 'BUTTON') {
         const id = parseInt(e.target.value);
         const fund = this.funds.find(currentFund => currentFund.id === id);
         this.handleFundSelection(fund);

@@ -85,11 +85,11 @@ body {
   padding-bottom: 12%;
   padding-right: 35%;
   padding-left: 10%;
-  border: 5px solid #FEFF00;
+  border: 5px solid #0EFEF9;
   margin-top: -20%;
   margin-left: 20%;
   margin-bottom: -12%;
-  color: #FEFF00;
+  color: #0EFEF9;
   text-align: right;
 }
 
@@ -122,7 +122,7 @@ body {
 
 .bgInstruction {
   background-color: #E3E3E3;
-  border: 5px solid #FEFF00;
+  border: 5px solid #0EFEF9;
   display: inline-block;
   padding-left: 5%;
   padding-right: 1%;
@@ -208,7 +208,7 @@ span.before {
 
 .upButtons {
   width: 100%;
-  background-color: #FEFF00;
+  background-color: rgb(255, 69, 1, 0.8);
   padding-top: 4px;
   padding-bottom: 4px;
 }
@@ -226,7 +226,7 @@ span.before {
 }
 
 .logo:hover {
-  color: rgb(255, 69, 1, 0.8);
+  color: #E3E3E3;
 }
 
 .loginPage {
@@ -259,9 +259,11 @@ span.before {
   font-family: 'Noto Serif', serif;
   margin-top: 35%;
   margin-bottom: 5%;
+  border:none;
   text-transform: uppercase;
   background-color: #252423;
-  border: 3px solid #FEFF00;;
+  border-bottom: 3px solid #0EFEF9;
+  border-right: 2x solid #0EFEF9;
   color: #E3E3E3;
   font-weight: 500;
   letter-spacing: 3px;
@@ -270,8 +272,7 @@ span.before {
   padding: 14px;
   width: 320px;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(255, 188, 87, 0.19);
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .twitterLogin:after {
@@ -279,15 +280,15 @@ span.before {
 }
 
 .twitterLogin:hover:after {
-  content: 'Login with Twitter »';
+  content: 'Login with Twitter»';
 }
 
 .twitterLogin:hover {
-  background-color: rgb(255, 69, 1, 0.8);
+  background-color: #0EFEF9;
   cursor: pointer;
-  border: 3px solid #FEFF00;
+  border: 2px solid #252423;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(255, 188, 87, 0.19);
-
+  color: #252423;
 }
 
 .loginInstruction {
@@ -364,15 +365,15 @@ span.before {
 }
 
 .goToNext:hover {
-  color: #FEFF00;
+  color: #0EFEF9;
 }
 
 .goBack:hover {
-  color: #FEFF00;
+  color: #0EFEF9;
 }
 
 .goBackEnd:hover {
-  color: #FEFF00;
+  color: #0EFEF9;
 }
 
 .generalpage {
@@ -421,11 +422,12 @@ span.before {
   font-family: 'Roboto', sans-serif;
   width: 150px;
   display: inline-block;
+  padding-bottom: 4%;
 }
 
 .selectFundBtn:hover {
   cursor: pointer;
-  background-color: #E3E3E3;
+  background-color: #0EFEF9;
   color: #252423;
 }
 
@@ -494,7 +496,8 @@ input.contactSearch {
 }
 
 span.phone {
-  color: #FF4C18;
+  background-color: #0EFEF9;
+  color: #252423;
   font-weight: 700; 
   letter-spacing: 1px;
   /* padding-top: 2%; */
@@ -509,7 +512,7 @@ span.place {
 }
 
 .hl {
-  background: #FEFF00;
+  background: #E3E3E3;
   color: #252423;
 }
 
@@ -546,21 +549,21 @@ input.selectedContact {
 
 .contact-detail:hover {
   cursor: pointer;
-  background-color: #E3E3E3;
+  background-color: #0EFEF9;
   color: #252423;
 }
 
 .chosen-contacts {
   align-items: center;
-  margin-left: 15%;
+  margin-left: 16%;
   margin-top: 4%;
 }
 
 .chosen-contactsNames {
   background-color: #E3E3E3;
   padding: 5px;
-  font-size: 16px;
-  width: 350px;
+  font-size: 14px;
+  width: 320px;
   letter-spacing: 3px;
   margin-top: 2%;
   color:  #252423;
@@ -600,7 +603,8 @@ input.selectedContact {
 
 .goToNextTwo:hover {
   background-color: #252423;
-  border: 1px solid #E3E3E3;
+  border-top: 1px solid #E3E3E3;
+  border-left:1px solid #E3E3E3;
   cursor: pointer;
   color: #E3E3E3;
 }
@@ -613,12 +617,13 @@ input.selectedContact {
 
 .buttons {
   display: flex;
-  margin-left: 4%;
+  margin-left: 5%;
   margin-top: 70%;
 }
 
 .bailDiv {
   margin-right: 3%;
+  margin-left: 4%;
 }
 
 .smsDiv {
@@ -645,12 +650,12 @@ margin-left: 5%;
   letter-spacing: 2px;
   border: 5px solid rgb(255, 69, 1);
   border-radius: 100%; 
-  margin-bottom: 4%;
+  margin-bottom: 5%;
 }
 
 .callBail:hover {
   cursor: pointer;
-  border: 4px solid  #FEFF00;
+  border: 5px solid  #0EFEF9;
   background-color: #252423;
   color: #E3E3E3;
 }
@@ -694,7 +699,7 @@ margin-left: 5%;
   padding-bottom: 50px;
   letter-spacing: 2px;
   line-height: 1.5rem;
-  border: 4px solid rgb(255, 69, 1);
+  border: 5px solid rgb(255, 69, 1);
   border-radius: 100%; 
   margin-bottom: 4%;
   margin-left: 2%;
@@ -703,7 +708,7 @@ margin-left: 5%;
 .SMS:hover {
   color: #252423;
   cursor: pointer;
-  border: 2px solid  #FEFF00;
+  border: 5px solid  #0EFEF9;
   background-color: #E3E3E3;
 }
 
@@ -735,10 +740,10 @@ margin-left: 5%;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.842);
+  background-color: rgba(255, 255, 255, 0.89);
   width: 350px;
   height: 450px;
-  border: 3px solid #FEFF00;
+  border: 3px solid #0EFEF9;
   border-radius: 5px;
 }
 
@@ -827,7 +832,7 @@ margin-left: 5%;
   padding: 10px;
   width: 160px;
   border-bottom: 3px solid #252423;
-  border-right: 2px solid #252423;
+  border-right: 2px solid #0EFEF9;
   transition: 0.2s;
   font-weight: 700;
 }
@@ -836,7 +841,8 @@ margin-left: 5%;
   background-color: #252423;
   border: 1px solid #E3E3E3;
   cursor: pointer;
-  color: #E3E3E3;}
+  color: #E3E3E3;
+}
 
 .alertBtnClose {
   display: inline-block;
@@ -853,7 +859,7 @@ margin-left: 5%;
   padding: 10px;
   width: 160px;
   border-bottom: 3px solid #252423;
-  border-right: 2px solid #252423;
+  border-right: 2px solid #0EFEF9;
   transition: 0.2s;
   font-weight: 700;
 
@@ -863,7 +869,8 @@ margin-left: 5%;
   background-color: #252423;
   border: 1px solid #E3E3E3;
   cursor: pointer;
-  color: #E3E3E3;}
+  color: #E3E3E3;
+}
 
 .staySafe {
   font-family: 'Roboto', sans-serif;
