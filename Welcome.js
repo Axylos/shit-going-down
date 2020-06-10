@@ -15,14 +15,14 @@ export default class Welcome {
     this.goToNext();
   }
 
-  setTimeout(){
+  setTimeout() {
     window.setTimeout(() => {
       this.pageTransition();
       this.contentAnimation();
       window.setTimeout(() => {
         this.goToNext();
       }, 3200)
-    }, 1000);
+    }, 1200);
   }
 
   delay(n) {
@@ -51,7 +51,7 @@ export default class Welcome {
       ease: "Expo.easeInOut",
       // delay: 0.1
     });
-    tl.set(".loading-screen", {top: "-100%"})
+    tl.set(".loading-screen", { top: "-100%" })
   }
 
   contentAnimation() {
@@ -69,34 +69,34 @@ export default class Welcome {
     })
   }
 
-initAnimation(){
-  console.log('click')
-  barba.init({
-    sync: true,
-    transitions: [
-      {
-        async leave(data) {
+  initAnimation() {
+    console.log('click')
+    barba.init({
+      sync: true,
+      transitions: [
+        {
+          async leave(data) {
 
-          const done = this.async();
-          this.pageTransition();
-          await this.delay(1000);
-          done();
+            const done = this.async();
+            this.pageTransition();
+            await this.delay(1000);
+            done();
+          },
+
+          async enter(data) {
+            console.log('done');
+
+            this.contentAnimation();
+          },
+
+          async once(data) {
+            this.contentAnimation();
+          }
         },
+      ],
 
-        async enter(data) {
-          console.log('done');
-
-          this.contentAnimation();
-        },
-
-        async once(data) {
-          this.contentAnimation();
-        } 
-      },
-    ],
-
-  })
-}
+    })
+  }
 
   render() {
     this.el.innerHTML = `
@@ -113,12 +113,8 @@ initAnimation(){
     </div>
     </main>
     `;
-
-  
     return this.el;
   }
 
-  unmount() {
-   
-  }
+  unmount() { }
 }
