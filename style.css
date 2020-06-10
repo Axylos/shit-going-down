@@ -89,7 +89,7 @@ body {
   margin-top: -20%;
   margin-left: 20%;
   margin-bottom: -12%;
-  color: #252423;
+  color: #FEFF00;
   text-align: right;
 }
 
@@ -125,9 +125,9 @@ body {
   border: 5px solid #FEFF00;
   display: inline-block;
   padding-left: 5%;
-  padding-right: 3%;
+  padding-right: 1%;
   padding-bottom: 5%;
-  margin-top: -5%;
+  margin-top: -4%;
 
 }
 
@@ -159,22 +159,22 @@ span.before {
   font-size: 12px;
   color: rgba(255, 78, 24, 0.796);
   line-height: 1rem;
-  width: 350px;
+  width: 340px;
   margin-top: 7%;
   margin-bottom: 1%;
   text-align: left;
+  padding-right: 4%;
 }
 
 .icon {
   padding: 4px;
   margin-left: 2px;
-  /* border: 1px solid #b5c0dd3b; */
 }
 
 .download {
   display: inline-block;
   font-family: 'Roboto', sans-serif;
-  margin-top: 20%;
+  margin-top: 8%;
   margin-bottom: 2%;
   border: none;
   background-color: #E3E3E3;
@@ -187,7 +187,7 @@ span.before {
   width: 160px;
   border-bottom: 3px solid #252423;
   border-right: 2px solid #252423;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 .download:after {
@@ -261,7 +261,7 @@ span.before {
   margin-bottom: 5%;
   text-transform: uppercase;
   background-color: #252423;
-  border: 4px solid #FEFF00;;
+  border: 3px solid #FEFF00;;
   color: #E3E3E3;
   font-weight: 500;
   letter-spacing: 3px;
@@ -285,7 +285,7 @@ span.before {
 .twitterLogin:hover {
   background-color: rgb(255, 69, 1, 0.8);
   cursor: pointer;
-  border: 4px solid #FEFF00;
+  border: 3px solid #FEFF00;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(255, 188, 87, 0.19);
 
 }
@@ -301,10 +301,12 @@ span.before {
 
 .loginInstructionTwo {
   background-color:  #E3E3E3;
+  /* padding:5px; */
   font-size: 16px;
   width: 320px;
   letter-spacing: 3px;
-  margin-top: 15%;
+  margin-top: 30%;
+  /* border: 1px solid #252423cc; */
   color:  #252423;
   line-height: 0.9rem;
   text-align: center;
@@ -620,7 +622,7 @@ input.selectedContact {
 }
 
 .smsDiv {
-margin-left: 3%;
+margin-left: 5%;
 }
 
 .telBail {
@@ -662,19 +664,20 @@ margin-left: 3%;
   line-height: 1.6rem;
   font-weight: 400;
   text-transform: uppercase;
- 
 }
 
 .storedData {
-  font-family: 'Roboto', sans-serif;
   color: #E3E3E3;
-  font-size: 13px;
-  width: 180px;
-  margin-left: 6%;
-  line-height: 1.6rem;
-  font-weight: 400;
-  padding-right: 2%;
-  margin-top: 5%;
+  font-size: 11px;
+  margin-top: 2%;
+  /* background-color: #E3E3E3; */
+  padding: 5px;
+  letter-spacing: 2px;
+  line-height: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
 }
 
 .SMS {
@@ -694,6 +697,7 @@ margin-left: 3%;
   border: 4px solid rgb(255, 69, 1);
   border-radius: 100%; 
   margin-bottom: 4%;
+  margin-left: 2%;
 }
 
 .SMS:hover {
@@ -778,24 +782,27 @@ margin-left: 3%;
 }
 
 .contact-reminder {
-  width: 320px;
-  line-height: 1.2rem;
-  font-weight: 300;
-  color: #252423;
-  font-size: 13px;
+  color: #E3E3E3;
+  font-size: 11px;
   margin-top: 2%;
-  margin-left: 8%;
-  margin-bottom: 2%;
-  background-color: #FEFF00;
+  /* background-color: #E3E3E3; */
+  padding: 5px;
+  letter-spacing: 2px;
+  line-height: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .msgContent {
-  color: rgb(237, 94, 108);
+  color: #252423;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   margin-left: 6%;
   width: 280px;
   line-height: 1.3rem;
+  font-weight: 500;
 }
 
 .alertBtnDiv {
@@ -822,6 +829,7 @@ margin-left: 3%;
   border-bottom: 3px solid #252423;
   border-right: 2px solid #252423;
   transition: 0.2s;
+  font-weight: 700;
 }
 
 .alertBtn:hover {
@@ -847,6 +855,8 @@ margin-left: 3%;
   border-bottom: 3px solid #252423;
   border-right: 2px solid #252423;
   transition: 0.2s;
+  font-weight: 700;
+
 }
 
 .alertBtnClose:hover {

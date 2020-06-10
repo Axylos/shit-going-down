@@ -44,10 +44,10 @@ export default class SelectFund {
       } else {
         return `
       <p class='listResults'>
-      <button class='selectFundBtn' value="${fund.id}">
-        <span class='place'>${cityName}, ${stateName}:</br> </span>
-        ${fund.name} -
-         <span class='phone'>${fund.number}</span>
+        <button class='selectFundBtn' value="${fund.id}">
+          <span class='place'>${cityName}, ${stateName}:</br> </span>
+          ${fund.name} -
+          <span class='phone'>${fund.number}</span>
         </button>
       </p>
       `
