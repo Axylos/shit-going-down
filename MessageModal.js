@@ -60,7 +60,7 @@ export default class MessageModal {
   confirmSent() {
     this.el.querySelector('.alert').innerHTML = `
     <h2 class="staySafe">Message Sent! </br> Stay Safe!</h2>
-    <button>Close</button>
+    <button class="alertBtnClose alert-two">Close</button>
     `;
 
     this.el.querySelector('.alert button').addEventListener('click', () => this.close());

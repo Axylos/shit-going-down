@@ -107,12 +107,13 @@ export default class Instructions {
   renderModal() {
     if (this.modalOpen) {
       return `
-      <div class="alert-second">
+      <div class="alert-second staySafe">
         <span class="sorry">Sorry!</span> </br>
         It looks like you are browsing from a desktop.</br>
 
         Please log in via a mobile device, </br> and add to home screen before proceeding.
 
+        </br>
         <button class="close-modal">Close</button>
       </div>
       `
