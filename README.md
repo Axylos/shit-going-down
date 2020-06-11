@@ -1,4 +1,4 @@
-# [shit-going-down](https://shitgoingdown.com)  👀
+# [shit-going-down](https://shitgoingdown.com) 🚔 👀
 a web-mobile app that allows to contact your trusted friends and local bail funds at a push of a button in case of on emergency.
 The goal is to make people feel safer with a faster mean of communication in times of protests and clashes with the authority.
 
