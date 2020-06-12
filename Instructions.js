@@ -55,7 +55,6 @@ export default class Instructions {
   }
 
   pageTransition() {
-    console.log('clock')
     let tl = gsap.timeline();
     tl.to(".loading-screen", {
       duration: 0,
@@ -133,11 +132,11 @@ export default class Instructions {
           Then, activate the app in advance to best protect you and your contacts.</p>
          <button class="download animate-text"></button>
         <div class= "small animate-text">
-         <h5 class="homeInstructionThree"><strong>*</strong> ANDROID USERS: look for this icon-> 
-         <img class="icon" src="./images/androidAddHomeScreen.svg" alt="android" width="14" height="18"/>- then slide to the right and “Add to Home Screen.” 
+         <p class="homeInstructionThree"> <span class="underline">Make sure you opened on your mobile a chrome browser:</span> </br> <strong>*</strong> ANDROID USERS: look for this icon-> 
+         <img class="icon" src="./images/androidAddHomeScreen_white.svg" alt="android" width="14" height="18"/>- then slide to the right and “Add to Home Screen.” 
          </br>
          <strong>*</strong> IOS USERS: look for this icon-> 
-        <img class="icon" src="./images/iosAddHomeScreen.svg" alt="ios" width="18" height="18" />- then tap Settings on the top right and “Add to Home Screen.”</h5>
+        <img class="icon" src="./images/iosAddHomeScreen_white.svg" alt="ios" width="18" height="18" />- then tap Settings on the top right and “Add to Home Screen.”</p>
        </div>
       </div>
      </div>

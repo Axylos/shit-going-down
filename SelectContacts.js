@@ -62,7 +62,7 @@ export default class SelectContacts {
 
        <div class='thirdPage'>
         <form class="search-form" autocomplete="off">
-          <p class="step">Step one:</br> Select trusted friends to DM in case of a need</p>
+          <h2 class="step">Step one:</br> Select trusted friends you would to DM </h2>
           <input name="selectedContact" type="text" required class="contactSearch" placeholder="Type name or user name">
         </form>
         <div class="contact-list"></div>

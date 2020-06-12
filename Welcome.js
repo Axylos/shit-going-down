@@ -101,16 +101,13 @@ export default class Welcome {
   render() {
     this.el.innerHTML = `
     <main data-barba="container" data-barba-namespace="home-section">
-
       <div class="animationPage">
       <div class="textHome animate-this">
         <p class='homeInstructionOne'> Contact emergency friends & local bail funds </br>at the push of a button
        </br> <strong>in case</strong></p>
-        <h1 class="shit">SHIT</h1>
-        <h1 class="going">GOING</h1>
-        <h1 class="down">DOWN</h1>
+        <h2 class="shit">SHIT GOING DOWN<h2>
       </div>
-    </div>
+     </div>
     </main>
     `;
     return this.el;

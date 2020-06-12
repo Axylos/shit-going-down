@@ -59,6 +59,7 @@ app.get('/verify', async (req, res) => {
     res.json({ verified });
   } catch (e) {
     console.log(e);
+    res.set('Access-Control-Allow-Credentials', 'true');
     res.json({ verified: false });
   }
 });
@@ -120,4 +121,4 @@ app.get('/', (req, res) => {
   res.json({msg: 'hello world'})
 });
 
-app.listen(PORT, () => console.log('up and running on 3000'));
+app.listen(PORT, () => console.log('up and running on ', PORT));

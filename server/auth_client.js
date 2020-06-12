@@ -13,7 +13,7 @@ const signing_key = encodeURIComponent(consumer_secret) + '&';
 
 
 const params = {
-  oauth_callback: process.env.OAUTH_CALLBACK,
+  oauth_callback: "http://localhost:8080/callback",
   oauth_nonce: hash,
   oauth_signature_method: 'HMAC-SHA1',
   oauth_timestamp,
