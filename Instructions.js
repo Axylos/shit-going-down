@@ -12,6 +12,7 @@ export default class Instructions {
   }
 
   isInstalled() {
+    return true;
     return (
       window.matchMedia('(display-mode: standalone)').matches) ||
       (window.navigator.standalone) ||
