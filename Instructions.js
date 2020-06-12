@@ -8,11 +8,34 @@ export default class Instructions {
     this.contentAnimation = this.contentAnimation.bind(this);
     this.initAnimation = this.initAnimation.bind(this);
     this.setTimeout();
+    this.modalOpen = false;
+  }
+
+  isInstalled() {
+    return true;
+    return (
+      window.matchMedia('(display-mode: standalone)').matches) ||
+      (window.navigator.standalone) ||
+      document.referrer.includes('android-app://');
   }
 
   handleClick() {
-    console.log('go to next page');
-    this.goToNext();
+    if (this.isInstalled()) {
+      console.log('go to next page');
+      this.goToNext();
+    } else {
+      this.openModal();
+    }
+  }
+
+  closeModal() {
+    this.modalOpen = false;
+    this.render();
+  }
+
+  openModal() {
+    this.modalOpen = true;
+    this.render();
   }
 
   setTimeout() {
@@ -82,14 +105,28 @@ export default class Instructions {
     })
   }
 
-  handleClick() {
-    console.log('go to next page');
-    this.goToNext();
+  renderModal() {
+    if (this.modalOpen) {
+      return `
+      <div class="alert-second staySafe">
+        <span class="sorry">Sorry!</span> </br>
+        It looks like you are browsing from a desktop.</br>
+
+        Please log in via a mobile device, </br> and add to home screen before proceeding.
+
+        </br>
+        <button class="close-modal">Close</button>
+      </div>
+      `
+    } else {
+      return '';
+    }
   }
 
   render() {
     this.el.innerHTML = `
     <main data-barba="container" data-barba-namespace="instruction-section">
+       ${this.renderModal()}
       <div class="InstructionPage">
        <div class="bgInstruction animate-this">
          <p class='homeInstructionTwo animate-text' > <span class="before"> Before starting</span> </br></br> Add the app to your mobile home-screen <strong>*</strong>.</br> 
@@ -107,7 +144,11 @@ export default class Instructions {
     </main>
     `;
 
-    this.el.querySelector('button').addEventListener('click', this.handleClick)
+    this.el.querySelector('button.download').addEventListener('click', this.handleClick)
+    const closeModal = this.el.querySelector('.close-modal')
+    if (closeModal !== null) {
+      closeModal.addEventListener('click', this.closeModal.bind(this));
+    }
     return this.el;
   }
 

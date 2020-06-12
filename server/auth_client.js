@@ -132,7 +132,7 @@ export async function verify(token, secret) {
 export async function getUserContacts(token, secret) {
   const client = await getClient(token, secret);
   console.log('client: ', client);
-  const resp = await client.get("friends/list");
+  const resp = await client.get("followers/list", { count: 200 });
 
   return resp;
 }

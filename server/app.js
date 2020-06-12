@@ -12,12 +12,16 @@ import path from 'path';
 import fs from 'fs';
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
+
+const opts = {
+  origin: 'http://localhost:3000'
+};
 
 const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(opts));
 app.use(cookieParser());
 
 app.post('/message', async (req, res) => {
@@ -51,6 +55,7 @@ app.get('/verify', async (req, res) => {
     const { oauth_token, oauth_secret } = await getUser(hash);
     const verified = await verify(oauth_token, oauth_secret);
     console.log('verified: ', verified);
+    res.set('Access-Control-Allow-Credentials', 'true');
     res.json({ verified });
   } catch (e) {
     console.log(e);
@@ -70,10 +75,13 @@ app.get('/callback', async (req, res) => {
   );
   const data = await getClient(oauth_token, oauth_token_secret);
   console.log(data);
+  res.set('foo', 'ba');
+  res.set('Access-Control-Allow-Credentials', 'true');
   res.cookie('hash', userData.hash, {
     maxAge: 86_400_000,
-    httpOnly: true
-  }).sendFile(path.join(path.resolve(path.dirname('')) + '/redirect.html'));
+    domain: 'localhost'
+  })
+    .sendFile(path.join(path.resolve(path.dirname('')) + '/redirect.html'));
 });
 
 app.get('/contacts', async (req, res) => {
@@ -84,6 +92,7 @@ app.get('/contacts', async (req, res) => {
     const { oauth_token, oauth_secret } = await getUser(hash);
 
     const contacts = await getUserContacts(oauth_token, oauth_secret);
+    res.set('Access-Control-Allow-Credentials', 'true')
     res.json(contacts);
   } catch (e) {
     console.log(e);

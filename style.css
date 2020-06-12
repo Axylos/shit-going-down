@@ -56,6 +56,9 @@ font-weight: 700;
   -webkit-text-stroke: 1px #E3E3E3; */
 }
 
+.alert-second {
+
+}
 .load-container {
   position: fixed;
   top: 0;
@@ -187,6 +190,94 @@ font-weight: 700;
 
 }
 
+.close-modal {
+  margin: auto;
+  margin-top: 10%;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  background-color: #E3E3E3;
+  color: #252423;
+  font-weight: 500;
+  letter-spacing: 4px;
+  font-size: 14px;
+  line-height: 1.5rem;
+  padding: 10px;
+  width: 160px;
+  border-bottom: 2px solid rgba(255, 78, 24, 0.796);
+  transition: 0.2s;
+}
+
+.sorry {
+  text-transform: uppercase;
+  font-size: 28px;
+  color: rgba(255, 78, 24, 0.796);
+  padding-bottom: 2%;
+  display: inline-block;
+  padding-top: 20%;
+}
+
+.close-modal:hover {
+  background-color: rgba(255, 78, 24, 0.796);
+  border-top: 1px solid #252423;
+  border-left:1px solid #252423;
+  cursor: pointer;
+  color: #252423;
+}
+
+.alert-second {
+  line-height: 1.8rem;
+  width: 100%;
+  height: 600px;
+  background-color: #252423f0;
+  font-family: 'Noto Serif', serif;
+  font-weight: 300;
+  font-size: 22px;
+  padding-top: 5%;
+  text-align: center;
+  color: #E3E3E3;
+  border: 5px solid #E3E3E3;
+  position: absolute;
+  top: 0;
+  margin: auto;
+
+}
+
+.chosen-contacts-fund {
+  background-color: #E3E3E3;
+  padding: 4px;
+  padding-left: 0;
+  font-size: 14px;
+  width: 250px;
+  letter-spacing: 3px;
+  margin: auto;
+  margin-top: 20px;
+  color:  #252423;
+  line-height: 0.9rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.alertBtnClose.alert-two {
+  margin: auto;
+  display: block;
+  margin-top: 20%;
+}
+
+.alert-second.staySafe {
+  color: #E3E3E3;
+  width: 100%;
+  height: 700px;
+  top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  left: 0;
+}
+
+.alert-second.staySafe button {
+  margin-top: 15px;
+}
+
 .homeInstructionTwo {
   font-size: 28px;
   letter-spacing: 2px;
@@ -265,8 +356,8 @@ span.before {
 .upButtons {
   width: 100%;
   background-color: rgb(255, 69, 1, 0.8);
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .logo {
@@ -381,8 +472,8 @@ span.before {
 
 .navLinks {
   width: 100%;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-top:0;
   background-color: rgba(0, 0, 0, 0.563);
 }
@@ -606,7 +697,6 @@ input.selectedContact {
 
 .chosen-contacts {
   text-align: center;
-  margin-left: 10%;
   margin-top: 4%;
 }
 
@@ -614,11 +704,11 @@ input.selectedContact {
   background-color: #E3E3E3;
   padding: 4px;
   padding-left: 0;
-  margin-left: 10%;
   font-size: 14px;
   width: 250px;
   letter-spacing: 3px;
-  margin-top: 2%;
+  margin-top: 20px;
+  margin: auto;
   color:  #252423;
   line-height: 0.9rem;
   text-align: center;
@@ -829,7 +919,7 @@ margin-right: 4%;
   right: 0;
   background-color: rgba(255, 255, 255, 0.94);
   width: 350px;
-  height: 470px;
+  height: 500px;
   border: 3px solid #0EFEF9;
   border-radius: 5px;
 }

@@ -16,7 +16,8 @@ export default class Buttons {
       recipients: this.recipients,
       fund: this.fund
     }
-    const resp = await fetch('https://draketalley.com/caller/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json' }});
+
+    const resp = await fetch('http://localhost:8080/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json', 'credentials': 'include' }});
     if (resp.ok) {
       const data = resp.json();
     }

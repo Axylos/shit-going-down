@@ -59,7 +59,7 @@ export default class SelectFund {
   getFundDisplay() {
     return `
     <div>
-    <h3>You have selected: ${this.selectedFund.name}</h3>
+    <h3 class="chosen-contacts-fund">You have selected: ${this.selectedFund.name}</h3>
     </div>
     `
   }

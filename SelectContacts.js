@@ -13,7 +13,7 @@ export default class SelectContacts {
   }
 
   async loadContacts() {
-    const resp = await fetch('https://draketalley.com/caller/contacts')
+    const resp = await fetch('http://localhost:8080/contacts', { credentials: 'include' })
     if (resp.ok) {
       const data = await resp.json();
       this.loaded = true;

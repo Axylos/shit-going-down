@@ -1,4 +1,4 @@
-const cacheName = 'cache-v12';
+const cacheName = 'refresh-4';
 const precacheResources = [
   '/',
   'index.html',
@@ -29,6 +29,13 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', ev => {
+  ev.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames
+      .map(name => caches.delete(name)));
+    })
+  );
   console.log('service worker active');
 });
 
