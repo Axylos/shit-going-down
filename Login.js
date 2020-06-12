@@ -39,12 +39,11 @@ export default class Login {
          <p class='loginInstructionTwo'>Your information will not be shared outside this application.
          & your activties are not stored anywhere in this application. </p>
       </div>
-      <button class="demo"> next</button>
 
     </div>
     `
 
-    this.el.querySelector('.demo').addEventListener('click', this.goToNext)
+    // this.el.querySelector('.demo').addEventListener('click', this.goToNext)
 
     return this.el;
 
