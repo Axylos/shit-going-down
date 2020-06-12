@@ -34,7 +34,7 @@ export default class Login {
       </div>  
      <div class="loginPage">
        <div class="center">
-         <button class="twitterLogin" onclick="location.href='/api/login'"></button>
+         <button class="twitterLogin" onclick="location.href='http://localhost:8080/login'"></button>
          <p class='loginInstruction'>to retrieve your contacts.</p>
          <p class='loginInstructionTwo'>Your information will not be shared outside this application.
          & your activties are not stored anywhere in this application. </p>

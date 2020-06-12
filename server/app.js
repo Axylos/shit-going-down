@@ -12,7 +12,7 @@ import path from 'path';
 import fs from 'fs';
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 app.use(logger('dev'));
@@ -73,7 +73,7 @@ app.get('/callback', async (req, res) => {
   res.cookie('hash', userData.hash, {
     maxAge: 86_400_000,
     httpOnly: true
-  }).sendFile(path.join(path.resolve(path.dirname('')) + '/redirect.html'));
+  }).sendFile(path.join(path.resolve(path.dirname('')) + '/rehttps://shitgoingdown.com/apidirect.html'));
 });
 
 app.get('/contacts', async (req, res) => {
