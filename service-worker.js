@@ -33,8 +33,8 @@ self.addEventListener('activate', ev => {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames
-      .map(name => return caches.delete(name));
-    )})
+      .map(name => caches.delete(name)));
+    })
   );
   console.log('service worker active');
 });
