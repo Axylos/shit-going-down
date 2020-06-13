@@ -11,7 +11,6 @@ const consumer_key = process.env.TWITTER_CONSUMER_KEY;
 const consumer_secret = process.env.TWITTER_CONSUMER_SECRET;
 const signing_key = encodeURIComponent(consumer_secret) + '&';
 
-
 const params = {
   oauth_callback: "http://localhost:8080/callback",
   oauth_nonce: hash,
@@ -45,7 +44,6 @@ const auth = `OAuth oauth_consumer_key="${vals.oauth_consumer_key}", oauth_nonce
 
 export async function getOauthToken() {
   try {
-
     const resp = await axios({
       method: "POST",
       url,
@@ -62,8 +60,7 @@ export async function getOauthToken() {
 
 export async function getClient(tokenKey, secret) {
   try {
-
-    console.log('token: ', tokenKey, ' secret: ', secret)
+  console.log('token: ', tokenKey, ' secret: ', secret)
   const opts = {
       subdomain: "api",
       version: "1.1",
@@ -73,10 +70,8 @@ export async function getClient(tokenKey, secret) {
       access_token_secret: secret
   }
   const client = new Twitter(opts);
-
   // const results = await client.get("account/verify_credentials");
   return client;
-
   } catch (e) {
     console.error(e);
     return null;
@@ -86,8 +81,7 @@ export async function getClient(tokenKey, secret) {
 export async function sendMsg(tokenKey, secret, recipientId, name, fund, userName) {
   const client = await getClient(tokenKey, secret);
   console.log('send msg: ', tokenKey, secret, recipientId)
-  try {
-
+  try { 
   const response = await client.post('direct_messages/events/new', {
     event: {
       type: 'message_create',
@@ -132,7 +126,23 @@ export async function verify(token, secret) {
 export async function getUserContacts(token, secret) {
   const client = await getClient(token, secret);
   console.log('client: ', client);
+  const users = [];
   const resp = await client.get("followers/list", { count: 200 });
+  users.push(...resp.users);
 
-  return resp;
+  let cursor = resp.next_cursor_str;
+  while (cursor !== "0") {
+    const opts = {
+      cursor,
+      count: 200
+    };
+
+    const nextResponse = await client.get("/followers/list", opts);
+    
+    const nextUsers = nextResponse.users;
+    users.push(...nextUsers);
+    cursor = nextResponse.next_cursor_str;
+  }
+
+  return { users } ;
 }
