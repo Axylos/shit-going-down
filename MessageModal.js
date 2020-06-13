@@ -20,12 +20,12 @@ export default class MessageModal {
     this.el.innerHTML = `
     <div class="alert">
       <h3 class="OnNo"><span class="oh">OH NO! </span></br>
-      Are you sure you want to sent DM S.O.S?</h3>
-      <p class='msgContent'><strong>Contact of the message:</strong> </br> 
+      Are you sure you want to send a S.O.S DM?</h3>
+      <p class='msgContent'><strong>Content of the message:</strong> </br> 
         Hey, {name}! <br />
         I'm sending you this message as a trusted friend - I have reason to believe that I may very soon have an encounter with law enforcement. <br />
-        Please cheack on me soon! If I'm not answering there is a chance I just got arrested. <br />
-        I chose the local bail fund below in advance, please contact them on my behalf at <br />
+        Please check on me soon! If I'm not answering there is a chance I just got arrested. <br />
+        I chose the local bail fund below in advance, please contact them on my behalf <br />
         if you feel comfortable. <br />
         {fund contact info} <br />
       <div class="alertBtnDiv">

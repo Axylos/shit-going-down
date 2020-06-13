@@ -128,7 +128,7 @@ export default class Instructions {
           Then, activate the app in advance to best protect you and your contacts.</p>
          <button class="download animate-text"></button>
         <div class= "small animate-text">
-         <p class="homeInstructionThree"> <span class="underline">Make sure you opened on your mobile a chrome browser:</span> </br> <strong>*</strong> ANDROID USERS: look for this icon-> 
+         <p class="homeInstructionThree"> <span class="underline">Make sure to open the app on a mobile browser:</span> </br> <strong>*</strong> ANDROID USERS: look for this icon-> 
          <img class="icon" src="./images/androidAddHomeScreen_white.svg" alt="android" width="14" height="18"/>- then slide to the right and “Add to Home Screen.” 
          </br>
          <strong>*</strong> IOS USERS: look for this icon-> 
