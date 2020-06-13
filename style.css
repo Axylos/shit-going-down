@@ -188,7 +188,6 @@ body {
 }
 
 span.before {
-  /* -webkit-text-stroke: 1px #00AF00; */
   font-family: 'Roboto', sans-serif;
   color: #4F66D1;
   font-weight: 500;
@@ -197,6 +196,7 @@ span.before {
   padding-bottom: 0;
   margin-bottom: -4%;
 }
+
 .underline {
   border-bottom: 1px solid #D34740;
   margin-bottom: 2px;
@@ -249,7 +249,6 @@ span.before {
 }
 
 .download:hover {
-  /* background-color: #4F66D1; */
   border: 3px solid #B1D2F1;
   cursor: pointer;
   color: #E3E3E3;
@@ -523,7 +522,6 @@ span.place {
   margin-right: 1%;
   margin-top: 1%;
   margin-left: 3%;
-  /* padding: 2%; */
 }
 
 .hl {
