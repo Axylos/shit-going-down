@@ -1,4 +1,8 @@
+import isMobile from './mobileCheck.js';
+
 export default class Instructions {
+
+
   constructor(goToNext) {
     this.handleClick = this.handleClick.bind(this);
     this.el = document.createElement('div');
@@ -11,16 +15,8 @@ export default class Instructions {
     this.modalOpen = false;
   }
 
-  isInstalled() {
-    return true;
-    return (
-      window.matchMedia('(display-mode: standalone)').matches) ||
-      (window.navigator.standalone) ||
-      document.referrer.includes('android-app://');
-  }
-
   handleClick() {
-    if (this.isInstalled()) {
+    if (isMobile()) {
       console.log('go to next page');
       this.goToNext();
     } else {
