@@ -2,7 +2,7 @@
 a web-mobile app that allows to contact your trusted friends and local bail funds at a push of a button in case of on emergency.
 The goal is to make people feel safer with a faster mean of communication in times of protests and clashes with the authority.
 
-![homescreen](https://i.imgur.com/Zwz5RMF.jpg)
+![bail funds screen](https://i.imgur.com/83xio54.jpg)
 
 ## installation:
 1. Open the app on your mobile - [https://shitgoingdown.com](https://shitgoingdown.com) - and add the app to your mobile home-screen. Here is an explanation how to do so for [android](https://browserhow.com/how-to-add-to-home-screen-shortcut-links-with-chrome-android/) and [ios](https://browserhow.com/how-to-add-to-home-screen-shortcut-links-with-chrome-android/).
@@ -19,4 +19,4 @@ The goal is to make people feel safer with a faster mean of communication in tim
 * Accessibility, inclusion, and performance are at the core of this project.
 * If you run into any issues or have concerns please use the issues tab on the github repo.
 
-![bail funds screen](https://i.imgur.com/83xio54.jpg)
+![homescreen](https://i.imgur.com/Zwz5RMF.jpg)
