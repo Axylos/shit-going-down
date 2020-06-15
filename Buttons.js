@@ -17,7 +17,7 @@ export default class Buttons {
       fund: this.fund
     }
 
-    const resp = await fetch('http://localhost:8080/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json', 'credentials': 'include' }});
+    const resp = await fetch('https://www.shitgoingdown.com/api/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json'}, credentials: 'include'});
     if (resp.ok) {
       const data = resp.json();
     }
@@ -73,7 +73,7 @@ export default class Buttons {
     this.el.innerHTML = `
     <div class="generalpage">
       <div class="upButtons">
-       <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+       <a class="logo" href="https://www.shitgoingdown.com">shitgoingdown.com</a>
       </div>
       <div class="navLinks">
         <a class="goBackEnd" href="#">« back</a>

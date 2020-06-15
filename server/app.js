@@ -12,10 +12,10 @@ import path from 'path';
 import fs from 'fs';
 dotenv.config();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 const opts = {
-  origin: 'http://localhost:3000'
+  origin: 'https://www.shitgoingdown.com'
 };
 
 const app = express();
@@ -80,7 +80,7 @@ app.get('/callback', async (req, res) => {
   res.set('Access-Control-Allow-Credentials', 'true');
   res.cookie('hash', userData.hash, {
     maxAge: 86_400_000,
-    domain: 'localhost'
+    domain: 'www.shitgoingdown.com'
   })
     .sendFile(path.join(path.resolve(path.dirname('')) + '/redirect.html'));
 });
@@ -104,12 +104,14 @@ app.get('/contacts', async (req, res) => {
 
 app.get('/login', async (req, res) => {
   const token = await getOauthToken();
+  console.log(JSON.stringify(token));
 
   try {
 
     const { oauth_token, oauth_token_secret } = qs.decode(token);
     const baseUrl = 'https://api.twitter.com/oauth/authorize?'
     const url = `${baseUrl}${token}`;
+    console.log(url);
     res.redirect(url);
   } catch (e) {
     console.log(e);

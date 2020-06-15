@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const oauth_timestamp = Math.round((new Date()).getTime() / 1000);
+console.log(oauth_timestamp)
 const hash = crypto.createHash('md5').update(oauth_timestamp.toString()).digest('hex');
 const url = 'https://api.twitter.com/oauth/request_token';
 const consumer_key = process.env.TWITTER_CONSUMER_KEY;
@@ -12,7 +13,7 @@ const consumer_secret = process.env.TWITTER_CONSUMER_SECRET;
 const signing_key = encodeURIComponent(consumer_secret) + '&';
 
 const params = {
-  oauth_callback: "http://localhost:8080/callback",
+  oauth_callback: "https://www.shitgoingdown.com/api/callback",
   oauth_nonce: hash,
   oauth_signature_method: 'HMAC-SHA1',
   oauth_timestamp,

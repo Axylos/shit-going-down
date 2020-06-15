@@ -13,7 +13,7 @@ export default class SelectContacts {
   }
 
   async loadContacts() {
-    const resp = await fetch('http://localhost:8080/contacts', { credentials: 'include' })
+    const resp = await fetch('https://www.shitgoingdown.com/api/contacts', { credentials: 'include' })
     if (resp.ok) {
       const data = await resp.json();
       this.loaded = true;
@@ -53,7 +53,7 @@ export default class SelectContacts {
     this.el.innerHTML = `
     <div class="generalpage">
        <div class="upButtons">
-         <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+         <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
        </div>
        <div class="navLinks">
           <a class="goBack" href="#">« back </a>

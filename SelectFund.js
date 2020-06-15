@@ -68,7 +68,7 @@ export default class SelectFund {
     this.el.innerHTML = `
     <div class="generalpage">
        <div class="upButtons">
-         <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+         <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
        </div>
        <div class="navLinks">
           <a class="goBack" href="#">« back </a>

@@ -2,7 +2,7 @@
   "short_name": "Call Bail Me",
   "name": "bail me out",
   "description": "call for bail assistance",
-  "start_url": "https://shitgoingdown.com",
+  "start_url": "https://www.shitgoingdown.com",
   "background_color": "#3367D6",
   "display": "fullscreen",
   "scope": "/",

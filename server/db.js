@@ -8,6 +8,8 @@ function getHash() {
 }
 
 const db = pgp()({
+  user: 'bail',
+  password: 'bail',
   database: 'bail',
 });
 

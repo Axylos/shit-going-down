@@ -5,7 +5,7 @@ async function main() {
   const vm = new ViewManager(root);
   let verified;
   try {
-    const resp = await fetch('http://localhost:8080/verify', { credentials: 'include' });
+    const resp = await fetch('https://www.shitgoingdown.com/api/verify', { credentials: 'include' });
     if (resp.ok) {
       const data = await resp.json();
       verified = data.verified ? "verified" : "unverified";

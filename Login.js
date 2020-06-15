@@ -30,11 +30,11 @@ export default class Login {
       this.el.innerHTML = `
     <div class="generalpage">
       <div class="upButtons">
-        <a class="logo" href="https://shitgoingdown.com">shitgoingdown.com</a>
+        <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
       </div>  
      <div class="loginPage">
        <div class="center">
-         <button class="twitterLogin" onclick="location.href='http://localhost:8080/login'"></button>
+         <button class="twitterLogin" onclick="location.href='https://www.shitgoingdown.com/api/login'"></button>
          <p class='loginInstruction'>to retrieve your contacts.</p>
          <p class='loginInstructionTwo'>Your information will not be shared outside this application.
          & your activties are not stored anywhere in this application. </p>
