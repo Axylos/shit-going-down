@@ -1,6 +1,6 @@
 # [shit-going-down](https://www.shitgoingdown.com) 🚔 👀
-a web-mobile app that allows to contact your trusted friends and local bail funds at a push of a button in case of on emergency.
-The goal is to make people feel safer with a faster mean of communication in times of protests and clashes with the authority.
+A web-mobile app that allows contacting your trusted friends and local bail funds at a push of a button in case of an emergency.
+The goal is to make people feel safer with a faster means of communication in times of protests and clashes with authority.
 
 ![bail funds screen](https://i.imgur.com/83xio54.jpg)
 
