@@ -4,46 +4,51 @@ import Twitter from 'twitter-lite';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const oauth_timestamp = Math.round((new Date()).getTime() / 1000);
-console.log(oauth_timestamp)
-const hash = crypto.createHash('md5').update(oauth_timestamp.toString()).digest('hex');
 const url = 'https://api.twitter.com/oauth/request_token';
 const consumer_key = process.env.TWITTER_CONSUMER_KEY;
 const consumer_secret = process.env.TWITTER_CONSUMER_SECRET;
 const signing_key = encodeURIComponent(consumer_secret) + '&';
 
-const params = {
-  oauth_callback: "https://www.shitgoingdown.com/api/callback",
-  oauth_nonce: hash,
-  oauth_signature_method: 'HMAC-SHA1',
-  oauth_timestamp,
-  oauth_consumer_key: consumer_key,
-  oauth_version: '1.0'
-};
+function buildAuthString() {
+  const oauth_timestamp = Math.round((new Date()).getTime() / 1000);
+  console.log(oauth_timestamp)
+  const hash = crypto.createHash('md5').update(oauth_timestamp.toString()).digest('hex');
+  const params = {
+    oauth_callback: "https://www.shitgoingdown.com/api/callback",
+    oauth_nonce: hash,
+    oauth_signature_method: 'HMAC-SHA1',
+    oauth_timestamp,
+    oauth_consumer_key: consumer_key,
+    oauth_version: '1.0'
+  };
 
-const vals = {};
+  const vals = {};
 
-for (let [key, val] of Object.entries(params)) {
-  vals[encodeURIComponent(key)] = encodeURIComponent(val);
+  for (let [key, val] of Object.entries(params)) {
+    vals[encodeURIComponent(key)] = encodeURIComponent(val);
+  }
+
+  const keyList = Object.keys(vals).sort()
+  const values = keyList.map(key => {
+    return `${key}=${vals[key]}`
+  }).join('&')
+
+  const valString = encodeURIComponent(values);
+  const raw_vals = ['POST', encodeURIComponent(url), valString];
+  const str = raw_vals.join('&');
+
+
+  const sig = encodeURIComponent(crypto.createHmac('sha1', signing_key)
+    .update(str)
+    .digest('Base64'));
+
+  const auth = `OAuth oauth_consumer_key="${vals.oauth_consumer_key}", oauth_nonce="${vals.oauth_nonce}", oauth_callback="${vals.oauth_callback}", oauth_signature_method="HMAC-SHA1", oauth_timestamp="${vals.oauth_timestamp}",  oauth_signature="${sig}", oauth_version="1.0"`;
+
+  return auth;
 }
 
-const keyList = Object.keys(vals).sort()
-const values = keyList.map(key => {
-  return `${key}=${vals[key]}`
-}).join('&')
-
-const valString = encodeURIComponent(values);
-const raw_vals = ['POST', encodeURIComponent(url), valString];
-const str = raw_vals.join('&');
-
-
-const sig = encodeURIComponent(crypto.createHmac('sha1', signing_key)
-  .update(str)
-  .digest('Base64'));
-
-const auth = `OAuth oauth_consumer_key="${vals.oauth_consumer_key}", oauth_nonce="${vals.oauth_nonce}", oauth_callback="${vals.oauth_callback}", oauth_signature_method="HMAC-SHA1", oauth_timestamp="${vals.oauth_timestamp}",  oauth_signature="${sig}", oauth_version="1.0"`;
-
 export async function getOauthToken() {
+  const auth = buildAuthString();
   try {
     const resp = await axios({
       method: "POST",
