@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>yo</title>
-    <script type="application/javascript">
-      window.onload = () => {
-        const button = document.querySelector('button');
-        button.addEventListener('click', (ev) => {
-          ev.preventDefault();
-          console.log(window.localStorage.getItem('sgdPhone'));
-          //alert(`Your sms contact is: ${window.localStorage.getItem('sgdPhone')}`);
-          const phone = window.localStorage.getItem('sgdPhone');
-          fetch('/sms/send', {
-            method: "POST",
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({phone})
-          }).then(resp => {
-            if (!resp.ok) {
-              console.log('something went wrong')
-            } else {
-              return resp.json();
-            }
-          }).then(data => {
-            console.log(data);
-          });
-        });
-      }
-    </script>
-  </head>
-  <body>
-    <!-- <div class="generalpage">
-      <div class="upButtons">
-       <a class="logo" href="https://www.shitgoingdown.com">shitgoingdown.com</a>
-      </div>
-      <div class="navLinks">
-        <a class="goBackEnd" href="#">« back</a>
-      </div>
-      <div class='finalPage'>
-      <h1 class="safe">stay safe</h1> -->
 
-    <h2>Sender</h2>
-    <button>Send SMS</button>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="http://0.0.0.0:9000/style.css">
+  <title>Send_sms</title>
+  <script type="application/javascript">
+    window.onload = () => {
+      const button = document.querySelector('button');
+      button.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        console.log(window.localStorage.getItem('sgdPhone'));
+        //alert(`Your sms contact is: ${window.localStorage.getItem('sgdPhone')}`);
+        const phone = window.localStorage.getItem('sgdPhone');
+        fetch('/sms/send', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ phone })
+        }).then(resp => {
+          if (!resp.ok) {
+            console.log('something went wrong')
+          } else {
+            return resp.json();
+          }
+        }).then(data => {
+          console.log(data);
+        });
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <div class="generalpage sms">
+    <div class="nav">
+      <div class="upButtons">
+        <a class="goBackEnd" href="#">« back</a>
+        <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
+      </div>
+    </div>
+    <div class="smsCointainer">
+      <div class='smsPage'>
+        <h2 class="safe sms">stay safe</h2>
+        <div class='centerSMS'>
+          <div class='smsDiv real'>
+            <button class="SMS real">SMS</br> your </br> trusted </br> friends</button>
+          </div>
+        </div>
+        <p class='loginInstructionTwo sms'>DRAKE INSERT HERE SMS INFORMATION</p>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
