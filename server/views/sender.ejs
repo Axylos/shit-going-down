@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Sender</title>
+    <script type="application/javascript">
+      window.onload = () => {
+        const button = document.querySelector('button');
+        button.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          console.log(window.localStorage.getItem('sgdPhone'));
+          //alert(`Your sms contact is: ${window.localStorage.getItem('sgdPhone')}`);
+          const phone = window.localStorage.getItem('sgdPhone');
+          fetch('/sms/send', {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({phone})
+          }).then(resp => {
+            if (!resp.ok) {
+              console.log('something went wrong')
+            } else {
+              return resp.json();
+            }
+          }).then(data => {
+            console.log(data);
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Sender</h1>
+    <button>Send SMS</button>
+  </body>
+</html>

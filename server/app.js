@@ -10,6 +10,8 @@ import { getOauthToken, getClient, getUserContacts, sendMsg, verify } from './au
 import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
+
+import SmsController from './sms_controller.js';
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -19,10 +21,13 @@ const opts = {
 };
 
 const app = express();
+app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(cors(opts));
 app.use(cookieParser());
+
+app.use('/sms', SmsController);
 
 app.post('/message', async (req, res) => {
   try {

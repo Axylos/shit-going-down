@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Select_contacts</title>
+    <script defer type="application/javascript" charset="utf-8">
+      window.onload = () => {
+        const form = document.querySelector('form');
+        form.onsubmit = (ev) => {
+          ev.preventDefault();
+          const data = new FormData(form);
+          const phone = data.get('phone');
+          window.localStorage.setItem('sgdPhone', phone);
+          window.location = "/sms/sender"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Select Contacts</h1>
+    <form action="#">
+      <p><label for="contact-sms">Contact SMS</label></p>
+      <p><input type="tel" required value="" name="phone" id="contact-sms"/></p>
+      <button type="submit">Save Contact</button>
+    </form>
+  </body>
+</html>
