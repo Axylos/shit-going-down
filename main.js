@@ -4,6 +4,8 @@ async function main() {
   const root = document.querySelector('.root');
   const vm = new ViewManager(root);
   let verified;
+  vm.init("unverified");
+  return;
   try {
     const resp = await fetch('https://www.shitgoingdown.com/api/verify', { credentials: 'include' });
     if (resp.ok) {

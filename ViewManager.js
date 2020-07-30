@@ -46,8 +46,7 @@ class ViewManager {
   }
 
   init(verified) {
-    const initial = this.getInitial(verified)
-    this.initial = initial;
+    this.initial = this.getInitial(verified)
     this.current = this.initial;
     this.render(); 
   }
@@ -57,7 +56,6 @@ class ViewManager {
       this.view.unmount();
     }
     this.rootEl.innerHTML = '';
-    
     this.view = this.getView();
     this.rootEl.append(this.view.render());
   }
@@ -78,16 +76,10 @@ class ViewManager {
     switch(this.current) {
       case WELCOME:
         goForward = () => {
-          this.current = INSTRUCTIONS;
+          this.current = LOGIN;
           this.render();
         };
         return new Welcome(goForward);
-      case INSTRUCTIONS:
-          goForward = () => {
-            this.current = LOGIN;
-            this.render();
-          };
-          return new Instructions(goForward);
       case LOGIN:
         goForward = () => {
           this.current = SELECT_CONTACTS;

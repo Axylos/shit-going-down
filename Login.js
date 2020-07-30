@@ -33,13 +33,14 @@ export default class Login {
         <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
       </div>  
      <div class="loginPage">
-       <div class="center">
-         <button class="twitterLogin" onclick="location.href='https://www.shitgoingdown.com/api/login'"></button>
-         <p class='loginInstruction'>to retrieve your contacts.</p>
-         <p class='loginInstructionTwo'>Your information will not be shared outside this application.
-         & your activties are not stored anywhere in this application. </p>
+    <div class="buttonDiv">
+    <button class="twitterLogin smsLogin" onclick="location.href='#'"></button>
+    <p class='loginInstruction'>save trusty contacts.</p>
+      <button class="twitterLogin" onclick="location.href='https://www.shitgoingdown.com/api/login'"></button>
+      <p class='loginInstruction'>to retrieve your contacts.</p>
+      <p class='loginInstructionTwo'>Your information will not be shared outside this application.
+      & your activties are not stored anywhere in this application. </p>
       </div>
-
     </div>
     `
 

@@ -2,6 +2,7 @@
 font-family: ;
 font-family: 'Noto Serif', serif;
 font-family: 'Roboto', sans-serif;
+font-family: 'Lalezar', cursive;
 */
 
 body {
@@ -10,6 +11,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .loading-screen {
@@ -40,41 +42,44 @@ body {
 }
 
 .textHome {
-  margin-left: 10%;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+.titlediv {
+  display: flex;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30%;
 }
 
 .shit {
-  font-family: 'Roboto', sans-serif;
-  text-align: left;
-  margin-top: -75%;
-  letter-spacing: 22px;
+  font-family: 'Prompt', sans-serif;
+  letter-spacing: 1.2rem;
   display: inline-block;
-  width: 60px;
-  border: 7px solid #E5979B;
-  box-shadow: 0 0 2px rgba(237, 207, 97, 0.8), inset 0 0 2px rgba(255, 188, 87, 0.19);
-  border-radius: 120px;
-  padding-left: 25%;
-  padding-right: 20%;
-  padding-bottom: 10%;
-  padding-top: 70%;
-  font-size: 59px;
+  font-size: 64px;
   font-weight: 700;
-  color: #E6EAE6;
+  color: #D34740;
+  margin-left: -85px;
 }
 
 .homeInstructionOne {
-  font-family: 'helvetica neue', Lato;
-  font-size: 28px;
+  font-family: 'Roboto';
+  font-size: 24px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-top: 0;
-  color: #EDCF61;
+  color: #E3E3E3;
   line-height: 2rem;
-  font-weight: 300;
-  margin-left: 10%;
-  margin-top: 30%;
+  font-weight: 200;
+  margin-top: 25%;
+  margin-left: 10px;
+  /* padding-right: 5px; */
   z-index: 1;
   width: 280px;
+  line-height: 1.4;
 }
 
 .InstructionPage {
@@ -246,56 +251,122 @@ span.before {
   color: #E3E3E3;
 }
 
+.nav {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 15px;
+}
+
 .upButtons {
-  width: 100%;
-  background-color: #D34740;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  display: inline-block;
+  background-color: transparent;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+ 
 }
 
 .logo {
-  color: #343438;
+  color: #D34740;
+  font-family: 'Prompt', sans-serif;
   margin-top: 0;
   margin-left: 0;
-  padding-left: 30px;
-  letter-spacing: 2px;
-  font-size: 11px;
+  letter-spacing: 1px;
+  font-size: 10px;
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .logo:hover {
-  color: #FF9376;
-  letter-spacing: 3px;
+  color: #E3E3E3;
+}
+
+
+.goToNext {
+  color: #989898;
+  letter-spacing: 2px;
+  font-size: 11px;
+  display: inline-block;
+  margin-left: 35px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid #E3E3E3;
+  border-radius: 50px;
+  padding: 4px 8px;
+}
+
+.goBack {
+  color: #989898;
+  letter-spacing: 2px;
+  font-size: 11px;
+  display: inline-block;
+  margin-right: 35px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid #E3E3E3;
+  border-radius: 50px;
+  padding: 4px 8px;
+}
+
+.goBackEnd {
+  color: #989898;
+  letter-spacing: 2px;
+  font-size: 12px;
+  display: inline-block;
+  margin-right: 35px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid #E3E3E3;
+  border-radius: 50px;
+  padding: 4px 8px;
+}
+
+.goToNext:hover {
+  color: #343438;
+  border:none;
+}
+
+.goBack:hover {
+  color: #343438;
+  border: none;
+}
+
+.goBackEnd:hover {
+  color: #343438;
+  border: none;
 }
 
 .loginPage {
   margin: 0 auto;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  display: flex;
 }
 
-.center {
-  display: inline-block;
+.buttonDiv {
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .twitterLogin {
-  font-family: 'helvetica neue', Lato;
-  margin-top: 35%;
+  display: inline-block;
+  font-family: 'Roboto';
+  margin-top: 60px;
   margin-bottom: 5%;
   border:none;
   text-transform: uppercase;
   background-color: #979391;
-  border-bottom: 4px solid #33703C;
-  border-right: 3px solid #33703C;
+  border-bottom: 4px solid #E3E3E3;
+  border-right: 3px solid #E3E3E3;
   color: #343438;
   font-weight: 500;
   letter-spacing: 4px;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.5rem;
-  padding: 12px;
-  width: 320px;
+  padding: 12px 18px;
   border-radius: 5px;
   transition: 0.2s;
 }
@@ -316,12 +387,24 @@ span.before {
   color: #343438;
 }
 
+.twitterLogin.smsLogin {
+  margin-top: 100px;
+  padding: 12px 14px;
+}
+
+.twitterLogin.smsLogin:after {
+  content: 'enter trusty friends'
+}
+
+.twitterLogin.smsLogin:hover:after {
+  content: 'enter trusty friends»'
+}
+
 .loginInstruction {
-  font-family: 'helvetica neue', Lato;
-  font-size: 16px;
+  font-family: 'Roboto';
+  font-size: 12px;
   letter-spacing: 2px;
   text-align: center;
-  /* margin-top: -2%; */
   color: #E3E3E3;
   line-height: 1.2rem;
 }
@@ -331,11 +414,12 @@ span.before {
   font-size: 16px;
   width: 320px;
   letter-spacing: 3px;
-  margin-top: 40%;
+  margin-top: 80px;
   color:  #252423;
   line-height: 0.9rem;
   text-align: center;
   font-weight: 700;
+  font-family: 'Roboto';
 }
 
 .twitter {
@@ -347,56 +431,6 @@ span.before {
   line-height: 1.4rem;
   width: 210px; 
   text-decoration: none;
-}
-
-.navLinks {
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  padding-top:0;
-  background-color: #E5979B;
-}
-
-.goToNext {
-  color: #343438;
-  letter-spacing: 2px;
-  font-size: 12px;
-  display: inline-block;
-  margin-left: 30px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.goBack {
-  color: #343438;
-  letter-spacing: 2px;
-  font-size: 12px;
-  display: inline-block;
-  padding-left: 30px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.goBackEnd {
-  color: #343438;
-  letter-spacing: 2px;
-  font-size: 12px;
-  display: inline-block;
-  margin-left: 30px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.goToNext:hover {
-  color: #D34740;
-}
-
-.goBack:hover {
-  color: #D34740;
-}
-
-.goBackEnd:hover {
-  color: #D34740;
 }
 
 .generalpage {
@@ -419,7 +453,7 @@ span.before {
 
 .step {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 2%;
   display: inline-block;
@@ -430,12 +464,16 @@ span.before {
   line-height: 1.8rem;
   margin-left: 1%;
   letter-spacing: 2px;
-  color: #4F66D1;
-  margin-top: 10%;
+  color: #E3E3E3;
+  margin-top: 100px;
+}
+
+.divMsg {
+  width: 400px
 }
 
 input {
-  margin-top: 5%;
+  margin-top: 15%;
   width: 280px;
   border: none;
   color: #E3E3E3;
@@ -446,10 +484,27 @@ input {
   text-align: center;
   font-weight: 200;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 14px;
   padding: 14px;
   font-weight: 400;
   outline:none;
+}
+
+input.smsName {
+  width: 120px;
+  border:none;
+  border-radius: 3px;
+  border-bottom: 1px solid #EDCF61;
+  margin-right: 15px;
+}
+
+input.smsTel {
+  width: 160px;
+  border:none;
+  border-radius: 3px;
+  border-bottom: 1px solid #EDCF61;
+  margin-left: 15px;
+ 
 }
 
 .selectFundBtn {
@@ -579,25 +634,26 @@ span.place {
 .goToNextTwo {
     display: inline-block;
     font-family: 'Roboto', sans-serif;
-    margin-top: 10%;
+    margin-top: 25%;
     margin-bottom: 2%;
-    border: none;
     background-color: #343438;
     color: #B1D2F1;
     font-weight: 500;
     letter-spacing: 4px;
-    font-size: 14px;
-    line-height: 1.5rem;
-    padding: 10px;
+    font-size: 12px;
+    padding: 14px 14px;
     width: 160px;
     border: 1px solid #4F66D1;
-    transition: 0.4s;
+    border-radius: 20px;
+    /* transition: 0.4s; */
+    
 }
 
 .goToNextTwo:hover {
-  border: 1px solid #B1D2F1;
+  border: none;
   cursor: pointer;
-  color: #E3E3E3;
+  color: #343438;
+  /* transform: scaleY(1.12); */
 }
 
 .finalPage {
