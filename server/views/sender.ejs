@@ -5,28 +5,40 @@
     <meta name="viewport" content="width=device-width" />
     <title>yo</title>
     <script type="application/javascript">
+      function sendMsg(phone, coords, err) {
+        fetch('/sms/send', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({phone, coords, err})
+        }).then(resp => {
+          if (!resp.ok) {
+            console.log('something went wrong: ', resp)
+          } else {
+            return resp.json();
+          }
+        }).then(data => {
+          console.log(data);
+        });
+      }
       window.onload = () => {
         const button = document.querySelector('button');
         button.addEventListener('click', (ev) => {
           ev.preventDefault();
           console.log(window.localStorage.getItem('sgdPhone'));
-          //alert(`Your sms contact is: ${window.localStorage.getItem('sgdPhone')}`);
           const phone = window.localStorage.getItem('sgdPhone');
-          fetch('/sms/send', {
-            method: "POST",
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({phone})
-          }).then(resp => {
-            if (!resp.ok) {
-              console.log('something went wrong')
-            } else {
-              return resp.json();
-            }
-          }).then(data => {
-            console.log(data);
-          });
+          if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(result => {
+              const { latitude, longitude } = result.coords;
+              sendMsg(phone, { latitude, longitude });
+            }, err => {
+              console.log(err);
+              sendMsg(phone, null, err.message);
+            }, {maximumAge:60000, timeout:5000})
+          } else {
+            sendMsg(phone, null);
+          }
         });
       }
     </script>
