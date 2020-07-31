@@ -22,6 +22,10 @@ a {
   text-decoration: none;
 }
 
+.fb {
+  background-color: transparent !important;
+}
+
 .loading-screen {
   position: relative;
   padding-left: 0;

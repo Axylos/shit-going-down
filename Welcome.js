@@ -35,9 +35,7 @@ export default class Welcome {
       this.verifiedFailed = false;
       this.el.prepend(node);
     }
-
   }
-
 
   // setTimeout() {
   //     window.setTimeout(() => {
