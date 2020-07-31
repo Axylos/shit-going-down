@@ -63,12 +63,12 @@ a {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .mainTitle {
-  margin-top: 18%;
-  margin-left: -35%;
+  margin-top: 20%;
+  margin-left: -38%;
   text-align: left;
   padding-top: 40px;
   padding-left:40px;
@@ -81,7 +81,7 @@ a {
   font-size: 52px;
   color: white;
   padding: 5px;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 .shit.down {
@@ -408,11 +408,12 @@ a {
 
 .loginInstructionTwo.btn {
   width: 180px;
-  font-size: 10px;
-  font-size: 500;
+  font-size: 11px;
+  font-weight: 500;
   margin-top: 15%;
   margin-left: auto;
   margin-right: auto;
+  color: black;
 }
 
 .generalpage {
@@ -677,6 +678,8 @@ span.place {
   text-align: center;
 }
 
+
+
 .safeDiv {
   margin-left: 10px;
   margin-top: 70px;
@@ -701,26 +704,42 @@ span.place {
 @-webkit-keyframes colorchange {
   0% {
     -webkit-text-stroke: 1px black;
+    color: white;
   }
   20% {
-    -webkit-text-stroke: 1px #B9FB4F;
+    /* -webkit-text-stroke: 1px #B9FB4F; */
+    color: black;
   }
   50% {  
     -webkit-text-stroke: 1px black;
+    color: white;
   }
   80% {
     -webkit-text-stroke: 1px #B9FB4F;
+    color: black;
   }
   100% {
     -webkit-text-stroke: 1px black;
+    color: white;
   }
 }
 
 .buttons {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
   text-align: center;
+}
+
+.white {
+  background-color: white;
+  height: 580px;
+  width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  margin-top: 5%;
+  box-shadow: 12x 15x rgba(38, 38, 38, 0.488);
+  /* margin-left: 20%; */
 }
 
 .btnSection {
@@ -733,28 +752,35 @@ span.place {
   font-family: 'Roboto';
   border: 3px solid #fa2a1f;
   text-transform: uppercase;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   font-weight: 700;
   letter-spacing: 4px;
   font-size: 16px;
   line-height: 1.1rem;
-  padding: 70px 8px;
-  border-radius: 10px;
+  padding: 80px 8px;
+  border-radius: 15px;
   transition: 0.2s; 
   margin-left: 5px;
   margin-right: 5px;
+  margin-top: 25%;
   width: 160px;
+  height: 210px
 }
 
 .text:hover {
-  background-color: black;
+  background-color: white;
   color:#fa2a1f;
   font-weight: 300;
 }
 
 .text.sms {
   margin-top:-12%
+}
+
+.click {
+  font-size: 10px;
+  letter-spacing: 1px;
 }
 
 .storedDataInfo {
@@ -868,7 +894,7 @@ span.place {
   left: 0;
   bottom: 2%;
   right: 0;
-  background-color: #979391c1;
+  background-color: rgba(0, 0, 0, 0.9);
   width: 350px;
   height: 500px;
   border: 2px solid #fa2a1f;
@@ -876,7 +902,7 @@ span.place {
 }
 
 .oh {
-  color: #343438;
+  color: #B9FB4F;
   font-size: 32px;
   margin-bottom: -4%;
   font-family: 'Roboto', sans-serif;
@@ -928,7 +954,7 @@ span.place {
 }
 
 .msgContent {
-  color: white;;
+  color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   margin-left: 4%;
@@ -950,24 +976,24 @@ span.place {
   margin-top: 5%;
   border: none;
   margin-right: 5%;
-  background-color: #B4B2B0;
-  color: black;
+  background-color: transparent;
+  color: white;
   font-weight: 500;
   letter-spacing: 4px;
   font-size: 10px;
   line-height: 1.5rem;
   padding: 10px;
   width: 160px;
-  border:3px solid #fa2a1f;
+  border: 2px solid #fa2a1f;
   transition: 0.2s;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .alertBtn:hover {
-  background-color: #B4B2B0;
-  border: 1px solid #B4B2B0;
+  border: 1px solid white;
   cursor: pointer;
-  color: #B4B2B0;
+  color: white;
 }
 
 .alertBtnClose {
@@ -976,29 +1002,29 @@ span.place {
   margin-top: 5%;
   border: none;
   margin-right: 5%;
-  background-color: #B4B2B0;
-  color: #252423;
+  background-color: transparent;
+  color: white;
   font-weight: 500;
   letter-spacing: 4px;
   font-size: 10px;
   line-height: 1.5rem;
   padding: 10px;
   width: 160px;
-  border: 3px solid #fa2a1f;
+  border: 2px solid #fa2a1f;
   transition: 0.2s;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .alertBtnClose:hover {
-  background-color: #B4B2B0;
-  border: 1px solid #B4B2B0;
+  border: 1px solid whitesmoke;
   cursor: pointer;
-  color: #B4B2B0;
+  color: white;
 }
 
 .staySafe {
   font-family: 'Roboto', sans-serif;
-  color: #fa2a1f;
+  color: black;
   font-weight: 300;
   text-transform: uppercase;
   padding-bottom: 0;

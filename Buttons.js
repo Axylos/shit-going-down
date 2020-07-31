@@ -58,21 +58,26 @@ export default class Buttons {
         <a class="navBtn End" href="#">◄◄</a>
         <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
         <a class="navBtn nextEnd" href="#"> ► </a>
-        </div>
+      </div>
     </div>
   <div class='finalPage'>
+  <div class="white">
   <div class="safeDiv">
     <h1 class="safe">stay safe</h1>
   </div>
+
+
+
   <div class='buttons'>
+ 
   <div class="btnSection">
   <div class='centerBail'>
        <div class='divBail'>
          <a class="telBail" href="tel:+1${this.fund.number}">
-         <button class="text callBail">Call Bail Fund</button>
+         <button class="text callBail"> <span class="click">Click to</span> Call Bail Fund</button>
          </a>
        </div>
-       <p class='loginInstructionTwo btn'>The bail fund info:
+       <p class='loginInstructionTwo btn'><span class="help name">The bail fund info:</span>
           Name: ${this.fund.name}, </br>
            Tel: <a class="loginInstructionTwo btn" href="tel:+1${this.fund.number}">+1${this.fund.number}</a></br>
            ${this.fund.city}, ${this.fund.state}</p>
@@ -80,13 +85,14 @@ export default class Buttons {
 
       <div class='centerDM'>
         <div class='divDM'>
-          <button class="text DM">DM trusted friends</button>
+          <button class="text DM"><span class="click">Click to</span> DM trusted friends</button>
         </div>
-          <p class="loginInstructionTwo btn"> your friends info:</br>
+          <p class="loginInstructionTwo btn"> <span class="help name">your friends info:</span></br>
            ${this.getContactList()}
           </p>
        </div>
        </div>
+    </div>
     </div>
    </div>
    </div>
