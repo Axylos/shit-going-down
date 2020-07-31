@@ -53,7 +53,6 @@ export default class Buttons {
   render() {
     this.el.innerHTML = `
     <div class="generalpage">
-
     <div class="nav">
       <div class="upButtons">
         <a class="navBtn End" href="#">◄◄</a>
@@ -61,7 +60,6 @@ export default class Buttons {
         <a class="navBtn nextEnd" href="#"> ► </a>
         </div>
     </div>
-
   <div class='finalPage'>
   <div class="safeDiv">
     <h1 class="safe">stay safe</h1>
@@ -88,12 +86,9 @@ export default class Buttons {
            ${this.getContactList()}
           </p>
        </div>
-
        </div>
-
     </div>
    </div>
-   
    </div>
      
     `;
@@ -105,7 +100,6 @@ export default class Buttons {
 
     return this.el;
   }
-
 
   unmount() {
     this.el.querySelector('.text.callBail').removeEventListener('click', this.handleCall);

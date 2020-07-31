@@ -84,6 +84,8 @@ export default class SelectFund {
         ${this.selectedFund !== null ? this.getFundDisplay() : ''}
         <div class="list">
           <div class="suggestions"></div>
+          <button class="goToNextTwo"> SKIP </button> 
+
         </div>
       </div>
     </div>
@@ -92,6 +94,7 @@ export default class SelectFund {
     const search = this.el.querySelector('.search');
     const suggestionsEl = this.el.querySelector('.suggestions');
 
+    this.el.querySelector('.goToNextTwo').addEventListener('click', this.goToNext);
     this.el.querySelector('.navBtn.back').addEventListener('click', this.goBack);
     this.el.querySelector('.navBtn.next').addEventListener('click', this.goToNext);
 

@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="http://0.0.0.0:9000/style.css">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Shit Going Down</title>
-    <script defer type="application/javascript" charset="utf-8">
-      window.onload = () => {
-        const form = document.querySelector('form');
-        form.onsubmit = (ev) => {
-          ev.preventDefault();
-          const data = new FormData(form);
-          const phone = data.get('phone');
-          window.localStorage.setItem('sgdPhone', phone);
-          window.location = "/sms/sender"
-        }
+
+<head>
+  <link rel="stylesheet" href="http://0.0.0.0:9000/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Shit Going Down</title>
+  <script defer type="application/javascript" charset="utf-8">
+    window.onload = () => {
+      const form = document.querySelector('form');
+      form.onsubmit = (ev) => {
+        ev.preventDefault();
+        const data = new FormData(form);
+        const phone = data.get('phone');
+        window.localStorage.setItem('sgdPhone', phone);
+        window.location = "/sms/sender"
       }
-    </script>
-  </head>
-  <body>
-    <div class="generalpage">
-      <div class="nav">
+    }
+  </script>
+</head>
+
+<body>
+  <div class="generalpage">
+    <div class="nav">
       <div class="upButtons">
-        <a class="goBack" href="#">« back </a>
+        <a class="navBtn back" href="#">◄◄ </a>
         <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
-        <a class="goToNext" href="#">next »</a>
+        <a class="navBtn next" href="#"> ► </a>
       </div>
     </div>
 
-      <div class='thirdPage'>
+    <div class='thirdPage'>
+
       <form class="search-form" action="#" autocomplete="off">
-      <h2 class="step">Save friends you would like to SMS</h2>
-      <div class="divMsg">
-      <input class="smsName" name="selectedContact" type="text" required class="contactSearch" placeholder="type a name">
-      <input class="smsTel" type="tel" required value="" name="phone" id="contact-sms" placeholder="Type a phone numer"/>
-      <button class="goToNextTwo" type="submit">Save Contact</button>
+        <h2 class="step">Save friends you would like to SMS</h2>
+        <div class="divMsg">
+          <div class="names">
+            <label for="selectedContact">NAME:</label>
+            <input class="smsName" name="selectedContact" type="text" required class="contactSearch"></br>
+            <label for="selectedContact">Number:</label>
+            <input class="smsTel" type="number" required value="" name="phone" id="contact-sms" />
+            <p class='loginInstructionTwo Tel'>only numbers(without&mdash;)</p>
+          </div>
+        </div>
+        <button class="goToNextTwo sms" type="submit">SAVE</button>
+      </form>
     </div>
-    </form>
-    </div>
-  </body>
+
+  </div>
+</body>
+
 </html>

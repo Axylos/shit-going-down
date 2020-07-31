@@ -78,7 +78,6 @@ a {
   color: white;
   padding: 5px;
   padding-top: 10px;
- 
 }
 
 .shit.down {
@@ -112,7 +111,6 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: 500px;
-
 }
 
 .loginDiv {
@@ -201,6 +199,12 @@ a {
   margin-top: 3%;
 }
 
+.loginInstructionTwo.Tel {
+  font-weight: 400;
+  width: 220px;
+  text-align: right;
+}
+
 .loginInstructionTwo.add {
   margin-top: 25%;
   color: white;
@@ -222,7 +226,6 @@ a {
   border-bottom: 1px solid #fa2a1f;
   border-radius: 3px;
 }
-
 
 .close-modal {
   margin: auto;
@@ -320,73 +323,6 @@ a {
   margin-top: 10%;
 } */
 
-/* span.before {
-  font-family: 'Roboto', sans-serif;
-  color: #4F66D1;
-  font-weight: 500;
-  font-size: 48px;
-  width: 340px;
-  padding-bottom: 0;
-  margin-bottom: -4%;
-} */
-/* 
-.underline {
-  border-bottom: 1px solid #D34740;
-  margin-bottom: 2px;
-  padding-bottom: 1px;
-}
-
-.homeInstructionThree {
-  margin: auto;
-  font-size: 12px;
-  width: 380px;
-  letter-spacing: 3px;
-  margin-top: 8%;
-  color: #FDED7A;
-  line-height: 0.9rem;
-  text-align: center;
-  font-weight: 300;
-}
-
-.icon {
-  padding: 4px;
-  margin-left: 2px;
-} */
-
-/* .download {
-  display: inline-block;
-  font-family: 'Roboto', sans-serif;
-  margin-top: 10%;
-  margin-bottom: 2%;
-  border: none;
-  background-color: #343438;
-  color: #B1D2F1;
-  font-weight: 500;
-  letter-spacing: 4px;
-  font-size: 14px;
-  line-height: 1.5rem;
-  padding: 10px;
-  width: 160px;
-  border-bottom: 3px solid #4F66D1;
-  border-right: 2px solid #4F66D1;
-  transition: 0.4s;
-} */
-
-/* .download:after {
-  content: 'I DID IT!';
-}
-
-.download:hover:after{
-  content: 'STAY SAFE ♡';
-  font-size: 12px;
-}
-
-.download:hover {
-  border: 3px solid #B1D2F1;
-  cursor: pointer;
-  color: #E3E3E3;
-} */
-
 .nav {
   display: flex;
   justify-content: space-around;
@@ -400,7 +336,6 @@ a {
   padding-top: 20px;
   margin-left: auto;
   margin-right: auto;
- 
 }
 
 .logo {
@@ -499,18 +434,31 @@ a {
   margin-bottom: 2%;
   display: inline-block;
   margin-left: 10%;
-  font-size: 28px;
+  font-size: 24px;
   text-align: left;
   width: 300px;
   line-height: 1.8rem;
   margin-left: 1%;
   letter-spacing: 2px;
-  color: #E3E3E3;
+  color: white;
   margin-top: 100px;
+  padding-left:20px;
 }
 
 .divMsg {
-  width: 400px
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  text-align: center;
+}
+
+.names {
+  max-width: 400px;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 input {
@@ -530,6 +478,35 @@ input {
   width: 260px;
   margin-top: 10%;
   outline: none;
+}
+
+label {
+  font-family: Gordita-Bold;
+  color: white;
+  padding-right: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  padding-bottom: 0;
+}
+
+input.smsName {
+  margin-top: 15%;
+  border: 2px solid white;
+  width: 140px;
+  letter-spacing: 1px;
+  line-height: 1rem;
+  padding: 6px 4px;
+  margin-left:10px;
+}
+
+input.smsTel {
+  margin-top: 15%;
+  border: 2px solid white;
+  width: 130px;
+  letter-spacing: 1px;
+  line-height: 1rem;
+  padding: 6px 4px;
 }
 
 .selectFundBtn {
@@ -561,7 +538,7 @@ input {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: #E3E3E3;
+  color: white;
   font-size: 12px;
   line-height: 1.2rem;
   padding-left: 6%;
@@ -576,7 +553,7 @@ input {
 .contactSuggestions {
   margin-left: 2%;
   margin-bottom: 10%;
-  color: #E3E3E3;
+  color: white;
   font-size: 14px;
   line-height: 1.2rem;
   padding-left: 1%;
@@ -682,7 +659,13 @@ span.place {
   background-color: black;
 }
 
+.goToNextTwo.sms {
+  margin-top: 15%;
+  padding: 10px 10px;
+}
+
 .finalPage {
+  max-width: 550px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -731,7 +714,6 @@ span.place {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
-  /* width: 400px; */
   text-align: center;
 }
 
@@ -765,6 +747,9 @@ span.place {
   font-weight: 300;
 }
 
+.text.sms {
+  margin-top:-12%
+}
 
 .storedDataInfo {
   font-family: 'Roboto', sans-serif;
@@ -801,7 +786,7 @@ span.place {
 .smsCointainer{
   display: flex;
  text-align: center;
- margin-top: 20px;
+ margin-top: 50px;
   
 }
 
@@ -811,79 +796,50 @@ span.place {
   margin-right: auto;
 }
 
-.smsDiv.real {
-  border: 1px solid #D34740;
-  box-shadow: 1px 1px #d34740b7;
-  border-radius: 100%;
-  width: 240px;
-  height: 260px;
-  margin-left: auto;
-  margin-right: auto;
-  }
-
-  .smsDiv.real:hover{
-    background-color: rgb(33, 31, 31);
-  }
-
-  .centerSMS {
-    margin-top: -14%;
-  }
-
-.SMS.real {
-  transform: rotate(-1.3deg);
-  height: 260px;
-  width: 220px;
-  border: 1px solid #D34740;
-  font-weight: 400;
-  line-height: 2;
-  font-size: 20px;
-  margin-right: auto;
-  margin-top: 35%;
-  display: inline-block;
-  padding:0;
-  margin-top:-5px;
-  transition: 0.25;
-  border-radius: 50%;
-}
-
-.SMS.real:hover {
-  box-shadow: 2px 2px #d3474072;
-  color: #bf7a76;
-}
-
-.SMS:hover {
-  cursor: pointer;
-  box-shadow: 2px 2px #611414af;
-  background-color: #343438;
-  color: #D34740;
-  font-weight: 300;
-}
-
-.msg {
-  font-family: 'Roboto', sans-serif;
-  color: white;
-  font-size: 14px;
-  width: 200px;
-  line-height: 1.2rem;
-}
-
-.loginInstructionTwo.sms {
+.content {
   width: 250px;
-  font-size: 12px;
-  font-size: 500;
-  margin-top: 15%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.safe.sms {
-  font-size: 52px;
-  width: 400px;
-  margin-top: 20%;
-  opacity: 0.8;
-  text-align: left;
-  margin-left: 20px;
-  
+.loginInstructionTwo.title {
+  margin-top: 50px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  color: #656565;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.loginInstructionTwo.help {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 4px;
+  padding-left: 0;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin: auto;
+  color: black;
+  line-height: 0.9rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.help.name {
+  border: 2px solid #B9FB4F;
+  border-radius: 20px;
+  transform: rotate(-10deg);
+  padding:1px;
+  background-color: transparent;
+}
+
+.map {
+  text-decoration: none;
+  border-bottom: 1px solid #fa2a1f;
+  padding-left: 5px;
+  color: black;
+}
+
+.map:hover {
+  color: #fa2a1f;
 }
 
 .sent {
@@ -943,7 +899,7 @@ span.place {
 
 .contact-listAlert {
   font-family: 'Roboto', sans-serif;
-  color: #E3E3E3;
+  color: white;
   width: 160px;
   line-height: 1.2rem;
   font-weight: 400;
@@ -953,8 +909,8 @@ span.place {
 }
 
 .contact-reminder {
-  color:#33703C;
-  background-color: #E3E3E3;
+  color:#B9FB4F;
+  background-color: white;
   font-size: 11px;
   margin-top: 2%;
   padding: 5px;
@@ -963,11 +919,10 @@ span.place {
   text-align: center;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
-
 }
 
 .msgContent {
-  color: #E3E3E3;;
+  color: white;;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   margin-left: 4%;
@@ -990,14 +945,14 @@ span.place {
   border: none;
   margin-right: 5%;
   background-color: #B4B2B0;
-  color: #252423;
+  color: black;
   font-weight: 500;
   letter-spacing: 4px;
   font-size: 10px;
   line-height: 1.5rem;
   padding: 10px;
   width: 160px;
-  border:1px solid #D34740;
+  border:3px solid #fa2a1f;
   transition: 0.2s;
   font-weight: 700;
 }
@@ -1023,7 +978,7 @@ span.place {
   line-height: 1.5rem;
   padding: 10px;
   width: 160px;
-  border: 1px solid #D34740;
+  border: 3px solid #fa2a1f;
   transition: 0.2s;
   font-weight: 700;
 }
@@ -1037,7 +992,7 @@ span.place {
 
 .staySafe {
   font-family: 'Roboto', sans-serif;
-  color: #D34740;
+  color: #fa2a1f;
   font-weight: 300;
   text-transform: uppercase;
   padding-bottom: 0;
@@ -1050,14 +1005,14 @@ span.place {
   padding-right: 2%;
   text-align: center;
   display: inline-block;
-  -webkit-text-stroke: 1px #E5979B;
+  /* -webkit-text-stroke: 1px #E5979B; */
 }
 
 .closing {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  color:  #D34740;
+  color:  #fa2a1f;
   font-size: 22px;
   width: 250px;
   margin-top: 10%;
