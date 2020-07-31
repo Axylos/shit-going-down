@@ -38,10 +38,10 @@ export default class Login {
         </div>
      <div class="loginPage">
     <div class="buttonDiv">
-    <button class="twitterLogin smsLogin" onclick="location.href='#'"></button>
-    <p class='loginInstruction'>save trusty contacts.</p>
+    <button class="twitterLogin smsLogin" onclick="location.href='/sms'"></button>
+    <p class='loginInstruction'>to manuly save and SMS your trusty contacts.</p>
       <button class="twitterLogin" onclick="location.href='https://www.shitgoingdown.com/api/login'"></button>
-      <p class='loginInstruction'>to retrieve your contacts.</p>
+      <p class='loginInstruction'>to retrieve your contacts and Directy Messege.</p>
       <p class='loginInstructionTwo'>Your information will not be shared outside this application.
       & your activties are not stored anywhere in this application. </p>
       </div>
