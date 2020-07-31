@@ -29,9 +29,13 @@ export default class Login {
   render() {
       this.el.innerHTML = `
     <div class="generalpage">
-      <div class="upButtons">
+    <div class="nav">
+    <div class="upButtons">
+        <a class="goBack notgoing" >« back </a>
         <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
-      </div>  
+        <a class="goToNext notgoing">next »</a>
+        </div>  
+        </div>
      <div class="loginPage">
     <div class="buttonDiv">
     <button class="twitterLogin smsLogin" onclick="location.href='#'"></button>

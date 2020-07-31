@@ -80,20 +80,30 @@ export default class Buttons {
      </div>
       <div class='finalPage'>
       <h1 class="safe">stay safe</h1>
+
        <div class='buttons'>
+
         <div class='bailDiv'>
-          <a class="telBail" href="tel:+1${this.fund.number}"><button class="callBail">Call</br> Bail</br> Fund</button></a>
-          <p class='storedDataInfo'>The bail fund info:</p>
-          <p class='storedData'><strong>Name:</strong> ${this.fund.name}, </br>
-           <strong>Tel:</strong> <a class="storedData" href="tel:+1${this.fund.number}">+1${this.fund.number}</a></br>
+        <div class='smsDiv BAIL'>
+          <a class="telBail" href="tel:+1${this.fund.number}">
+          <button class="SMS callBail">Call</br> Bail</br> Fund</button>
+          </a>
+          </div>
+          <p class='loginInstructionTwo btn'>The bail fund info:
+          Name: ${this.fund.name}, </br>
+           Tel: <a class="loginInstructionTwo btn" href="tel:+1${this.fund.number}">+1${this.fund.number}</a></br>
            ${this.fund.city}, ${this.fund.state}</p>
          </div>
+
          <div class='smsDiv'>
+         <div class='smsDiv DM'>
           <button class="SMS">DM trusted friends</button>
-          <p class="contact-listAlert"> <span class="contartsMSG">your contacts info:<span> </br>
+          </div>
+          <p class="loginInstructionTwo btn"> your contacts info:</br>
            ${this.getContactList()}
           </p>
          </div>
+
         </div>
        </div>
       </div>

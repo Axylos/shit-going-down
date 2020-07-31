@@ -73,7 +73,7 @@ class ViewManager {
   getView() {
     let goForward;
     let goBack;
-    switch(this.current) {
+    switch(BUTTONS) {
       case WELCOME:
         goForward = () => {
           this.current = LOGIN;
