@@ -78,6 +78,12 @@ a {
   color: white;
   padding: 5px;
   padding-top: 10px;
+ 
+}
+
+.shit.down {
+  font-size: 52px;
+  letter-spacing: .5em;
 }
 
 .divInsta {

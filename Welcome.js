@@ -132,7 +132,7 @@ export default class Welcome {
                 <p class='homeInstructionOne'> Contact your friends at the push of a button</br> <strong>in case</strong></p>
               </div>
               <div class="mainTitle">
-                <h2 class="shit">SHIT GOING DOWN</h2>
+                <h2 class="shit">SHIT GOING <span class="shit down">DOWN</span></h2>
               </div>
           </div>
         </div>
