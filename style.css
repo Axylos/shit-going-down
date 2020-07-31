@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 .loading-screen {
@@ -325,17 +326,17 @@ span.before {
 
 .goToNext:hover {
   color: #343438;
-  border:none;
+  border:1px solid #343438;
 }
 
 .goBack:hover {
   color: #343438;
-  border: none;
+  border: 1px solid #343438;
 }
 
 .goBackEnd:hover {
   color: #343438;
-  border: none;
+  border: 1px solid #343438;
 }
 
 .loginPage {
@@ -434,7 +435,7 @@ span.before {
 }
 
 .generalpage {
-  width: 100%;
+  width: 100vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -663,7 +664,7 @@ span.place {
 }
 
 .safe {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Prompt', sans-serif;
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
@@ -675,6 +676,7 @@ span.place {
   -webkit-text-stroke: 1px #343438;
 }
 
+
 @-webkit-keyframes colorchange {
   0% {
     -webkit-text-stroke: 1px #343438;
@@ -683,13 +685,13 @@ span.place {
     -webkit-text-stroke: 1px #B1D2F1;
   }
   50% {  
-    -webkit-text-stroke: 1px #4F66D1;
+    -webkit-text-stroke: 1px #D34740;
   }
   80% {
-    -webkit-text-stroke: 1px #33703C;
+    -webkit-text-stroke: 1px #E3E3E3;
   }
   100% {
-    -webkit-text-stroke: 1px #EDCF61;
+    -webkit-text-stroke: 1px #B1D2F1;
   }
 }
 
@@ -770,10 +772,10 @@ margin-right: 4%;
   transform: rotate(-5deg);
   font-size: 16px;
   width: 150px;
-  color: #EDCF61;
+  color: #E3E3E3;
   text-transform: uppercase;
   font-weight: 600;
-  background-color: #48484d;
+  background-color: #3e3e3f;
   padding-left:35px;
   padding-right: 80px;
   text-align: center;
@@ -787,11 +789,72 @@ margin-right: 4%;
   margin-left: 2%;
 }
 
+.generalpage.sms {
+  max-width: 500px;
+  max-height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.smsCointainer{
+  display: flex;
+ text-align: center;
+ margin-top: 20px;
+  
+}
+
+.smsPage {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.smsDiv.real {
+  border: 1px solid #D34740;
+  box-shadow: 1px 1px #d34740b7;
+  border-radius: 100%;
+  width: 240px;
+  height: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .smsDiv.real:hover{
+    background-color: rgb(33, 31, 31);
+  }
+
+  .centerSMS {
+    margin-top: -14%;
+  }
+
+.SMS.real {
+  transform: rotate(-1.3deg);
+  height: 260px;
+  width: 220px;
+  border: 1px solid #D34740;
+  font-weight: 400;
+  line-height: 2;
+  font-size: 20px;
+  margin-right: auto;
+  margin-top: 35%;
+  display: inline-block;
+  padding:0;
+  margin-top:-5px;
+  transition: 0.25;
+  border-radius: 50%;
+}
+
+.SMS.real:hover {
+  box-shadow: 2px 2px #d3474072;
+  color: #bf7a76;
+}
+
 .SMS:hover {
   cursor: pointer;
-  border: 5px solid  #33703C;
+  box-shadow: -2px 2px #988e8eaf;
   background-color: #343438;
   color: #D34740;
+  font-weight: 300;
 }
 
 .msg {
@@ -800,6 +863,22 @@ margin-right: 4%;
   font-size: 14px;
   width: 200px;
   line-height: 1.2rem;
+}
+
+.loginInstructionTwo.sms {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+}
+
+.safe.sms {
+  font-size: 52px;
+  width: 400px;
+  margin-top: 20%;
+  opacity: 0.8;
+  text-align: left;
+  margin-left: 20px;
+  
 }
 
 .sent {
@@ -965,6 +1044,7 @@ margin-right: 4%;
   line-height: 2rem;
   padding-right: 2%;
   text-align: center;
+  display: inline-block;
   -webkit-text-stroke: 1px #E5979B;
 }
 

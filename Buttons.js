@@ -72,12 +72,12 @@ export default class Buttons {
   render() {
     this.el.innerHTML = `
     <div class="generalpage">
-      <div class="upButtons">
-       <a class="logo" href="https://www.shitgoingdown.com">shitgoingdown.com</a>
+    <div class="nav">
+    <div class="upButtons">
+      <a class="goBackEnd" href="#">« back</a>
+        <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
       </div>
-      <div class="navLinks">
-        <a class="goBackEnd" href="#">« back</a>
-      </div>
+     </div>
       <div class='finalPage'>
       <h1 class="safe">stay safe</h1>
        <div class='buttons'>

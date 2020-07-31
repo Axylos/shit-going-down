@@ -52,13 +52,13 @@ export default class SelectContacts {
   render() {
     this.el.innerHTML = `
     <div class="generalpage">
-       <div class="upButtons">
-         <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
-       </div>
-       <div class="navLinks">
-          <a class="goBack" href="#">« back </a>
-          <a class="goToNext" href="#">next »</a>
-        </div>
+      <div class="nav">
+      <div class="upButtons">
+        <a class="goBack" href="#">« back </a>
+        <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
+        <a class="goToNext" href="#">next »</a>
+      </div>
+     </div>
 
        <div class='thirdPage'>
         <form class="search-form" autocomplete="off">
