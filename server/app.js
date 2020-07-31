@@ -26,6 +26,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(cors(opts));
 app.use(cookieParser());
+app.use(express.static('public'))
 
 app.use('/sms', SmsController);
 

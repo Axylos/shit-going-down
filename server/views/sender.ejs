@@ -6,13 +6,18 @@
     <link rel="stylesheet" href="http://0.0.0.0:9000/style.css">
     <title>Shit Going Down</title>
     <script type="application/javascript">
-      function sendMsg(phone, coords, err) {
+      function sendMsg(phone, coords, fbData, err) {
+        document.body.append(`<div>${JSON.stringify(localStorage)}</div>`);
         fetch('/sms/send', {
           method: "POST",
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({phone, coords, err})
+          body: JSON.stringify({
+            phone,
+            coords,
+            fbData,
+            err})
         }).then(resp => {
           if (!resp.ok) {
             console.log('something went wrong: ', resp)
@@ -22,6 +27,7 @@
         }).then(data => {
           console.log(data);
         });
+
       }
       window.onload = () => {
         const button = document.querySelector('button');
@@ -29,16 +35,18 @@
           ev.preventDefault();
           console.log(window.localStorage.getItem('sgdPhone'));
           const phone = window.localStorage.getItem('sgdPhone');
+          const fbId = localStorage.getItem('sgdFbId');
+          const fbName = localStorage.getItem('sgdName');
           if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition(result => {
               const { latitude, longitude } = result.coords;
-              sendMsg(phone, { latitude, longitude });
+              sendMsg(phone, { latitude, longitude }, { fbId, fbName });
             }, err => {
               console.log(err);
-              sendMsg(phone, null, err.message);
+              sendMsg(phone, null, { fbId, fbName }, err.message);
             }, {maximumAge:60000, timeout:5000})
           } else {
-            sendMsg(phone, null);
+            sendMsg(phone, null, { fbId, fbName });
           }
         });
       }
@@ -60,7 +68,11 @@
               <button class="SMS real">SMS</br> your </br> trusted </br> friends</button>
             </div>
           </div>
-          <p class='loginInstructionTwo sms'>DRAKE INSERT HERE SMS INFORMATION</p>
+          <p class='loginInstructionTwo sms'>
+          This message is being sent on behalf of Robert Drake Talley
+          Please notify my friends. You can use this link:
+          to see where I was around when I sent this message: https://maps.google.com/?q=40.719494,-73.9886672
+          </p>
         </div>
       </div>
     </div>
