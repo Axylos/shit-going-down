@@ -4,11 +4,11 @@ const LOGIN = 'login';
 const SELECT_FUND = 'select_fund';
 const BUTTONS = 'buttons';
 const INSTRUCTIONS = 'instructions';
-import Welcome from './Welcome.js';
 import Login from './Login.js';
 import SelectContacts from './SelectContacts.js';
 import SelectFund from './SelectFund.js';
 import Buttons from './Buttons.js';
+import Welcome from './Welcome.js';
 import Instructions from './Instructions.js';
 
 class ViewManager {

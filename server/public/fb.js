@@ -10,6 +10,7 @@ function checkLoginState() {
         console.log(resp);
         localStorage.setItem('sgdName', resp.name);
         localStorage.setItem('sgdFbId', resp.id);
+        window.location = "/sms/select-contacts";
       })
       console.log('you are connected');
     } else {

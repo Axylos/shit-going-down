@@ -5,17 +5,25 @@ const sid = process.env.TWILIO_SID;
 const token = process.env.TWILIO_TOKEN;
 const client = new twilio(sid, token);
 
-export function buildBody(phone, coords, fbName) {
-  const baseMsg = `
+export function buildBody(phone, coords, fbName, region) {
+  const { latitude, longitude } = coords;
+  const url = `https://maps.google.com/?q=${latitude},${longitude}`;
+
+  console.log('the region is: ', region);
+  if (region === "IL") {
+    // shirin add hebrew here
+
+    return "it's hebrew time";
+  } else {
+    const baseMsg = `
 This message is being sent on behalf of ${fbName}
 Please notify my friends.`;
-  if (coords === null) {
-    return baseMsg;
-  } else {
-    const { latitude, longitude } = coords;
-    const url = `https://maps.google.com/?q=${latitude},${longitude}`;
-    return `${baseMsg} You can use this link
+    if (coords === null) {
+      return baseMsg;
+    } else {
+      return `${baseMsg} You can use this link
 to see where I was around when I sent this message: ${url}`;
+    }
   }
 }
 export async function sendMsg(to, body) {

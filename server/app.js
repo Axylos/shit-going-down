@@ -3,6 +3,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import cookieParser from 'cookie-parser'
+import createLocaleMiddleware from 'express-locale';
 import qs from 'querystring';
 import { storeToken, getSecretFromToken, getUser } from './db.js';
 import { getToken } from './token.js';
@@ -26,7 +27,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(cors(opts));
 app.use(cookieParser());
-app.use('/sms', express.static('public'))
+app.use('/sms/static', express.static('public'))
+app.use(createLocaleMiddleware());
 
 app.use('/sms', SmsController);
 
