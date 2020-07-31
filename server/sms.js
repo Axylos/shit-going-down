@@ -5,14 +5,17 @@ const sid = process.env.TWILIO_SID;
 const token = process.env.TWILIO_TOKEN;
 const client = new twilio(sid, token);
 
-export function buildBody(phone, coords) {
+export function buildBody(phone, coords, fbName) {
+  const baseMsg = `
+This message is being sent on behalf of ${fbName}
+Please notify my friends.`;
   if (coords === null) {
-    return "Please try to contact me or notify my friends";
+    return baseMsg;
   } else {
     const { latitude, longitude } = coords;
     const url = `https://maps.google.com/?q=${latitude},${longitude}`;
-    return `Please notify my friends.  You can use this link: 
-    to see where I was around when I sent this message: ${url}`;
+    return `${baseMsg} You can use this link
+to see where I was around when I sent this message: ${url}`;
   }
 }
 export async function sendMsg(to, body) {

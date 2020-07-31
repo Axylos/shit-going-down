@@ -10,8 +10,9 @@ router.post('/send', async (req, res) => {
   if (req.body.err) {
     console.log('client error: ', req.body.err);
   }
-  const { phone, coords } = req.body;
-  const body = buildBody(phone, coords);
+  const { phone, coords, fbData: { fbName, fbId } } = req.body;
+  const body = buildBody(phone, coords, fbName);
+  console.log(body);
   await sendMsg(phone, body);
   res.json({msg: 'ok', phone});
 });
