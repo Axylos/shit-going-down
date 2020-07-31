@@ -17,7 +17,8 @@ export default class Welcome {
   }
 
   setTimeout() {
-  
+    window.setTimeout(() => {
+      document.querySelector('.shit').style['color'] = 'black';
       window.setTimeout(() => {
         this.pageTransition();
         this.contentAnimation();
@@ -25,7 +26,7 @@ export default class Welcome {
           this.goToNext();
         }, 3200)
       }, 1200);
-   
+    }, 1500);
   }
 
   delay(n) {
@@ -127,7 +128,7 @@ export default class Welcome {
       <div class="titlediv ">  
       <p class='homeInstructionOne'> Contact emergency friends</br>at the push of a button
        </br> <strong>in case</strong></p>
-        <h2 class="shit animate-text">SHIT GOING DOWN</h2>
+        <h2 class="shit">SHIT GOING DOWN</h2>
       </div>
         </div>
      </div>

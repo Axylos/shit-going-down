@@ -50,28 +50,10 @@ export default class Buttons {
     }).join('');
   }
 
-  //   getLocation() {
-  //     if(navigator.geolocation) {
-  //       navigator.geolocation.getCurrentPosition(showPosition);
-  //     } else {
-  //       console.log("Geo Location not supported by browser");
-  //     }
-  //   }
-  //   //function that retrieves the position
-  //   function showPosition(position) {
-  //     var location = {
-  //       longitude: position.coords.longitude,
-  //       latitude: position.coords.latitude
-  //     }
-  //     console.log(location)
-  //   }
-  //   //request for location
-  //   this.getLocation();
-  // }
-
   render() {
     this.el.innerHTML = `
     <div class="generalpage">
+
     <div class="nav">
     <div class="upButtons">
       <a class="goBackEnd" href="#">« back</a>
@@ -80,9 +62,7 @@ export default class Buttons {
      </div>
       <div class='finalPage'>
       <h1 class="safe">stay safe</h1>
-
        <div class='buttons'>
-
         <div class='bailDiv'>
         <div class='smsDiv BAIL'>
           <a class="telBail" href="tel:+1${this.fund.number}">
@@ -94,7 +74,6 @@ export default class Buttons {
            Tel: <a class="loginInstructionTwo btn" href="tel:+1${this.fund.number}">+1${this.fund.number}</a></br>
            ${this.fund.city}, ${this.fund.state}</p>
          </div>
-
          <div class='smsDiv'>
          <div class='smsDiv DM'>
           <button class="SMS">DM trusted friends</button>
@@ -103,10 +82,9 @@ export default class Buttons {
            ${this.getContactList()}
           </p>
          </div>
-
         </div>
        </div>
-      </div>
+     
     `;
     this.el.querySelector('.goBackEnd').addEventListener('click', this.goBack)
     //this.el.querySelector('.callBail').addEventListener('click', this.handleCall);

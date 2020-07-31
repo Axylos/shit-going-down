@@ -45,7 +45,6 @@ body {
 .textHome {
   margin-left: auto;
   margin-right: auto;
- 
 }
 
 .titlediv {
@@ -274,9 +273,9 @@ span.before {
   margin-top: 0;
   margin-left: 0;
   letter-spacing: 1px;
-  font-size: 10px;
+  font-size: 11px;
   display: inline-block;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-decoration: none;
 }
 
@@ -287,41 +286,41 @@ span.before {
 
 .goToNext {
   color: #989898;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-size: 11px;
   display: inline-block;
-  margin-left: 35px;
+  margin-left: 20px;
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid #E3E3E3;
   border-radius: 50px;
-  padding: 4px 8px;
+  padding: 4px 6px;
 }
 
 .goBack {
   color: #989898;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-size: 11px;
   display: inline-block;
-  margin-right: 35px;
+  margin-right: 20px;
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid #E3E3E3;
   border-radius: 50px;
-  padding: 4px 8px;
+  padding: 4px 6px;
 }
 
 .goBackEnd {
   color: #989898;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-size: 12px;
   display: inline-block;
-  margin-right: 35px;
+  margin-right: 20px;
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid #E3E3E3;
   border-radius: 50px;
-  padding: 4px 8px;
+  padding: 4px 6px;
 }
 
 .goToNext:hover {
@@ -534,7 +533,8 @@ input.smsTel {
   background-color: #343438;
   color: #E3E3E3;
   border:none;
-  border-bottom: 2px solid #D34740;
+  border-bottom: 1px solid #D34740;
+  border-radius: 5px;
   margin-left: 2%;
   text-align: left;
   font-family: 'Roboto', sans-serif;
@@ -549,8 +549,10 @@ input.smsTel {
 .selectFundBtn:hover {
   cursor: pointer;
   font-weight: 600;
-  background-color:  #E3E3E3;
-  color: #252423;
+  /* background-color:  #E3E3E3; */
+  color: #E3E3E3;
+  border: 1px solid #D34740;
+  border-radius: 5px;
 }
 
 .search-form {
@@ -566,7 +568,7 @@ input.smsTel {
   line-height: 1.2rem;
   padding-left: 6%;
   padding-right: 4%;
-  margin-top: 3%;
+  margin-top: 6%;
 } 
 
 .listResults {
@@ -612,7 +614,8 @@ span.place {
   background-color: #343438;
   color: #E3E3E3;
   border: none;
-  border-bottom: 3px solid #D34740;
+  border-bottom: 1px solid #D34740;
+  border-radius: 5px;
   margin-top: 2%;
   margin-left: 2%;
   text-align: left;
@@ -622,8 +625,9 @@ span.place {
 
 .contact-detail:hover {
   cursor: pointer;
-  background-color: #EDCF61;
-  color: #252423;
+  font-weight: 600;
+  color: #E3E3E3;
+  border: 1px solid #D34740;
 }
 
 .chosen-contacts {
@@ -640,7 +644,7 @@ span.place {
   letter-spacing: 3px;
   margin-top: 20px;
   margin: auto;
-  color: #33703C;
+  color: #343438;
   line-height: 0.9rem;
   text-align: center;
   font-weight: 700;
@@ -680,7 +684,6 @@ span.place {
   border: none;
   cursor: pointer;
   color: #343438;
-  /* transform: scaleY(1.12); */
 }
 
 .finalPage {
@@ -688,7 +691,6 @@ span.place {
   max-height: 700px;
   margin: 0 auto;
   margin-top: 5%;
-
 }
 
 .safe {
@@ -910,9 +912,12 @@ margin-right: auto;
 }
 
 .loginInstructionTwo.sms {
+  width: 250px;
+  font-size: 12px;
+  font-size: 500;
+  margin-top: 15%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15%;
 }
 
 .safe.sms {
@@ -948,7 +953,7 @@ margin-right: auto;
   background-color: #979391c1;
   width: 350px;
   height: 500px;
-  border: 3px solid #33703C;
+  border: 2px solid #D34740;
   border-radius: 5px;
 }
 
@@ -961,7 +966,7 @@ margin-right: auto;
 
 .OnNo {
   font-family: 'Roboto', sans-serif;
-  color: #EDCF61;
+  color: #D34740;
   font-weight: 700;
   text-transform: uppercase;
   padding-bottom: 0;
@@ -1036,16 +1041,16 @@ margin-right: auto;
   line-height: 1.5rem;
   padding: 10px;
   width: 160px;
-  border: 2px solid #EDCF61;
+  border:1px solid #D34740;
   transition: 0.2s;
   font-weight: 700;
 }
 
 .alertBtn:hover {
-  background-color: #252423;
-  border: 1px solid #EDCF61;
+  background-color: #B4B2B0;
+  border: 1px solid #B4B2B0;
   cursor: pointer;
-  color: #EDCF61;
+  color: #B4B2B0;
 }
 
 .alertBtnClose {
@@ -1062,16 +1067,16 @@ margin-right: auto;
   line-height: 1.5rem;
   padding: 10px;
   width: 160px;
-  border: 2px solid #EDCF61;
+  border: 1px solid #D34740;
   transition: 0.2s;
   font-weight: 700;
 }
 
 .alertBtnClose:hover {
-  background-color: #252423;
-  border: 1px solid #EDCF61;
+  background-color: #B4B2B0;
+  border: 1px solid #B4B2B0;
   cursor: pointer;
-  color: #EDCF61;
+  color: #B4B2B0;
 }
 
 .staySafe {
