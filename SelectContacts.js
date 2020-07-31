@@ -53,12 +53,12 @@ export default class SelectContacts {
     this.el.innerHTML = `
     <div class="generalpage">
       <div class="nav">
-      <div class="upButtons">
-        <a class="goBack" href="#">« back </a>
-        <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
-        <a class="goToNext" href="#">next »</a>
+        <div class="upButtons">
+          <a class="navBtn back" href="#">◄◄  </a>
+          <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
+          <a class="navBtn next" href="#"> ► </a>
+        </div>
       </div>
-     </div>
 
        <div class='thirdPage'>
         <form class="search-form" autocomplete="off">
@@ -87,8 +87,8 @@ export default class SelectContacts {
       }
     });
     this.el.querySelector('.goToNextTwo').addEventListener('click', this.goToNext);
-    this.el.querySelector('.goToNext').addEventListener('click', this.goToNext);
-    this.el.querySelector('.goBack').addEventListener('click', this.goBack);
+    this.el.querySelector('.navBtn.next').addEventListener('click', this.goToNext);
+    this.el.querySelector('.navBtn.back').addEventListener('click', this.goBack);
     return this.el;
   }
 

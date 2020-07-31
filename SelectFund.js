@@ -67,11 +67,11 @@ export default class SelectFund {
   render() {
     this.el.innerHTML = `
     <div class="generalpage">
-      <div class="nav">
+     <div class="nav">
       <div class="upButtons">
-        <a class="goBack" href="#">« back </a>
+        <a class="navBtn back" href="#">◄◄  </a>
         <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
-        <a class="goToNext" href="#">next »</a>
+        <a class="navBtn next" href="#"> ► </a>
       </div>
     </div>
 
@@ -92,8 +92,8 @@ export default class SelectFund {
     const search = this.el.querySelector('.search');
     const suggestionsEl = this.el.querySelector('.suggestions');
 
-    this.el.querySelector('.goBack').addEventListener('click', this.goBack);
-    this.el.querySelector('.goToNext').addEventListener('click', this.goToNext);
+    this.el.querySelector('.navBtn.back').addEventListener('click', this.goBack);
+    this.el.querySelector('.navBtn.next').addEventListener('click', this.goToNext);
 
     search.addEventListener("input", () => {
       const value = this.getValue();

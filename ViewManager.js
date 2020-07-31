@@ -37,7 +37,7 @@ class ViewManager {
       return WELCOME;
     } else if (verifiedResponse === "failed") {
       this.verifiedFailure = true;
-      return LOGIN;
+      return WELCOME;
     } else if (this.fund !== null && this.selectedContacts.length > 0) {
       return BUTTONS;
     } else {
@@ -73,26 +73,20 @@ class ViewManager {
   getView() {
     let goForward;
     let goBack;
-    switch(WELCOME) {
+    switch(BUTTONS) {
       case WELCOME:
-        goForward = () => {
-          this.current = LOGIN;
-          this.render();
-        };
-        return new Welcome(goForward);
-      case LOGIN:
         goForward = () => {
           this.current = SELECT_CONTACTS;
           this.render();
-        } 
-        return new Login(goForward, this.verifiedFailure);
+        };
+        return new Welcome (goForward, this.verifiedFailure);
       case SELECT_CONTACTS: 
         goForward = () => {
           this.current = SELECT_FUND;
           this.render();
         }
         goBack = () => {
-          this.current = LOGIN;
+          this.current = WELCOME;
           this.render();
         }
         return new SelectContacts(goForward, this.handleSelectContactIds.bind(this), goBack, this.selectedContacts);

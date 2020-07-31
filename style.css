@@ -118,7 +118,6 @@ a {
 .loginDiv {
   margin-left: auto;
   margin-right: auto;
- 
 }
 
 .buttonDiv {
@@ -189,7 +188,6 @@ a {
 }
 
 .loginInstructionTwo {
-  /* background-color:  #656565; */
   font-size: 10px;
   letter-spacing: 3px;
   margin-top: 80px;
@@ -224,10 +222,6 @@ a {
   border-bottom: 1px solid #fa2a1f;
   border-radius: 3px;
 }
-
-
-
-
 
 
 .close-modal {
@@ -267,16 +261,16 @@ a {
 } */
 
 .chosen-contacts-fund {
-  background-color: #E3E3E3;
+  background-color: white;
   padding: 4px;
   padding-left: 0;
-  font-size: 14px;
+  font-size: 12px;
   width: 250px;
   letter-spacing: 3px;
   margin: auto;
   margin-top: 20px;
-  color: #252423;
-  line-height: 0.9rem;
+  color: black;
+  line-height: 0.8rem;
   text-align: center;
   font-weight: 700;
 }
@@ -410,74 +404,53 @@ a {
 }
 
 .logo {
-  color: #D34740;
-  font-family: 'Prompt', sans-serif;
+  color: #B9FB4F;
+  font-family: 'Lato', sans-serif;
   margin-top: 0;
   margin-left: 0;
   letter-spacing: 1px;
   font-size: 11px;
   display: inline-block;
-  /* text-transform: uppercase; */
   text-decoration: none;
+  font-weight: 300;
 }
 
 .logo:hover {
   color: #E3E3E3;
 }
 
-
-.goToNext {
+.navBtn{
   color: #989898;
   letter-spacing: 1px;
-  font-size: 11px;
+  font-size: 14px;
   display: inline-block;
-  margin-left: 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid #E3E3E3;
-  border-radius: 50px;
-  padding: 4px 6px;
 }
 
-.goBack {
-  color: #989898;
-  letter-spacing: 1px;
-  font-size: 11px;
-  display: inline-block;
-  margin-right: 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid #E3E3E3;
-  border-radius: 50px;
-  padding: 4px 6px;
+.navBtn.next {
+  margin-left: 60px;
 }
 
-.goBackEnd {
-  color: #989898;
-  letter-spacing: 1px;
-  font-size: 12px;
-  display: inline-block;
-  margin-right: 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid #E3E3E3;
-  border-radius: 50px;
-  padding: 4px 6px;
+.navBtn.back {
+  margin-right: 60px;
 }
 
-.goToNext:hover {
-  color: #343438;
-  border:1px solid #343438;
+.navBtn.End {
+  margin-right: 60px;
 }
 
-.goBack:hover {
-  color: #343438;
-  border: 1px solid #343438;
+.navBtn.nextEnd {
+  margin-left: 60px;
+  cursor: none;
+  color: black;
+}
+
+.navBtn:hover {
+  color: black;
+  cursor: pointer;
 }
 
 .goBackEnd:hover {
-  color: #343438;
-  border: 1px solid #343438;
+  color: black;
 }
 
 .goToNext.notgoing{
@@ -489,13 +462,12 @@ a {
 .goBack.notgoing {
   color: #343438;
   border: 1px solid #343438;
-  cursor: none; }
-
-
+  cursor: none; 
+}
 
 .loginInstructionTwo.btn {
-  width: 210px;
-  font-size: 12px;
+  width: 180px;
+  font-size: 10px;
   font-size: 500;
   margin-top: 15%;
   margin-left: auto;
@@ -542,46 +514,28 @@ a {
 }
 
 input {
-  margin-top: 15%;
-  width: 280px;
-  border: none;
-  color: #E3E3E3;
-  border: none;
-  border-bottom: 2px solid #EDCF61;
-  background-color: #343438;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-  font-weight: 200;
-  border-radius: 6px;
-  font-size: 14px;
-  padding: 14px;
-  font-weight: 400;
-  outline:none;
-}
-
-input.smsName {
-  width: 120px;
-  border:none;
-  border-radius: 3px;
-  border-bottom: 1px solid #EDCF61;
-  margin-right: 15px;
-}
-
-input.smsTel {
-  width: 160px;
-  border:none;
-  border-radius: 3px;
-  border-bottom: 1px solid #EDCF61;
-  margin-left: 15px;
- 
+  display: inline-block;
+  font-family: 'Roboto';
+  border: 3px solid white;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 11px;
+  line-height: 1.1rem;
+  padding: 10px 4px;
+  border-radius: 2px;
+  transition: 0.2s;
+  width: 260px;
+  margin-top: 10%;
+  outline: none;
 }
 
 .selectFundBtn {
-  background-color: #343438;
-  color: #E3E3E3;
+  background-color: black;
+  color: white;
   border:none;
-  border-bottom: 1px solid #D34740;
-  border-radius: 5px;
   margin-left: 2%;
   text-align: left;
   font-family: 'Roboto', sans-serif;
@@ -590,16 +544,13 @@ input.smsTel {
   display: inline-block;
   padding-bottom: 4%;
   box-shadow: none;
-
 }
 
 .selectFundBtn:hover {
   cursor: pointer;
   font-weight: 600;
-  /* background-color:  #E3E3E3; */
-  color: #E3E3E3;
-  border: 1px solid #D34740;
-  border-radius: 5px;
+  background-color: #B9FB4F;
+  color: black;
 }
 
 .search-form {
@@ -634,35 +585,31 @@ input.smsTel {
 }
 
 span.phone {
-  color: #D34740;
-  font-weight: 500; 
-  letter-spacing: 1px;
-  /* padding-top: 2%; */
+  border-bottom: 2px solid #fa2a1f;
+  font-weight: 700; 
 }
 
 span.place {
-  line-height: 1.2rem;
+  line-height: 1.1rem;
   margin-right: 1%;
   margin-top: 1%;
   margin-left: 3%;
 }
 
 .hl {
-  background: #EDCF61;
+  background: #B9FB4F;
   color: #252423;
 }
 
 .contact-list {
-  background-color: #343438;
-  color: #E3E3E3;
+  background-color: black;
+  color: white;
 }
 
 .contact-detail {
-  background-color: #343438;
-  color: #E3E3E3;
+  background-color: black;
+  color: white;
   border: none;
-  border-bottom: 1px solid #D34740;
-  border-radius: 5px;
   margin-top: 2%;
   margin-left: 2%;
   text-align: left;
@@ -673,8 +620,8 @@ span.place {
 .contact-detail:hover {
   cursor: pointer;
   font-weight: 600;
-  color: #E3E3E3;
-  border: 1px solid #D34740;
+  background-color: #B9FB4F;
+  color: black;
 }
 
 .chosen-contacts {
@@ -683,22 +630,22 @@ span.place {
 }
 
 .chosen-contactsNames {
-  background-color: #E3E3E3;
+  background-color: white;
   padding: 4px;
   padding-left: 0;
-  font-size: 14px;
+  font-size: 12px;
   width: 250px;
   letter-spacing: 3px;
   margin-top: 20px;
   margin: auto;
-  color: #343438;
-  line-height: 0.9rem;
+  color: black;
+  line-height: 0.8rem;
   text-align: center;
   font-weight: 700;
 }
 
 .remove {
-  background-color: #E3E3E3;
+  background-color: white;
   border: none;
   margin-left: 2%;
   padding-top: -2%;
@@ -714,99 +661,114 @@ span.place {
     font-family: 'Roboto', sans-serif;
     margin-top: 25%;
     margin-bottom: 2%;
-    background-color: #343438;
-    color: #B1D2F1;
+    background-color: rgb(6, 6, 6);
+    color: white;
     font-weight: 500;
     letter-spacing: 4px;
     font-size: 12px;
     padding: 14px 14px;
-    width: 160px;
-    border: 1px solid #4F66D1;
-    border-radius: 20px;
-    /* transition: 0.4s; */
-    
+    width: 150px;
+    border: none;
+    border-right: 1px solid #fa2a1f;
+    border-bottom: 2px solid #fa2a1f;
+    border-radius: 2px;
+    transition: 0.12s;   
 }
 
 .goToNextTwo:hover {
   border: none;
   cursor: pointer;
-  color: #343438;
+  color: black;
+  background-color: black;
 }
 
 .finalPage {
-  max-width: 530px;
-  max-height: 700px;
-  margin: 0 auto;
-  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.safeDiv {
+  margin-left: 10px;
+  margin-top: 70px;
+  text-align: left;
 }
 
 .safe {
   font-family: 'Roboto';
   display: inline-block;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
-  color: #343438;
+  color: black;
   font-weight: 500;
-  font-size: 68px;
+  font-size: 52px;
   line-height: 0.9;
-  width: 230px;
+  letter-spacing: -5px;
   animation:colorchange 60s infinite alternate;
-  -webkit-text-stroke: 1px #343438;
+  -webkit-text-stroke: 1px black;
 }
 
 
 @-webkit-keyframes colorchange {
   0% {
-    -webkit-text-stroke: 1px #343438;
+    -webkit-text-stroke: 1px black;
   }
   20% {
-    -webkit-text-stroke: 1px #B1D2F1;
+    -webkit-text-stroke: 1px #B9FB4F;
   }
   50% {  
-    -webkit-text-stroke: 1px #D34740;
+    -webkit-text-stroke: 1px black;
   }
   80% {
-    -webkit-text-stroke: 1px #E3E3E3;
+    -webkit-text-stroke: 1px #B9FB4F;
   }
   100% {
-    -webkit-text-stroke: 1px #B1D2F1;
+    -webkit-text-stroke: 1px black;
   }
 }
 
 .buttons {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  /* width: 400px; */
+  text-align: center;
+}
+
+.btnSection {
   display: flex;
+  justify-content: space-evenly;
 }
 
-.bailDiv {
-  margin-right: 3%;
-  margin-left: 5%;
+.text {
+  display: inline-block;
+  font-family: 'Roboto';
+  border: 3px solid #fa2a1f;
+  text-transform: uppercase;
+  background-color: white;
+  color: black;
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-size: 16px;
+  line-height: 1.1rem;
+  padding: 70px 8px;
+  border-radius: 10px;
+  transition: 0.2s; 
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 160px;
 }
 
-.smsDiv {
-margin-left: auto;
-margin-right: auto;
-}
-
-.telBail {
-  text-decoration: none;
-}
-
-.SMS.callBail {
-  transform: rotate(5deg);
-}
-
-
-.SMS.callBail:hover {
-  cursor: pointer;
-  box-shadow: 2px 2px #611414af;
-  background-color: #343438;
-  color: #D34740;
+.text:hover {
+  background-color: black;
+  color:#fa2a1f;
   font-weight: 300;
 }
 
+
 .storedDataInfo {
   font-family: 'Roboto', sans-serif;
-  color: #E3E3E3;
+  color: white;
   font-size: 13px;
   width: 200px;
   margin-left: 6%;
@@ -816,7 +778,7 @@ margin-right: auto;
 }
 
 .storedData {
-  color: #E3E3E3;
+  color: white;
   font-size: 11px;
   margin-top: 2%;
   padding: 5px;
@@ -826,28 +788,6 @@ margin-right: auto;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
   text-align: left;
-}
-
-.SMS {
-  font-family: 'Roboto', sans-serif;
-  transform: rotate(-5deg);
-  font-size: 16px;
-  width: 150px;
-  color: #E3E3E3;
-  text-transform: uppercase;
-  font-weight: 400;
-  background-color: #3e3e3f;
-  padding-left:35px;
-  padding-right: 55px;
-  text-align: center;
-  padding-top: 38px;
-  padding-bottom: 38px;
-  letter-spacing: 2px;
-  line-height: 1.5rem;
-  border: 1px solid #D34740;
-  border-radius: 100%; 
-  margin-bottom: 4%;
-  margin-left: 2%;
 }
 
 .generalpage.sms {
@@ -885,37 +825,6 @@ margin-right: auto;
     background-color: rgb(33, 31, 31);
   }
 
-  .smsDiv.DM {
-    width: 155px;
-    height: 165px;
-    transform: rotate(-1deg);
-    border-radius: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #D34740;
-    box-shadow: 1px 1px #d34740b7;
-  }
-
-  .smsDiv.BAIL {
-    width: 155px;
-    height: 165px;
-    transform: rotate(-1deg);
-    border-radius: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #D34740;
-    box-shadow: 1px 1px #d34740b7;
-  }
-
-  .smsDiv.BAIL:hover{
-    background-color: rgb(33, 31, 31);
-  }
-
-  .smsDiv.DM:hover{
-      background-color: rgb(33, 31, 31);
-    }
-  
-
   .centerSMS {
     margin-top: -14%;
   }
@@ -952,7 +861,7 @@ margin-right: auto;
 
 .msg {
   font-family: 'Roboto', sans-serif;
-  color: #E3E3E3;
+  color: white;
   font-size: 14px;
   width: 200px;
   line-height: 1.2rem;
@@ -978,7 +887,7 @@ margin-right: auto;
 }
 
 .sent {
-  color: #EDCF61;
+  color: #B9FB4F;
   padding: 10px;
   width: 300px;
   margin-left: 38%;
@@ -1000,7 +909,7 @@ margin-right: auto;
   background-color: #979391c1;
   width: 350px;
   height: 500px;
-  border: 2px solid #D34740;
+  border: 2px solid #fa2a1f;
   border-radius: 5px;
 }
 
@@ -1013,7 +922,7 @@ margin-right: auto;
 
 .OnNo {
   font-family: 'Roboto', sans-serif;
-  color: #D34740;
+  color: #fa2a1f;
   font-weight: 700;
   text-transform: uppercase;
   padding-bottom: 0;
