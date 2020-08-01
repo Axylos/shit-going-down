@@ -1085,15 +1085,15 @@ span.place {
   left: 0;
   bottom: 2%;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.92);
   width: 350px;
   height: 500px;
-  border: 2px solid #fa2a1f;
+  border: 2px solid #B9FB4F;
   border-radius: 5px;
 }
 
 .oh {
-  color: #B9FB4F;
+  color: white;
   font-size: 32px;
   margin-bottom: -4%;
   font-family: 'Roboto', sans-serif;
