@@ -914,8 +914,6 @@ span.place {
   padding: 80px 8px;
   border-radius: 15px;
   transition: 0.2s; 
-
-
   margin-top: 18%;
   width: 150px;
   height: 200px
@@ -959,7 +957,7 @@ span.place {
 
 .sms-modal {
   visibility: hidden;
-  margin-top: 60%;
+  margin-top: 45%;
   padding: 40px 20px;
   display: inline-block;
   background-color: black;
