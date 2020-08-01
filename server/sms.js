@@ -11,7 +11,15 @@ export function buildBody(phone, coords, fbName, region) {
 
   console.log('the region is: ', region);
   if (region === "IL") {
-    // shirin add hebrew here
+    `
+   ההודעה הזו נשלחת מטעם ${fbName}.
+   הם סימנו אותך כאיש/ת קשר בשעת חירום.
+   נדמה כי הם חווים (או יחוו בקרוב) התנקשויות עם החוק או אם אחרים, וזקוקים לעזרה.
+   בבקשה נסה/י ליצור עימם קשר! מצורפים לינקים לפרופיל הפייסבוק והמיקום האחרון ממנו ההודעה נשלחה.
+
+   ההודעה נשלחה על ידי: 
+   www.shitgoingdown.com
+    `
 
     return "it's hebrew time";
   } else {
@@ -21,7 +29,9 @@ They marked you as an emergency contact.  They may
 have had (or will soon have) a confrontation with
 law enforcement or others in a protest or mass gathering.
 Please try to contact them. Here is their facebook profile
-and last known location.
+and the location from where the message was sent.
+
+the message was sent via www.shitgoingdowm.com
       .`;
     if (coords === null) {
       return baseMsg;
