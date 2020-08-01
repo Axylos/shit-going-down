@@ -149,7 +149,7 @@ export default class Welcome {
               <div class="titlediv "> 
 
                   <div class="divInsta"> 
-                    <p class='homeInstructionOne'> <strong>Contact your friends at the push of a button<br/> in case</strong></p>
+                    <p class='homeInstructionOne'> <strong>Contact your friends at the push of a button in case</strong></p>
                   </div>
 
                   <div class="mainTitle">

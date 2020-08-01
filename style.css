@@ -149,6 +149,7 @@ a {
   margin-right: auto;
   text-align: center;
   margin-top: 30px;
+  width: 450px;
 }
 
 .mainTitle {
@@ -176,11 +177,11 @@ a {
 }
 
 .divInsta {
-  padding: 0;
+  padding-bottom: 0;
   margin-left: 35px;
   text-align: left;
-  margin-top: 20px;
-  width: 500px;
+  margin-top: 15px;
+  padding-left: 20px;
 }
 
 .homeInstructionOne {
@@ -1073,6 +1074,7 @@ span.place {
   border-radius: 20px;
   transform: rotate(-10deg);
   padding:1px;
+  padding-bottom: 5px;
   background-color: transparent;
 }
 
@@ -1104,13 +1106,13 @@ span.place {
 .alert {
   margin: auto;
   position: absolute;
-  margin-top: 20px;
+  top:0;
   left: 0;
   bottom: 2%;
   right: 0;
   background-color: rgba(0, 0, 0, 0.92);
   width: 350px;
-  height: 500px;
+  height: 600px;
   border: 2px solid #B9FB4F;
   border-radius: 5px;
 }
