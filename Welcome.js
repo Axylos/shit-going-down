@@ -122,6 +122,13 @@ export default class Welcome {
   render() {
     this.el.innerHTML = `
     <main data-barba="container" data-barba-namespace="home-section">
+      <div class="mobile-modal alert-second staySafe">
+        <span class="sorry">Sorry!</span> </br>
+        It looks like you are browsing from a desktop.</br>
+        Please log in via a mobile device, </br> and add to home screen before proceeding.
+        </br>
+        <button class="close-modal">Close</button>
+      </div>
     <div class="mobile-modal">
       <h2>A Mobile Modal</h2>
     </div>
@@ -177,6 +184,10 @@ export default class Welcome {
       </div>
     </main>
     `;
+
+    this.el.querySelector('.close-modal').addEventListener('click', (ev) => {
+      this.el.querySelector('.mobile-modal').style.visibility = 'hidden';
+    })
     return this.el;
   }
 
