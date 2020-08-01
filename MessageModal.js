@@ -2,6 +2,7 @@ export default class MessageModal {
   constructor(contacts, onSubmit) {
     this.el = document.createElement('div');
     this.el.classList.add('modal');
+    this.el.classList.add('message-modal');
     this.onSubmit = onSubmit;
     this.contacts = contacts;
   }
