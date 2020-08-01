@@ -8,14 +8,6 @@ font-family: 'Lalezar', cursive;
 }
 */
 
-.modal {
-  visibility: hidden;
-  color: yellow;
-  background: red;
-  height: 70%;
-  border: solid 2px brown;
-}
-
 body {
   background: black;
   font-family: 'Roboto', sans-serif, 'helvetica neue', Lato;
@@ -131,6 +123,7 @@ a {
 }
 
 .buttonDiv {
+  display: flex;
   justify-content: space-around;
   width: 450px;
   margin-left: auto;
@@ -213,10 +206,42 @@ a {
   margin-bottom: 20px;
 }
 
+.upper {
+  text-transform: uppercase;
+  /* color: #fa2a1f; */
+}
+
+.modal {
+  visibility: hidden;
+  color: white;
+  background: black;
+  height: 50%;
+  width: 95%;
+  border-top: solid 2px #B9FB4F;
+  z-index: 1000;
+  margin-top: -15%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background: linear-gradient(rgba(255, 255, 255, 0.824), black);
+}
+
+.loginInstructionTwo.save {
+  margin-top: 5px;
+  /* background-color: black; */
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
 .loginInstructionTwo.Tel {
   font-weight: 400;
-  width: 220px;
+  width: 200px;
   text-align: right;
+  margin-top: 5%;
+
 }
 
 .loginInstructionTwo.add {
@@ -674,9 +699,22 @@ span.place {
   background-color: black;
 }
 
+.goToNextTwo.second {
+  margin-top: 6%;
+  margin-bottom: 5%;
+  width: 150px;
+  background:transparent;
+  color:#fa2a1f;
+}
+
+.goToNextTwo.second:hover {
+  color: transparent;
+}
+
 .goToNextTwo.sms {
   margin-top: 15%;
   padding: 10px 10px;
+  transition: 0s; 
 }
 
 .finalPage {
@@ -783,12 +821,27 @@ span.place {
 }
 
 .text.sms {
-  margin-top:-12%
+  margin-top:-10px;
+  background-color: white;
+  color:black;
+  margin-bottom: 10%;
+  padding-top: 70px;
+  border-radius: 25px;
+}
+
+.text.sms:hover {
+  background-color: black;
+  color:white;
+  font-weight: 700;
 }
 
 .click {
   font-size: 10px;
   letter-spacing: 1px;
+}
+
+.click.sms {
+  padding-bottom: 5px;
 }
 
 .storedDataInfo {
@@ -841,7 +894,7 @@ span.place {
 }
 
 .loginInstructionTwo.title {
-  margin-top: 50px;
+  margin-top: 60px;
   padding-bottom: 10px;
   margin-bottom: 0;
   color: #656565;

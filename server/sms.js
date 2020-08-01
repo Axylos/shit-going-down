@@ -27,7 +27,7 @@ export function buildBody(phone, coords, fbName, fbId, region) {
   } else {
     const baseMsg = `
 This message is being sent on behalf of ${fbName}
-They marked you as an emergency contact.  They may
+They marked you as their emergency contact.  They may
 have had (or will soon have) a confrontation with
 law enforcement or others in a protest or mass gathering.
 Please try to contact them. Here is their facebook profile

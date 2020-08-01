@@ -136,28 +136,29 @@ export default class Welcome {
         </div>
       </div>
 
-      <div class="loginSection">
-          <div class"loginDiv">
-            <div class="buttonDiv">
-  <div class="fb-login-button" 
-    data-max-rows="2" 
-    data-size="large" 
-    data-button-type="login_with"
-    data-auto-logout-link="false" 
-    data-use-continue-as="true" 
-    data-scope="public_profile,email"
-    onlogin="checkLoginState">
-    <button class="btnLogin sms" onclick="checkLoginState()">
-      <span class='loginInstruction'>to manuly save &amp; SMS friends.</span></br>
-    </button>
-  </div>
+              <div class="loginSection">
+              <div class"loginDiv">
+              <div class="buttonDiv">
 
-              <button class="btnLogin sms" onclick="location.href='/sms'">
-                <span class='loginInstruction'>send SMS</span></br>
-              </button>
+
+              <div class="fb-login-button" 
+                data-max-rows="2" 
+                data-size="large" 
+                data-button-type="login_with"
+                data-auto-logout-link="false" 
+                data-use-continue-as="true" 
+                data-scope="public_profile,email"
+                onlogin="checkLoginState">
+                <button class="btnLogin sms" onclick="checkLoginState()">
+                  <span class='loginInstruction'>send SMS</span></br>
+                </button>
+              </div>
+
+             <div>
               <button class="btnLogin twitter" onclick="location.href='https://www.shitgoingdown.com/api/login'">
                 <span class='loginInstruction'>DM contacts</span></br>
               </button>
+            </div>
             </div>
             <div class-"text">
               <p class='loginInstructionTwo'>Your information & activties will not be shared outside this application

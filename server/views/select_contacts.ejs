@@ -16,7 +16,8 @@
         window.localStorage.setItem('sgdPhone', phone);
         const modal = document.querySelector('.modal');
         modal.style.visibility = 'visible';
-
+        const btn = document.querySelector('.goToNextTwo.sms');
+        btn.style.visibility = 'hidden';
         //window.location = "/sms/sender"
       }
     }
@@ -35,12 +36,7 @@
 
     <div class='thirdPage'>
 
-  <div class="modal">
-    <p>Let's be friends</p>
-    <div>
-      <a href="/sms/sender" target="_self">Continue to Send Page</a>
-    </div>
-  </div>
+    
       <form class="search-form" action="#" autocomplete="off">
         <h2 class="step">Save friends you would like to SMS</h2>
         <div class="divMsg">
@@ -56,7 +52,16 @@
             <p class='loginInstructionTwo Tel'>only numbers(without&mdash;)</p>
           </div>
         </div>
+       
         <button class="goToNextTwo sms" type="submit">SAVE</button>
+
+        <div class="modal">
+          <p class='loginInstructionTwo save'><span class="upper">Your contact has been saved!</span></br> </br>It will be available for you on-click in case of a need on the next screen, every time you open the App. 
+            You can close or keep going.</p>
+          <div>
+          <a class="goToNextTwo second" href="/sms/sender" target="_self">CONTINUE</a>
+        </div>
+      </div>
       </form>
     </div>
 
