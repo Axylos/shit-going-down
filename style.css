@@ -8,8 +8,12 @@ font-family: 'Lalezar', cursive;
 }
 */
 
-modal {
-  display: none;
+.modal {
+  visibility: hidden;
+  color: yellow;
+  background: red;
+  height: 70%;
+  border: solid 2px brown;
 }
 
 body {

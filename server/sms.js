@@ -5,13 +5,16 @@ const sid = process.env.TWILIO_SID;
 const token = process.env.TWILIO_TOKEN;
 const client = new twilio(sid, token);
 
-export function buildBody(phone, coords, fbName, region) {
+export function buildBody(phone, coords, fbName, fbId, region) {
   const { latitude, longitude } = coords;
   const url = `https://maps.google.com/?q=${latitude},${longitude}`;
+  const fbUrl = `https://facebook.com/profile?id=${fbId}`;
 
   console.log('the region is: ', region);
+  const ending = 'the message was sent via www.shitgoingdowm.com';
+
   if (region === "IL") {
-    `
+    return `
    ההודעה הזו נשלחת מטעם ${fbName}.
    הם סימנו אותך כאיש/ת קשר בשעת חירום.
    נדמה כי הם חווים (או יחוו בקרוב) התנקשויות עם החוק או עם אחרים, וזקוקים לעזרה.
@@ -21,7 +24,6 @@ export function buildBody(phone, coords, fbName, region) {
    www.shitgoingdown.com
     `
 
-    return "it's hebrew time";
   } else {
     const baseMsg = `
 This message is being sent on behalf of ${fbName}
@@ -29,15 +31,17 @@ They marked you as an emergency contact.  They may
 have had (or will soon have) a confrontation with
 law enforcement or others in a protest or mass gathering.
 Please try to contact them. Here is their facebook profile
-and the location from where the message was sent.
-
-the message was sent via www.shitgoingdowm.com
-      .`;
+${fbUrl}.
+`;
     if (coords === null) {
-      return baseMsg;
+      return `${baseMsg}
+      ${ending}`;
     } else {
-      return `${baseMsg} You can use this link
-to see where I was around when I sent this message: ${url}`;
+      return `${baseMsg} 
+Here is their last known location:
+${url}
+
+${ending}`;
     }
   }
 }

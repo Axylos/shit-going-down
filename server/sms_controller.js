@@ -12,7 +12,7 @@ router.post('/send', async (req, res) => {
   }
   const { phone, coords, fbData: { fbName, fbId } } = req.body;
   const { region } = req.locale;
-  const body = buildBody(phone, coords, fbName, region);
+  const body = buildBody(phone, coords, fbName, fbId, region);
   console.log(body);
   await sendMsg(phone, body);
   res.json({msg: 'ok', phone});

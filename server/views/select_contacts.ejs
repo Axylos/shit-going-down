@@ -15,7 +15,8 @@
         const phone = data.get('phone');
         window.localStorage.setItem('sgdPhone', phone);
         const modal = document.querySelector('.modal');
-        debugger;
+        modal.style.visibility = 'visible';
+
         //window.location = "/sms/sender"
       }
     }
@@ -23,9 +24,6 @@
 </head>
 
 <body>
-  <div class="modal">
-    <p>go fuck yourself</p>
-  </div>
   <div class="generalpage">
     <div class="nav">
       <div class="upButtons">
@@ -37,6 +35,12 @@
 
     <div class='thirdPage'>
 
+  <div class="modal">
+    <p>Let's be friends</p>
+    <div>
+      <a href="/sms/sender" target="_self">Continue to Send Page</a>
+    </div>
+  </div>
       <form class="search-form" action="#" autocomplete="off">
         <h2 class="step">Save friends you would like to SMS</h2>
         <div class="divMsg">
