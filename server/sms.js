@@ -7,8 +7,8 @@ const client = new twilio(sid, token);
 
 export function buildBody(shortUrl, fbName, contactName, region, emptyCoords) {
   const ending = emptyCoords ? "More Info:" : "Their location:";
-  const baseMsg = `${contactName}, ${fbName} listed you as an emergency contact and may need help at a protest
-Please reach out
+  const baseMsg = `Hey ${contactName}, ${fbName} listed you as an emergency contact and may be in distress at a protest
+Please contact them
 ${ending} ${shortUrl}`;
 
   return baseMsg;
