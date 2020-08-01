@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/style.css">
   <title>Shit Going Down</title>
   <script type="application/javascript">
-    function sendMsg(phone, coords, fbData, err) {
+    function sendMsg(phone, coords, fbData, contactName, err) {
       fetch('/sms/send', {
         method: "POST",
         headers: {

@@ -13,7 +13,7 @@
         <p class="loginInstructionTwo info">contact your trusty friends at the push of a button</p>
       </div>
       <div class="msgInfo">
-        <h2 class="step info">Hey {name}!</br> <%= fbName %> needs assistance</h2>
+        <h2 class="step info">Hey <%= contactName %>!</br> <%= fbName %> needs assistance</h2>
         <p class="loginInstructionTwo links"> <a class="link info" href="<%= fbUrl %>">● Click here for their public facebook profile.</a></p>
         <% if (mapUrl !== null) { %>
        	  <p class="loginInstructionTwo links"><a  class="link info" href="<%= mapUrl %>">● Click here for a google map from where the message was sent.</a></p>
