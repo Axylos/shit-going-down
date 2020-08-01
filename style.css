@@ -467,6 +467,10 @@ a {
   margin-right: auto;
 }
 
+.upButtons.sender {
+  margin-top: -25px;
+}
+
 .logo {
   color: #B9FB4F;
   font-family: 'Lato', sans-serif;
