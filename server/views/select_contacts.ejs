@@ -8,6 +8,17 @@
   <title>Shit Going Down</title>
   <script defer type="application/javascript" charset="utf-8">
     window.onload = () => {
+      const nameInput = document.querySelector('input#contact');
+      const smsInput = document.querySelector('input#contact-sms');
+      const storedPhone = localStorage.getItem('sgdPhone');
+      const storedName = localStorage.getItem('sgdContactName');
+      if (storedPhone !== null) {
+        smsInput.value = storedPhone;
+      }
+
+      if (storedName !== null) {
+        nameInput.value = storedName;
+      }
       const form = document.querySelector('form');
       form.onsubmit = (ev) => {
         ev.preventDefault();
@@ -45,6 +56,7 @@
             <label for="selectedContact">NAME:</label>
             <input class="smsName"
               name="selectedContact"
+              id="contact"
               type="text"
               required />
             </br>

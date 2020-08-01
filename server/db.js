@@ -32,6 +32,8 @@ export async function storeContact({
   region,
   contactName
 }) {
+  console.log(contactName);
+  console.log('namey');
   const resp = await db.one(`
   INSERT INTO contacts
   (fb_id, fb_name, phone, coords, region, name)
