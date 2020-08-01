@@ -1,0 +1,28 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3931623, 2020-07-31T09:04:32-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Gordita-Bold by Type Atelier
+ * URL: https://www.myfonts.com/fonts/type-atelier/gordita/bold/
+ * Copyright: Copyright (c) 2016 by THOMAS GILLETT. All rights reserved.
+ * 
+ * 
+ * 
+ * © 2020 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3bfde7");
+  
+@font-face {
+  font-family: 'Gordita-Bold';
+  src: url('webFonts/Gordita-Bold/font.woff2') format('woff2'), url('webFonts/Gordita-Bold/font.woff') format('woff');
+}
+

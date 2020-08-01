@@ -59,7 +59,7 @@ export default class MessageModal {
 
   confirmSent() {
     this.el.querySelector('.alert').innerHTML = `
-    <h2 class="staySafe">Message Sent! </br> Stay Safe!</h2>
+    <h2 class="staySafe alert">Message Sent! </br> Stay Safe!</h2>
     <button class="alertBtnClose alert-two">Close</button>
     `;
 

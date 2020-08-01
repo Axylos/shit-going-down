@@ -19,7 +19,7 @@ font-family: 'Lalezar', cursive;
 
 body {
   background: black;
-  font-family: 'Roboto', sans-serif, 'helvetica neue', Lato;
+  font-family: 'Roboto', Lato, 'helvetica neue', sans-serif;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -111,7 +111,7 @@ a {
 }
 
 .logo.two {
-  font-family: Gordita-Bold, 'Lato';
+  font-family: Gordita-Bold, 'Lato', 'helvetica neue';
   text-decoration: underline;
   font-size: 18px;
 }
@@ -160,7 +160,7 @@ a {
 }
 
 .shit {
-  font-family: Gordita-Bold, 'Lato';
+  font-family: Gordita-Bold, 'Lato', 'helvetica neue';
   letter-spacing: 1.2rem;
   display: inline-block;
   font-size: 52px;
@@ -852,8 +852,6 @@ span.place {
   opacity: 0.2;
 }
 
-
-
 @-webkit-keyframes colorchange {
   0% {
     -webkit-text-stroke: 1px black;
@@ -1153,8 +1151,8 @@ span.place {
 }
 
 .contact-reminder {
-  color:#B9FB4F;
-  background-color: white;
+  color: white;
+  background-color: transparent;
   font-size: 11px;
   margin-top: 2%;
   padding: 5px;
@@ -1250,6 +1248,10 @@ span.place {
   text-align: center;
   display: inline-block;
   /* -webkit-text-stroke: 1px #E5979B; */
+}
+
+.staySafe.alert {
+  color: white;
 }
 
 .closing {
