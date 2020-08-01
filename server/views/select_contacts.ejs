@@ -13,7 +13,9 @@
         ev.preventDefault();
         const data = new FormData(form);
         const phone = data.get('phone');
+        const name = data.get('selectedContact');
         window.localStorage.setItem('sgdPhone', phone);
+        window.localStorage.setItem('sgdContactName', name);
         const modal = document.querySelector('.modal');
         modal.style.visibility = 'visible';
         const btn = document.querySelector('.goToNextTwo.sms');

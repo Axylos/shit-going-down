@@ -29,15 +29,16 @@ export async function storeContact({
   fbName,
   phone,
   coords,
-  region
+  region,
+  contactName
 }) {
   const resp = await db.one(`
   INSERT INTO contacts
-  (fb_id, fb_name, phone, coords, region)
+  (fb_id, fb_name, phone, coords, region, name)
   VALUES
-  ($1, $2, $3, $4, $5)
+  ($1, $2, $3, $4, $5, $6)
   RETURNING *
-  `, [fbId, fbName, phone, coords, region]);
+  `, [fbId, fbName, phone, coords, region, contactName]);
 
   return resp;
 }
@@ -86,6 +87,7 @@ export async function createDatabase() {
 
   CREATE table contacts (
   ID TEXT PRIMARY KEY,
+  name VARCHAR(50),
   phone VARCHAR(20),
   fb_id VARCHAR(50),
   fb_name VARCHAR(80),

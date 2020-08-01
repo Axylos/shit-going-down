@@ -41,6 +41,7 @@ app.get('/url/:externalId', async (req, res) => {
   try {
     const id = externalId;
     const data = await fetchContactData(id);
+    const contactName = data.name;
     const fbId = data.fb_id;
     const fbName = data.fb_name
     let mapUrl = null;
@@ -50,7 +51,7 @@ app.get('/url/:externalId', async (req, res) => {
     }
 
     const fbUrl = `https://facebook.com/profile?id=${fbId}`;
-    res.render("contact_summary", {fbName, fbUrl, mapUrl});
+    res.render("contact_summary", {fbName, fbUrl, mapUrl, contactName});
   } catch (e) {
     console.log(e);
     res.json("invalid id");

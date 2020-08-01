@@ -18,6 +18,7 @@ router.post('/send', async (req, res) => {
     coords,
     fbName,
     fbId,
+    contactName,
     region
   };
   try {
