@@ -122,31 +122,31 @@ export default class Welcome {
   render() {
     this.el.innerHTML = `
     <main data-barba="container" data-barba-namespace="home-section">
-      <div class="mobile-modal alert-second staySafe">
-        <span class="sorry">Sorry!</span> </br>
-        It looks like you are browsing from a desktop.</br>
-        Please log in via a mobile device, </br> and add to home screen before proceeding.
-        </br>
-        <button class="close-modal">Close</button>
-      </div>
-    <div class="mobile-modal">
-      <h2>A Mobile Modal</h2>
-    </div>
-     
-    <div class="animationPage">
-        <div class="textHome animate-this">
-          <div class="titlediv "> 
-
-              <div class="divInsta"> 
-                <p class='homeInstructionOne'> Contact your friends at the push of a button<br/> <strong>in case</strong></p>
-              </div>
-
-              <div class="mainTitle">
-                <h2 class="shit">SHIT GOING <span class="shit down">DOWN</span></h2>
-              </div>
-          </div>
+        <div class="mobile-modal alert-second staySafe">
+          <span class="sorry">Sorry!</span> </br>
+          It looks like you are browsing from a desktop.</br>
+          Please log in via a mobile device, </br> and add to home screen before proceeding.
+          </br>
+          <button class="close-modal">Close</button>
         </div>
+      <div class="mobile-modal">
+        <h2>A Mobile Modal</h2>
       </div>
+        
+        <div class="animationPage">
+            <div class="textHome animate-this">
+              <div class="titlediv "> 
+
+                  <div class="divInsta"> 
+                    <p class='homeInstructionOne'> Contact your friends at the push of a button<br/> <strong>in case</strong></p>
+                  </div>
+
+                  <div class="mainTitle">
+                    <h2 class="shit">SHIT GOING <span class="shit down">DOWN</span></h2>
+                  </div>
+              </div>
+            </div>
+          </div>
 
               <div class="loginSection">
               <div class"loginDiv">
