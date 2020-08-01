@@ -167,7 +167,7 @@ export default class Welcome {
               </div>
 
              <div>
-              <button class="btnLogin twitter" onclick="location.href='https://www.shitgoingdown.com/api/login'">
+              <button class="btnLogin twitter" onclick="handleTwitterLogin()">
                 <span class='loginInstruction'>DM contacts</span></br>
               </button>
             </div>

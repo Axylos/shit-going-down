@@ -11,6 +11,16 @@ function storeCreds() {
   });
 }
 
+function handleTwitterLogin() {
+  if (!isMobile()) {
+    const modal = document.querySelector('.mobile-modal');
+    modal.style.visibility = 'visible';
+    return;
+  }
+
+  location.href='https://www.shitgoingdown.com/api/login'
+}
+
 function checkLoginState() {
   if (!isMobile()) {
     const modal = document.querySelector('.mobile-modal');
@@ -35,6 +45,7 @@ function checkLoginState() {
 }
 
 window.checkLoginState = checkLoginState;
+window.handleTwitterLogin = handleTwitterLogin;
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '320035045798277',
