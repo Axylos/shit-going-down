@@ -46,7 +46,7 @@ app.get('/url/:externalId', async (req, res) => {
     const fbName = data.fb_name
     let mapUrl = null;
     if (data.coords !== null) {
-      const { coords: { latitude, longitude } } = data;
+      const { latitude, longitude } = JSON.parse(data.coords);
       mapUrl = `https://maps.google.com/?q=${latitude},${longitude}`;
     }
 

@@ -55,7 +55,7 @@ export default class Buttons {
     <div class="generalpage">
     <div class="nav">
       <div class="upButtons">
-        <a class="navBtn End" href="#">◄◄</a>
+        <a class="navBtn End">◄◄</a>
         <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
         <a class="navBtn nextEnd" href="#"> ► </a>
       </div>
@@ -108,7 +108,7 @@ export default class Buttons {
   unmount() {
     this.el.querySelector('.text.callBail').removeEventListener('click', this.handleCall);
     this.el.querySelector('.text.DM').removeEventListener('click', this.openModal);
-    this.el.querySelector('navBtn.End').removeEventListener('click', this.goBack);
+    //this.el.querySelector('navBtn.End').removeEventListener('click', this.goBack);
 
   }
 }
