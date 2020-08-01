@@ -1,4 +1,5 @@
 import express from 'express';
+import { storeContact } from './db.js';
 import { sendMsg, buildBody } from './sms.js';
 
 const router = express.Router();
@@ -12,10 +13,23 @@ router.post('/send', async (req, res) => {
   }
   const { phone, coords, fbData: { fbName, fbId } } = req.body;
   const { region } = req.locale;
-  const body = buildBody(phone, coords, fbName, fbId, region);
-  console.log(body);
-  await sendMsg(phone, body);
-  res.json({msg: 'ok', phone});
+  const data = {
+    phone,
+    coords,
+    fbName,
+    fbId,
+    region
+  };
+  try {
+    const resp = await storeContact(data);
+    const url = `ssgd.me/${resp.id}`;
+    const body = buildBody(url, fbName, coords, region);
+    await sendMsg(phone, body);
+  } catch (e) { 
+    console.log(e) 
+  } finally {
+    res.json({msg: 'ok', phone});
+  }
 });
 
 router.get('/', async (req, res) => {

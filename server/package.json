@@ -20,7 +20,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "oauth-1.0a": "^2.2.6",
-    "pg-promise": "^10.5.6",
+    "pg-promise": "^10.5.8",
     "twilio": "^3.48.1",
     "twitter-lite": "^0.13.0"
   }
