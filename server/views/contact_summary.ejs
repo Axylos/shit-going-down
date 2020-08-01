@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://tweeters.site/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <title>Contact_summary</title>
+  </head>
+  <body>
+    <div>
+      <h2 style="color: lightblue;"><%= fbName %> needs assistance</h2>
+      <div><a href="<%= fbUrl %>">Click here for their public facebook profile</a></div>
+      <% if (mapUrl !== null) { %>
+        <p><a href="<%= mapUrl %>">Click here for a google map of their last known location</a></p>
+      <% } %>
+    </div>
+  </body>
+</html>

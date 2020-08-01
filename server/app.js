@@ -5,7 +5,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser'
 import createLocaleMiddleware from 'express-locale';
 import qs from 'querystring';
-import { storeToken, getSecretFromToken, getUser } from './db.js';
+import { storeToken, getSecretFromToken, getUser, fetchContactData } from './db.js';
 import { getToken } from './token.js';
 import { getOauthToken, getClient, getUserContacts, sendMsg, verify } from './auth_client.js';
 import dotenv from 'dotenv';
@@ -31,6 +31,31 @@ app.use('/sms/static', express.static('public'))
 app.use(createLocaleMiddleware());
 
 app.use('/sms', SmsController);
+
+app.get('/url/:externalId', async (req, res) => {
+  const { externalId } = req.params;
+  if (externalId.match(/favicon/)) {
+    res.sendStatus(404);
+    return;
+  }
+  try {
+    const id = externalId;
+    const data = await fetchContactData(id);
+    const fbId = data.fb_id;
+    const fbName = data.fb_name
+    let mapUrl = null;
+    if (data.coords !== null) {
+      const { coords: { latitude, longitude } } = data;
+      mapUrl = `https://maps.google.com/?q=${latitude},${longitude}`;
+    }
+
+    const fbUrl = `https://facebook.com/profile?id=${fbId}`;
+    res.render("contact_summary", {fbName, fbUrl, mapUrl});
+  } catch (e) {
+    console.log(e);
+    res.json("invalid id");
+  }
+});
 
 app.post('/message', async (req, res) => {
   try {

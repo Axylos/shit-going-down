@@ -13,6 +13,35 @@ const db = pgp()({
   database: 'bail',
 });
 
+export async function fetchContactData(id) {
+  console.log(id);
+  const data = await db.one(`
+  SELECT *
+  FROM contacts
+  WHERE id = $1
+  `, id);
+
+  return data;
+}
+
+export async function storeContact({
+  fbId,
+  fbName,
+  phone,
+  coords,
+  region
+}) {
+  const resp = await db.one(`
+  INSERT INTO contacts
+  (fb_id, fb_name, phone, coords, region)
+  VALUES
+  ($1, $2, $3, $4, $5)
+  RETURNING *
+  `, [fbId, fbName, phone, coords, region]);
+
+  return resp;
+}
+
 export async function getUser(hash) {
   const resp = await db.one(`
   SELECT * FROM users where hash = $1
@@ -43,6 +72,9 @@ export async function storeToken(token, secret, twitter_id, name) {
 
 export async function createDatabase() {
   await db.none(`
+  DROP TABLE IF EXISTS users;
+  DROP TABLE IF EXISTS contacts;
+
   CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   hash VARCHAR(255) NOT NULL,
@@ -50,6 +82,18 @@ export async function createDatabase() {
   oauth_token VARCHAR(255) NOT NULL,
   oauth_secret VARCHAR(255) NOT NULL,
   name VARCHAR(255) NOT NULL
-  )
+  );
+
+  CREATE table contacts (
+  ID TEXT PRIMARY KEY,
+  phone VARCHAR(20),
+  fb_id VARCHAR(50),
+  fb_name VARCHAR(80),
+  coords VARCHAR(255),
+  region VARCHAR(255)
+  );
+
+  CREATE TRIGGER trigger_contacts_genid
+  BEFORE INSERT ON contacts FOR EACH ROW EXECUTE PROCEDURE unique_short_id();
   `);
 }

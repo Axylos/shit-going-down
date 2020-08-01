@@ -5,14 +5,7 @@ const sid = process.env.TWILIO_SID;
 const token = process.env.TWILIO_TOKEN;
 const client = new twilio(sid, token);
 
-export function buildBody(phone, coords, fbName, fbId, region) {
-  const { latitude, longitude } = coords;
-  const url = `https://maps.google.com/?q=${latitude},${longitude}`;
-  const fbUrl = `https://facebook.com/profile?id=${fbId}`;
-
-  console.log('the region is: ', region);
-  const ending = 'the message was sent via www.shitgoingdowm.com';
-
+export function buildBody(shortUrl, fbName, region) {
   if (region === "IL") {
     return `
    ההודעה הזו נשלחת מטעם ${fbName}.
@@ -25,24 +18,11 @@ export function buildBody(phone, coords, fbName, fbId, region) {
     `
 
   } else {
-    const baseMsg = `
-This message is being sent on behalf of ${fbName}
-They marked you as their emergency contact.  They may
-have had (or will soon have) a confrontation with
-law enforcement or others in a protest or mass gathering.
-Please try to contact them. Here is their facebook profile
-${fbUrl}.
-`;
-    if (coords === null) {
-      return `${baseMsg}
-      ${ending}`;
-    } else {
-      return `${baseMsg} 
-Here is their last known location:
-${url}
+    const baseMsg = `${fbName} listed you as an emergency contact and may be in distress at a protest
+Please contact them
+Their location: ${shortUrl}`;
 
-${ending}`;
-    }
+    return baseMsg;
   }
 }
 export async function sendMsg(to, body) {
