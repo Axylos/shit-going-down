@@ -355,35 +355,35 @@ a {
   display: inline-block;
   font-family: 'Roboto', sans-serif;
   border: none;
-  background-color: #E3E3E3;
-  color: #252423;
+  background-color: black;
+  color: white;
   font-weight: 500;
   letter-spacing: 4px;
   font-size: 14px;
   line-height: 1.5rem;
   padding: 10px;
   width: 160px;
-  border-bottom: 3px solid #33703C;
-  border-right: 2px solid #33703C;
+  border-bottom: 3px solid #B9FB4F;
+  border-right: 2px solid #B9FB4F;
   transition: 0.2s;
 }
 
 .sorry {
   text-transform: uppercase;
   font-size: 46px;
-  color: #E5979B;
+  color: #B9FB4F;
   padding-bottom: 2%;
   display: inline-block;
   padding-top: 10%;
   letter-spacing: 4px;
 }
 
-/* .close-modal:hover {
-  border: 3px solid #FDED7A;
+.close-modal:hover {
+  border: 3px solid #B9FB4F;
   cursor: pointer;
-  color: #33703C;
+  color: black;
   font-family: 'Roboto', sans-serif;
-} */
+}
 
 .chosen-contacts-fund {
   background-color: white;
