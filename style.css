@@ -100,7 +100,7 @@ a {
 .homeInstructionOne.info {
   color: white;
   margin-top: 5%;
-  font-weight: 300;
+  font-weight: 500;
   width: 70%;
   font-size: 12px;
 }
@@ -190,7 +190,7 @@ a {
   text-transform: uppercase;
   color: #656565;
   line-height: 2rem;
-  font-weight: 200;
+  font-weight: 500;
   padding: 8px;
   line-height: 1.4;
 }
@@ -1228,6 +1228,11 @@ span.place {
   transition: 0.2s;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.alert.button {
+  background-color: transparent;
+  color: white;
 }
 
 .alertBtnClose:hover {
