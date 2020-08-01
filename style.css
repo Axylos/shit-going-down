@@ -308,7 +308,14 @@ a {
   width: 200px;
   text-align: right;
   margin-top: 5%;
+}
 
+.loginInstructionTwo.edit {
+  font-weight: 400;
+  width: 200px;
+  text-align: right;
+  margin-top: 5%;
+  margin-bottom: 0;
 }
 
 .loginInstructionTwo.add {
