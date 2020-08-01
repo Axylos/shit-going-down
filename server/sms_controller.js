@@ -11,16 +11,18 @@ router.post('/send', async (req, res) => {
   if (req.body.err) {
     console.log('client error: ', req.body.err);
   }
-  const { phone, coords, fbData: { fbName, fbId } } = req.body;
+  const { phone, coords, fbData: { fbName, fbId }, contactName } = req.body;
   const { region } = req.locale;
   const data = {
     phone,
     coords,
     fbName,
     fbId,
+    contactName,
     region
   };
   try {
+    console.log('storing contact');
     const resp = await storeContact(data);
     const url = `ssgd.me/${resp.id}`;
     const body = buildBody(url, fbName, coords, region);

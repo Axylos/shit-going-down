@@ -17,6 +17,7 @@
           phone,
           coords,
           fbData,
+          contactName,
           err
         })
       }).then(resp => {
@@ -36,18 +37,19 @@
         ev.preventDefault();
         console.log(window.localStorage.getItem('sgdPhone'));
         const phone = window.localStorage.getItem('sgdPhone');
+        const contactName = window.localStorage.getItem('sgdContactName')
         const fbId = localStorage.getItem('sgdFbId');
         const fbName = localStorage.getItem('sgdName');
         if ('geolocation' in navigator) {
           navigator.geolocation.getCurrentPosition(result => {
             const { latitude, longitude } = result.coords;
-            sendMsg(phone, { latitude, longitude }, { fbId, fbName });
+            sendMsg(phone, { latitude, longitude }, { fbId, fbName }, contactName);
           }, err => {
             console.log(err);
-            sendMsg(phone, null, { fbId, fbName }, err.message);
+            sendMsg(phone, null, { fbId, fbName }, contactName, err.message);
           }, { maximumAge: 60000, timeout: 5000 })
         } else {
-          sendMsg(phone, null, { fbId, fbName });
+          sendMsg(phone, null, { fbId, fbName }, contactName);
         }
       });
     }
