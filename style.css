@@ -312,6 +312,10 @@ a {
   background: linear-gradient(rgba(255, 255, 255, 0.6), black);
 }
 
+.modal.message-modal {
+  visibility: visible;
+}
+
 .loginInstructionTwo.save {
   margin-top: 5px;
   /* background-color: black; */
