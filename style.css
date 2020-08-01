@@ -31,6 +31,16 @@ a {
   text-decoration: none;
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: black;
+  background: #B9FB4F;
+}
+
+::selection {
+  color: black;
+  background: #B9FB4F
+}
+
 .fb {
   background-color: transparent !important;
 }
