@@ -224,7 +224,7 @@ a {
   background-color: transparent;
   color: white;
   font-weight: 500;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   font-size: 14px;
   line-height: 1.8rem;
   padding: 18px 3px;
