@@ -122,6 +122,9 @@ export default class Welcome {
   render() {
     this.el.innerHTML = `
     <main data-barba="container" data-barba-namespace="home-section">
+    <div class="mobile-modal">
+      <h2>A Mobile Modal</h2>
+    </div>
      
     <div class="animationPage">
         <div class="textHome animate-this">
