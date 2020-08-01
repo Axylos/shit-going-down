@@ -34,6 +34,10 @@ app.use('/sms', SmsController);
 
 app.get('/url/:externalId', async (req, res) => {
   const { externalId } = req.params;
+  if (externalId.match(/favicon/)) {
+    res.sendStatus(404);
+    return;
+  }
   try {
     const id = externalId;
     const data = await fetchContactData(id);
