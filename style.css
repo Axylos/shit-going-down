@@ -67,7 +67,7 @@ a {
 }
 
 .mainTitle {
-  margin-top: 20%;
+  margin-top: 18%;
   margin-left: -38%;
   text-align: left;
   padding-top: 40px;
@@ -92,10 +92,9 @@ a {
 
 .divInsta {
   padding: 0;
-  margin: 0;
   margin-left: 35px;
   text-align: left;
-  margin-top: 4%;
+  margin-top: 40px;
 }
 
 .homeInstructionOne {
@@ -397,24 +396,24 @@ a {
 .navBtn{
   color: #989898;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 20px;
   display: inline-block;
 }
 
 .navBtn.next {
-  margin-left: 60px;
+  margin-left: 50px;
 }
 
 .navBtn.back {
-  margin-right: 60px;
+  margin-right: 50px;
 }
 
 .navBtn.End {
-  margin-right: 60px;
+  margin-right: 50px;
 }
 
 .navBtn.nextEnd {
-  margin-left: 60px;
+  margin-left: 50px;
   cursor: none;
   color: black;
 }
@@ -444,7 +443,7 @@ a {
   width: 180px;
   font-size: 11px;
   font-weight: 500;
-  margin-top: 15%;
+  margin-top: 18%;
   margin-left: auto;
   margin-right: auto;
   color: white;
@@ -728,7 +727,7 @@ span.place {
 
 .safeDiv {
   margin-left: 10px;
-  margin-top: 70px;
+  margin-top: 50px;
   text-align: left;
 }
 
@@ -779,16 +778,15 @@ span.place {
 }
 
 .white {
-  background: linear-gradient(rgba(255, 255, 255, 0.6), black);
+  background: linear-gradient(rgba(255, 255, 255, 0.75), black);
   border-top: 1px solid #B9FB4F;
-  height: 580px;
-  width: 380px;
+  height: 60%;
+  width: 360px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
   margin-top: 10%;
   box-shadow: 12x 15x rgba(38, 38, 38, 0.488);
-  /* margin-left: 20%; */
 }
 
 .btnSection {
@@ -810,15 +808,25 @@ span.place {
   padding: 80px 8px;
   border-radius: 15px;
   transition: 0.2s; 
+
+
+  margin-top: 18%;
+  width: 150px;
+  height: 200px
+}
+
+.text.callBail {
+  margin-right: 20px;
   margin-left: 5px;
+}
+
+.text.DM {
+  margin-left: 20px;
   margin-right: 5px;
-  margin-top: 25%;
-  width: 160px;
-  height: 210px
 }
 
 .text:hover {
-  background-color: white;
+  background-color: transparent;
   color:#fa2a1f;
   font-weight: 300;
 }
@@ -828,18 +836,21 @@ span.place {
   color:white;
   margin-bottom: 10%;
   margin-top: 65%;
-  padding-top: 70px;
+  /* padding-top: 70px; */
   border-radius: 25px;
   padding: 40px 8px;
-  width: 130px;
-  height: 160px;
+  width: 140px;
+  height: 170px;
   font-size: 14px;
 }
 
 .text.sms:hover {
-  background-color: white;
+  background-color: transparent;
+  color:#fa2a1f;
+  font-weight: 300;
+  /* background-color: white;
   color:black;
-  font-weight: 700;
+  font-weight: 700; */
 }
 
 .click {
@@ -887,7 +898,6 @@ span.place {
   display: flex;
  text-align: center;
  margin-top: 50px;
-
 }
 
 .smsPage {
@@ -900,7 +910,7 @@ span.place {
   background: linear-gradient(rgba(255, 255, 255, 0.75), black);
   border-top: 1px solid #B9FB4F;
   height: 80%;
-  width: 300px;
+  width: 280px;
   margin-top: -40%;
   margin-left: auto;
   margin-right: auto;
@@ -913,8 +923,8 @@ span.place {
   width: 250px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -10%;
   margin-bottom: 10%;
+  margin-top: -25%;
 }
 
 .loginInstructionTwo.title {
@@ -924,7 +934,7 @@ span.place {
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
-  margin-top: 28%;
+  /* margin-top: 10%; */
 }
 
 .loginInstructionTwo.help {

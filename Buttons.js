@@ -66,8 +66,6 @@ export default class Buttons {
     <h1 class="safe">stay safe</h1>
   </div>
 
-
-
   <div class='buttons'>
  
   <div class="btnSection">
