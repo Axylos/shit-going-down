@@ -13,6 +13,7 @@ font-family: 'Lalezar', cursive;
 }
 
 .mobile-modal {
+  color: blue;
   visibility: hidden;
 }
 
@@ -378,7 +379,7 @@ a {
 }
 
 .close-modal:hover {
-  border: 3px solid #B9FB4F;
+  border: 3px solid #fa2a1f;
   cursor: pointer;
   color: black;
   font-family: 'Roboto', sans-serif;
@@ -400,9 +401,10 @@ a {
 }
 
 .alertBtnClose.alert-two {
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
   display: block;
-  margin-top: 20%;
+  margin-top: 5%;
 }
 
 .alert-second.staySafe {
@@ -411,21 +413,27 @@ a {
   font-size: 22px;
   padding-top: 5%;
   text-align: center;
-  color: #252423;
-  border: 5px solid #33703C;
+  color: white;
+  border: 3px solid #B9FB4F;
   position: absolute;
-  margin: 0 auto;
-  background-color: #979391e8;
+  margin-left: 10%;
+  background-color: black;
   font-family: 'Roboto', sans-serif;
   border-radius: 5px;
-  width: 100%;
-  height: 100vh;
-  top: 0;
+  width: 80%;
+  height: 80%;
+ 
+
   -webkit-text-stroke: 1px #343438
 }
 
 .alert-second.staySafe button {
-  margin-top: 35px;
+  margin-top: 70px;
+}
+
+.alert-second.staySafe button:hover {
+  color: black;
+  border:none;
 }
 
 /* .homeInstructionTwo {
