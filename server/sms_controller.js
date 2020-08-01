@@ -25,8 +25,9 @@ router.post('/send', async (req, res) => {
     console.log('storing contact');
     const resp = await storeContact(data);
     const url = `ssgd.me/${resp.id}`;
-    const body = buildBody(url, fbName, coords, region);
-    await sendMsg(phone, body);
+    const body = buildBody(url, fbName, contactName, coords, region);
+    const coordsIsEmpty = coords === null;
+    await sendMsg(phone, body, coordsIsEmpty);
   } catch (e) { 
     console.log(e) 
   } finally {

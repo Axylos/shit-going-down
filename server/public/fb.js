@@ -2,19 +2,28 @@ function init() {
   console.log('here');
 }
 
+function storeCreds() {
+  FB.api('/me', {}, resp => {
+    console.log(resp);
+    localStorage.setItem('sgdName', resp.name);
+    localStorage.setItem('sgdFbId', resp.id);
+    window.location = "/sms/select-contacts";
+  });
+}
+
 function checkLoginState() {
   console.log('hoo yeah');
   FB.getLoginStatus(resp => {
     if (resp.status === 'connected') {
-      FB.api('/me', {}, resp => {
-        console.log(resp);
-        localStorage.setItem('sgdName', resp.name);
-        localStorage.setItem('sgdFbId', resp.id);
-        window.location = "/sms/select-contacts";
-      })
-      console.log('you are connected');
+      storeCreds();
     } else {
-      FB.login();
+      FB.login(response => {
+        if (response.authResponse) {
+          storeCreds();
+        } else {
+          console.log('user did not authorize');
+        }
+      });
     }
   })
 

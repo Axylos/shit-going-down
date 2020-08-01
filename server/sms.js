@@ -5,25 +5,13 @@ const sid = process.env.TWILIO_SID;
 const token = process.env.TWILIO_TOKEN;
 const client = new twilio(sid, token);
 
-export function buildBody(shortUrl, fbName, region) {
-  if (region === "IL") {
-    return `
-   ההודעה הזו נשלחת מטעם ${fbName}.
-   הם סימנו אותך כאיש/ת קשר בשעת חירום.
-   נדמה כי הם חווים (או יחוו בקרוב) התנקשויות עם החוק או עם אחרים, וזקוקים לעזרה.
-   בבקשה נסה/י ליצור עימם קשר! מצורפים לינקים לפרופיל הפייסבוק והמיקום האחרון ממנו ההודעה נשלחה.
+export function buildBody(shortUrl, fbName, contactName, region, emptyCoords) {
+  const ending = emptyCoords ? "More Info:" : "Their location:";
+  const baseMsg = `${contactName}, ${fbName} listed you as an emergency contact and may need help at a protest
+Please reach out
+${ending} ${shortUrl}`;
 
-   ההודעה נשלחה על ידי: 
-   www.shitgoingdown.com
-    `
-
-  } else {
-    const baseMsg = `${fbName} listed you as an emergency contact and may be in distress at a protest
-Please contact them
-Their location: ${shortUrl}`;
-
-    return baseMsg;
-  }
+  return baseMsg;
 }
 export async function sendMsg(to, body) {
   try {
