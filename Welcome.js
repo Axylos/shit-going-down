@@ -165,7 +165,7 @@ export default class Welcome {
               & are not stored anywhere in this application. </p>
             </div>
             <div class-"text add">
-            <p class='loginInstructionTwo add'>It's recommended adding the app to your mobile home screen, so you locate it quickly in case of an emergency. It is easy to do that through your phone menu - <a class="how" href="https://natomasunified.org/kb/add-website-to-mobile-device-home-screen/"> here is how</a>.</p>
+            <p class='loginInstructionTwo add'>It's recommended adding the app to your mobile home screen, so you locate it quickly in case of an emergency. It is easy to do that through your phone menu - <a class="how" href="https://natomasunified.org/kb/add-website-to-mobile-device-home-screen/" target="_blank"> here is how</a>.</p>
           </div>  
 
         </div>
