@@ -45,7 +45,7 @@ function checkLoginState() {
 }
 
 window.checkLoginState = checkLoginState;
-window.handleTwitterLogin = handleTwitterLogin;
+window.isMobile = isMobile;
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '320035045798277',

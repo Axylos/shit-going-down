@@ -58,7 +58,7 @@ app.get('/url/:externalId', async (req, res) => {
   }
 });
 
-app.post('/message', async (req, res) => {
+app.post('/api/message', async (req, res) => {
   try {
     console.log(req.body);
     const { recipients, fund } = req.body;
@@ -79,7 +79,7 @@ app.post('/message', async (req, res) => {
   }
 });
 
-app.get('/verify', async (req, res) => {
+app.get('/api/verify', async (req, res) => {
   try {
     const hash = req.cookies.hash;
     console.log('hash: ', hash);
@@ -98,7 +98,7 @@ app.get('/verify', async (req, res) => {
   }
 });
 
-app.get('/callback', async (req, res) => {
+app.get('/api/callback', async (req, res) => {
   const query = req.query;
   const tokenData = await getToken(query.oauth_token, query.oauth_verifier);
   const { oauth_token, oauth_token_secret, user_id, screen_name } = qs.decode(tokenData);
@@ -119,7 +119,7 @@ app.get('/callback', async (req, res) => {
     .sendFile(path.join(path.resolve(path.dirname('')) + '/redirect.html'));
 });
 
-app.get('/contacts', async (req, res) => {
+app.get('/api/contacts', async (req, res) => {
   try {
 
     const { hash } = req.cookies;
@@ -136,7 +136,7 @@ app.get('/contacts', async (req, res) => {
   }
 });
 
-app.get('/login', async (req, res) => {
+app.get('/api/login', async (req, res) => {
   const token = await getOauthToken();
   console.log(JSON.stringify(token));
 
