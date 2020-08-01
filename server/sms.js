@@ -17,7 +17,12 @@ export function buildBody(phone, coords, fbName, region) {
   } else {
     const baseMsg = `
 This message is being sent on behalf of ${fbName}
-Please notify my friends.`;
+They marked you as an emergency contact.  They may
+have had (or will soon have) a confrontation with
+law enforcement or others in a protest or mass gathering.
+Please try to contact them. Here is their facebook profile
+and last known location.
+      .`;
     if (coords === null) {
       return baseMsg;
     } else {

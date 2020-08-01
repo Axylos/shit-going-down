@@ -14,13 +14,18 @@
         const data = new FormData(form);
         const phone = data.get('phone');
         window.localStorage.setItem('sgdPhone', phone);
-        window.location = "/sms/sender"
+        const modal = document.querySelector('.modal');
+        debugger;
+        //window.location = "/sms/sender"
       }
     }
   </script>
 </head>
 
 <body>
+  <div class="modal">
+    <p>go fuck yourself</p>
+  </div>
   <div class="generalpage">
     <div class="nav">
       <div class="upButtons">
@@ -37,7 +42,11 @@
         <div class="divMsg">
           <div class="names">
             <label for="selectedContact">NAME:</label>
-            <input class="smsName" name="selectedContact" type="text" required class="contactSearch"></br>
+            <input class="smsName"
+              name="selectedContact"
+              type="text"
+              required />
+            </br>
             <label for="selectedContact">Number:</label>
             <input class="smsTel" type="number" required value="" name="phone" id="contact-sms" />
             <p class='loginInstructionTwo Tel'>only numbers(without&mdash;)</p>
