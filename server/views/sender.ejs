@@ -51,6 +51,8 @@
         } else {
           sendMsg(phone, null, { fbId, fbName }, contactName);
         }
+
+        document.querySelector('.sms-modal').style.visibility = 'visible';
       });
     }
   </script>
@@ -69,6 +71,9 @@
       <div class='smsPage'>
         <h2 class="safe sms">stay safe</h2>
         <div class='centerSMS'>
+          <div class="sms-modal">
+            <h1>a big modal</h1>
+          </div>
           <button class="text sms"> <span class="click sms">Click to</span></br> SMS</br> your friend</button>
         </div>
           <div class="content">

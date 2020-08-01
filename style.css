@@ -8,6 +8,10 @@ font-family: 'Lalezar', cursive;
 }
 */
 
+.sms-modal {
+  visibility: hidden;
+}
+
 body {
   background: black;
   font-family: 'Roboto', sans-serif, 'helvetica neue', Lato;
