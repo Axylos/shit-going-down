@@ -1,9 +1,10 @@
 export default class Welcome {
-  constructor(goToNext) {
+  constructor(goToNext, verifiedFailure, twitterNext) {
     this.handleClick = this.handleClick.bind(this);
     this.el = document.createElement('div');
     this.el = document.createElement('div');
     this.goToNext = goToNext;
+    this.twitterNext = twitterNext;
     // this.verifiedFailed = verifiedFailed;
     // this.goToNext = goToNext;
     // this.delay = this.delay.bind(this);
@@ -11,6 +12,16 @@ export default class Welcome {
     // this.contentAnimation = this.contentAnimation.bind(this);
     // this.initAnimation = this.initAnimation.bind(this);
     // this.setTimeout();
+  }
+
+  handleTwitterLogin() {
+    if (!isMobile()) {
+      const modal = document.querySelector('.mobile-modal');
+      modal.style.visibility = 'visible';
+      return;
+    }
+
+    this.twitterNext();
   }
 
   handleClick() {
@@ -167,7 +178,7 @@ export default class Welcome {
               </div>
 
              <div>
-              <button class="btnLogin twitter" onclick="handleTwitterLogin()">
+              <button class="btnLogin twitter">
                 <span class='loginInstruction'>DM contacts</span></br>
               </button>
             </div>
@@ -187,6 +198,10 @@ export default class Welcome {
 
     this.el.querySelector('.close-modal').addEventListener('click', (ev) => {
       this.el.querySelector('.mobile-modal').style.visibility = 'hidden';
+    })
+
+    this.el.querySelector('.twitter.btnLogin').addEventListener('click', (ev) => {
+      this.handleTwitterLogin();
     })
     return this.el;
   }

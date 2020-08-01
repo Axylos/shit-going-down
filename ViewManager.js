@@ -45,7 +45,8 @@ class ViewManager {
   }
 
   init(verified) {
-    this.initial = this.getInitial(verified)
+    this.verified = verified;
+    this.initial = this.getInitial("unverified");
     this.current = this.initial;
     this.render(); 
   }
@@ -69,6 +70,15 @@ class ViewManager {
     localStorage.setItem('fund', JSON.stringify(fund));
   }
 
+  twitterNext() {
+    if (this.verified === "verified") {
+      this.current = SELECT_CONTACTS;
+      this.render();
+    } else {
+      window.location = "https://www.shitgoingdown.com/api/login";
+    }
+  }
+
   getView() {
     let goForward;
     let goBack;
@@ -78,7 +88,7 @@ class ViewManager {
           this.current = SELECT_CONTACTS;
           this.render();
         };
-        return new Welcome (goForward, this.verifiedFailure);
+        return new Welcome (goForward, this.verifiedFailure, this.twitterNext.bind(this));
       case SELECT_CONTACTS: 
         goForward = () => {
           this.current = SELECT_FUND;
