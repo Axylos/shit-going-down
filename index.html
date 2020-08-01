@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="https://tweeters.site/style.css">
 
     <script type="application/javascript" defer>
+      const phone = localStorage.getItem('sgdPhone');
+      const name = localStorage.getItem('sgdName');
+      if (!!phone && !!name ) {
+        location.href = "/sms/sender";
+      }
     </script>
     
     <title>SHIT GOING DOWN</title>
