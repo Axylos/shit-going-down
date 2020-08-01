@@ -8,10 +8,6 @@ font-family: 'Lalezar', cursive;
 }
 */
 
-.sms-modal {
-  visibility: hidden;
-}
-
 body {
   background: black;
   font-family: 'Roboto', sans-serif, 'helvetica neue', Lato;
@@ -913,22 +909,33 @@ span.place {
   background-color: black;
   color:white;
   margin-bottom: 10%;
-  margin-top: 65%;
+  margin-top: -18%;
   /* padding-top: 70px; */
   border-radius: 25px;
   padding: 40px 8px;
   width: 140px;
   height: 170px;
   font-size: 14px;
+  transition: 0s;
 }
 
 .text.sms:hover {
   background-color: transparent;
   color:#fa2a1f;
   font-weight: 300;
-  /* background-color: white;
-  color:black;
-  font-weight: 700; */
+}
+
+.sms-modal {
+  visibility: hidden;
+  margin-top: 60%;
+  padding: 40px 20px;
+  display: inline-block;
+  background-color: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 22px;
 }
 
 .click {
