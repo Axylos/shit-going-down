@@ -7,12 +7,20 @@
     <title>Contact_summary</title>
   </head>
   <body>
-    <div>
-      <h2 style="color: lightblue;"><%= fbName %> needs assistance</h2>
-      <div><a href="<%= fbUrl %>">Click here for their public facebook profile</a></div>
+    <div class="infoPage">
+      <div class="topLogo">
+        <a class="link Logo" href="https://www.shitgoingdown.com"><h3 class="logo two">SHIT GOING DOWN</h3></a>
+        <p class="loginInstructionTwo info">contact your trusty friends at the push of a button</p>
+      </div>
+      <div class="msgInfo">
+        <h2 class="step info">Hey {name}!</br> <%= fbName %> needs assistance</h2>
+        <p class="loginInstructionTwo links"> <a class="link info" href="<%= fbUrl %>">● Click here for their public facebook profile.</a></p>
       <% if (mapUrl !== null) { %>
-        <p><a href="<%= mapUrl %>">Click here for a google map of their last known location</a></p>
+        <p class="loginInstructionTwo links"><a  class="link info" href="<%= mapUrl %>">● Click here for a google map from where the message was sent.</a></p>
       <% } %>
+    </div>
+    <h2 class="homeInstructionOne info">Stay safe and thank you for caring for your friends ♡</h2>
+
     </div>
   </body>
 </html>

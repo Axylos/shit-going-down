@@ -58,6 +58,73 @@ a {
   margin-right: auto;
 }
 
+.infoPage {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 90%;
+}
+
+.step.info {
+  line-height: 1.4;
+  font-size: 14px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  width: 100%;
+}
+
+.loginInstructionTwo.info {
+  margin-top: -2%;
+  padding:0 ;
+}
+
+
+.homeInstructionOne.info {
+  color: white;
+  margin-top: 5%;
+  font-weight: 300;
+  width: 70%;
+  font-size: 12px;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.logo.two {
+  font-family: Gordita-Bold, 'Lato';
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.topLogo {
+  margin-top: 50px;
+}
+
+.msgInfo {
+  margin-top: 15%;
+  padding: 30px;
+  border: 1px solid grey;
+}
+
+.loginInstructionTwo.links {
+  margin-top: 2%;
+  margin-bottom: 8%;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: left;
+  width: 70%;
+}
+
+.link.info {
+  color:#fa2a1f;
+}
+
+.link.info:hover {
+  text-decoration: underline;
+}
+
 .titlediv {
   display: flex;
   margin-left: auto;

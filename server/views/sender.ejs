@@ -8,7 +8,6 @@
   <title>Shit Going Down</title>
   <script type="application/javascript">
     function sendMsg(phone, coords, fbData, err) {
-      document.body.append(`<div>${JSON.stringify(localStorage)}</div>`);
       fetch('/sms/send', {
         method: "POST",
         headers: {
