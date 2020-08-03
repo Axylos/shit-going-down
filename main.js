@@ -5,7 +5,7 @@ async function main() {
   const vm = new ViewManager(root);
   let verified;
   try {
-    const resp = await fetch('https://clump.systems/api/verify', { credentials: 'include' });
+    const resp = await fetch('/api/verify', { credentials: 'include' });
     if (resp.ok) {
       const data = await resp.json();
       verified = data.verified ? "verified" : "unverified";

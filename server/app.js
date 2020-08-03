@@ -90,7 +90,8 @@ app.get('/api/verify', async (req, res) => {
     const hash = req.cookies.hash;
     req.log.info('hash: ' + hash);
     if (!hash) {
-      throw new Error('did not receive hash');
+      res.json({ verified: false });
+      return;
     }
     const { oauth_token, oauth_secret } = await getUser(hash);
     const verified = await verify(oauth_token, oauth_secret);
@@ -115,7 +116,7 @@ app.get('/api/callback', async (req, res) => {
     screen_name
   );
   const data = await getClient(oauth_token, oauth_token_secret);
-  req.log(data.toString());
+  req.log.info(data.toString());
   res.set('foo', 'ba');
   res.set('Access-Control-Allow-Credentials', 'true');
   res.cookie('hash', userData.hash, {
@@ -136,7 +137,6 @@ app.get('/api/contacts', async (req, res) => {
     res.set('Access-Control-Allow-Credentials', 'true')
     res.json(contacts);
   } catch (e) {
-    req.log.error(e.stack);
     req.log.error(e.stack);
     res.send(502);
   }
