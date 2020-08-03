@@ -12,13 +12,14 @@ ${ending} ${shortUrl}`;
 
   return baseMsg;
 }
-export async function sendMsg(to, body) {
-  logger.info('got to sendMsg');
+export async function sendMsg(to, body, country) {
+  const from = country === "USA" ? '+12058982370' : "+972527391473";
+  logger.info(`from: ${from}`);
   try {
     const resp = await client.messages.create({
       body,
       to,
-      from: '+12058982370'
+      from
     })
     logger.info('message sent');
   } catch (e) {

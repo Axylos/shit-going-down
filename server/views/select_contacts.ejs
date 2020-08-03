@@ -14,6 +14,7 @@
       const smsInput = document.querySelector('input#contact-sms');
       const storedPhone = localStorage.getItem('sgdPhone');
       const storedName = localStorage.getItem('sgdContactName');
+      let selectCountry = localStorage.getItem('sgdCountryCode');
 
       if (storedPhone !== null) {
         smsInput.value = storedPhone;
@@ -22,14 +23,30 @@
       if (storedName !== null) {
         nameInput.value = storedName;
       }
+
+      if (selectCountry !== null) {
+        const el = document.querySelector('#' + selectCountry);
+        el.parentElement.parentElement.querySelector('span').textContent = el.textContent;
+        el.parentElement.parentElement.querySelector('input').value = el.id;
+      }
+
+      function showValidation() {
+        document.querySelector('.validation-error').style.visibility = 'visible';
+      }
+
       const form = document.querySelector('form');
       form.onsubmit = (ev) => {
         ev.preventDefault();
         const data = new FormData(form);
         const phone = data.get('phone');
         const name = data.get('selectedContact');
+        if (!phone || !name || !selectCountry) {
+          showValidation();
+          return;
+        }
         window.localStorage.setItem('sgdPhone', phone);
         window.localStorage.setItem('sgdContactName', name);
+        window.localStorage.setItem('sgdCountryCode', selectCountry);
         const modal = document.querySelector('.modal');
         modal.style.visibility = 'visible';
         const btn = document.querySelector('.goToNextTwo.sms');
@@ -53,7 +70,7 @@
       });
       $('.dropdown-menu li').click(function () {
         var input = $(this).parents('.dropdown').find('input').val()
-        console.log(input);
+        selectCountry = input;
       });
       /*End Dropdown Menu*/
     }
@@ -83,6 +100,7 @@
           <p class='loginInstructionTwo edit'>retype to edit</p>
           </br>
           <span class="choose number">Number: </span><br /><br />
+          <p class="validation-error">Phone Number with country code and contact name are all required</p>
           <div class="names">
             <div class="inputs">
               <div class="container">
