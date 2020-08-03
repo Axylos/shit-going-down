@@ -32,6 +32,10 @@ app.use(createLocaleMiddleware());
 
 app.use('/sms', SmsController);
 
+app.get('/about', (req, res) => {
+  res.render("about")
+})
+
 app.get('/url/:externalId', async (req, res) => {
   const { externalId } = req.params;
   if (externalId.match(/favicon/)) {
