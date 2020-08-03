@@ -344,10 +344,18 @@ a {
 .loginInstructionTwo.edit {
   font-weight: 400;
   width: 220px;
-  text-align: right;
   margin-top: 2%;
   margin-bottom: 8%;
   text-align: right;
+  padding-left: 2%;
+}
+
+.loginInstructionTwo.editTwo {
+  font-weight: 400;
+  width: 250px;
+  text-align: right;
+  margin-top: 2%;
+  padding-left: 5%;
 }
 
 .loginInstructionTwo.add {
@@ -627,13 +635,13 @@ input {
 label {
   font-family: Gordita-Bold, 'Lato';
   color: white;
-  /* padding-right: 5px; */
+  padding-right: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 12px;
   padding-bottom: 0;
   font-weight: 700;
-  margin-left: -30%;
+  /* margin-left: -30%; */
 }
 
 .divMsg {
@@ -664,7 +672,7 @@ label {
 input.smsName {
   margin-top: 0;
   border: 2px solid white;
-  width: 200px;
+  width: 180px;
   letter-spacing: 1px;
   line-height: 1rem;
   padding: 10px 4px;
@@ -689,7 +697,7 @@ input.smsTel {
   display: inherit
 } */
 
-span.choose {
+/* span.choose {
   font-family: Gordita-Bold, 'Lato';
   color: white;
   padding-right: 5px;
@@ -698,7 +706,7 @@ span.choose {
   font-size: 12px;
   padding-bottom: 0;
   font-weight: 700;
-}
+} */
 
 .choose.number {
   margin-left: -50%;

@@ -76,34 +76,36 @@
 
       <form class="search-form" action="#" autocomplete="off">
         <h2 class="step sms">Save a friend you would like to SMS</h2>
-        
-        <div class="divMsg">
-            <label for="selectedContact">NAME:</label><br/></br>
-            <input class="smsName" name="selectedContact" id="contact" type="text" required />
-            <p class='loginInstructionTwo edit'>retype to edit</p>
-            </br>
-            <span class="choose number">Number: </span><br/><br/>
-            <div class="names">
-            <div class= "inputs">
-            <div class="container">
-              <div class="dropdown">
-                <!-- <label for="selectedContact">Number:</label> -->
-                <div class="select">
-                  <span>Select Country</span>
-                  <i class="fa fa-chevron-left"></i>
-                </div>
-                <input type="hidden" name="country">
-                <ul class="dropdown-menu">
-                  <li id="Israel">Israel</li>
-                  <li id="USA">USA</li>
-                </ul>
-              </div>
-              <span class="msg"></span>
-            </div>
 
-            <input class="smsTel" type="tel" required value="" name="phone" id="contact-sms" placeholder="type a number"/>
+        <div class="divMsg">
+          <label for="selectedContact">NAME:</label>
+          <input class="smsName" name="selectedContact" id="contact" type="text" required />
+          <p class='loginInstructionTwo edit'>retype to edit</p>
+          </br>
+          <span class="choose number">Number: </span><br /><br />
+          <div class="names">
+            <div class="inputs">
+              <div class="container">
+                <div class="dropdown">
+                  <!-- <label for="selectedContact">Number:</label> -->
+                  <div class="select">
+                    <span>Country Code</span>
+                    <i class="fa fa-chevron-left"></i>
+                  </div>
+                  <input type="hidden" name="country">
+                  <ul class="dropdown-menu">
+                    <li id="Israel">Israel (+972)</li>
+                    <li id="USA">USA (+1)</li>
+                  </ul>
+                </div>
+                <span class="msg"></span>
+              </div>
+              <input class="smsTel" type="tel" required value="" name="phone" id="contact-sms"
+                placeholder="type a number" />
+            </div>
           </div>
-        </div>
+          <p class='loginInstructionTwo editTwo'>type a 10 digit mobile number </p>
+
         </div>
 
         <button class="goToNextTwo sms" type="submit">SAVE</button>
