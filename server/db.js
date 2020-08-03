@@ -14,7 +14,6 @@ const db = pgp()({
 });
 
 export async function fetchContactData(id) {
-  console.log(id);
   const data = await db.one(`
   SELECT *
   FROM contacts
@@ -32,8 +31,6 @@ export async function storeContact({
   region,
   contactName
 }) {
-  console.log(contactName);
-  console.log('namey');
   const resp = await db.one(`
   INSERT INTO contacts
   (fb_id, fb_name, phone, coords, region, name)
@@ -69,7 +66,6 @@ export async function storeToken(token, secret, twitter_id, name) {
   ($1, $2, $3, $4, $5)
   RETURNING *
   `, [token, secret, twitter_id, name, hash]);
-  console.log(resp);
   return resp;
 }
 

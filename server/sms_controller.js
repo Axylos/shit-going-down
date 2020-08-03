@@ -7,9 +7,9 @@ const router = express.Router();
 router.get('/select-contacts', (req, res) => res.render('select_contacts'));
 router.get('/sender', (req, res) => res.render('sender'));
 router.post('/send', async (req, res) => {
-  console.log(req.body);
+  req.log.info('body: ' + JSON.stringify(req.body));
   if (req.body.err) {
-    console.log('client error: ', req.body.err);
+    req.log.error('client error: ', req.body.err);
   }
   const { phone, coords, fbData: { fbName, fbId }, contactName } = req.body;
   const { region } = req.locale;
@@ -22,22 +22,20 @@ router.post('/send', async (req, res) => {
     region
   };
   try {
-    console.log('storing contact');
     const resp = await storeContact(data);
     const url = `ssgd.me/${resp.id}`;
-    const body = buildBody(url, fbName, contactName, coords, region);
+    const body = buildBody(url, fbName, contactName, coords, region, req.log);
     const coordsIsEmpty = coords === null;
-    await sendMsg(phone, body, coordsIsEmpty);
+    await sendMsg(phone, body, req.log);
   } catch (e) { 
-    console.log(e) 
+    req.log.error(e.stack) 
   } finally {
     res.json({msg: 'ok', phone});
   }
 });
 
-router.get('/', async (req, res) => {
-
-  //await sendMsg('+1 901-484-4933', 'it works');
+router.get('/', (req, res) => {
+  req.log.info('test route');
   res.render('sms');
 });
 

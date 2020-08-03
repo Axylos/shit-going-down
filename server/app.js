@@ -1,4 +1,5 @@
 import express from 'express';
+import logger from './logger.js';
 import pinoLogger from 'express-pino-logger';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -23,7 +24,7 @@ const opts = {
 
 const app = express();
 app.set('view engine', 'ejs');
-app.use(pinoLogger());
+app.use(pinoLogger({ logger }));
 app.use(bodyParser.json());
 app.use(cors(opts));
 app.use(cookieParser());
@@ -53,46 +54,47 @@ app.get('/url/:externalId', async (req, res) => {
     const fbUrl = `https://facebook.com/profile?id=${fbId}`;
     res.render("contact_summary", {fbName, fbUrl, mapUrl, contactName});
   } catch (e) {
-    console.log(e);
+    req.log.info(e.stack);
     res.json("invalid id");
   }
 });
 
 app.post('/api/message', async (req, res) => {
+  req.log.info('got one');
   try {
-    console.log(req.body);
+    req.log.info(req.body);
     const { recipients, fund } = req.body;
     const { hash } = req.cookies;
     const { oauth_token, oauth_secret, name } = await getUser(hash);
-    console.log('reps: ', recipients);
+    req.log.info('reps: ', JSON.stringify(recipients));
     const promises = recipients.map(async (recipient) => {
-      const response = await sendMsg(oauth_token, oauth_secret, recipient.id_str, recipient.name, fund, name);
-      console.log(response);
+      await sendMsg(oauth_token, oauth_secret, recipient.id_str, recipient.name, fund, name);
     })
 
     await Promise.all(promises);
 
     res.json('yay');
   } catch (e) {
-    console.log(e);
+    req.log.error(e.stack);
     res.sendStatus(500);
   }
 });
 
 app.get('/api/verify', async (req, res) => {
+  req.log.info('got another');
   try {
     const hash = req.cookies.hash;
-    console.log('hash: ', hash);
+    req.log.info('hash: ' + hash);
     if (!hash) {
       throw new Error('did not receive hash');
     }
     const { oauth_token, oauth_secret } = await getUser(hash);
     const verified = await verify(oauth_token, oauth_secret);
-    console.log('verified: ', verified);
+    req.log.info('verified: ' + verified);
     res.set('Access-Control-Allow-Credentials', 'true');
     res.json({ verified });
   } catch (e) {
-    console.log(e);
+    req.log.error(e.stack);
     res.set('Access-Control-Allow-Credentials', 'true');
     res.json({ verified: false });
   }
@@ -109,7 +111,7 @@ app.get('/api/callback', async (req, res) => {
     screen_name
   );
   const data = await getClient(oauth_token, oauth_token_secret);
-  console.log(data);
+  req.log(data.toString());
   res.set('foo', 'ba');
   res.set('Access-Control-Allow-Credentials', 'true');
   res.cookie('hash', userData.hash, {
@@ -123,32 +125,32 @@ app.get('/api/contacts', async (req, res) => {
   try {
 
     const { hash } = req.cookies;
-    console.log(hash);
+    req.log.info(hash);
     const { oauth_token, oauth_secret } = await getUser(hash);
 
     const contacts = await getUserContacts(oauth_token, oauth_secret);
     res.set('Access-Control-Allow-Credentials', 'true')
     res.json(contacts);
   } catch (e) {
-    console.log(e);
-    console.error('error: ', e.message);
+    req.log.error(e.stack);
+    req.log.error(e.stack);
     res.send(502);
   }
 });
 
 app.get('/api/login', async (req, res) => {
   const token = await getOauthToken();
-  console.log(JSON.stringify(token));
+  req.log.info(JSON.stringify(token));
 
   try {
 
     const { oauth_token, oauth_token_secret } = qs.decode(token);
     const baseUrl = 'https://api.twitter.com/oauth/authorize?'
     const url = `${baseUrl}${token}`;
-    console.log(url);
+    req.log.info(url);
     res.redirect(url);
   } catch (e) {
-    console.log(e);
+    req.log.error(e.stack);
     res.status(404).send();
   }
 })
@@ -157,4 +159,9 @@ app.get('/', (req, res) => {
   res.json({msg: 'hello world'})
 });
 
-app.listen(PORT, () => console.log('up and running on ', PORT));
+app.use((err, req, res, next) => {
+  logger.error(err.stack);
+  res.status(500).send("Sorry we ran into an internal error.  Try again later.")
+});
+
+app.listen(PORT, () => logger.info('up and running on ', PORT));

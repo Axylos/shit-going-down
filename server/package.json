@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node app.js | pino-gelf log -h draketalley.com -p 12201 -t -v",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js | pino-gelf log -m 8192 -h draketalley.com -p 12201 -t -v"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -19,11 +19,13 @@
     "express": "^4.17.1",
     "express-locale": "^2.0.0",
     "express-pino-logger": "^5.0.0",
+    "libphonenumber-js": "^1.7.55",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "oauth-1.0a": "^2.2.6",
     "pg-promise": "^10.5.8",
     "pino-gelf": "^2.0.0",
+    "pino-pretty": "^4.1.0",
     "twilio": "^3.48.1",
     "twitter-lite": "^0.13.0"
   }
