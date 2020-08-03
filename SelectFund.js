@@ -94,7 +94,14 @@ export default class SelectFund {
     const search = this.el.querySelector('.search');
     const suggestionsEl = this.el.querySelector('.suggestions');
 
-    this.el.querySelector('.goToNextTwo').addEventListener('click', this.goToNext);
+    this.el.querySelector('.goToNextTwo').addEventListener('click', () => {
+      if (this.fund === null) {
+
+      const fund = this.funds.find(currentFund => currentFund.id === 55);
+      this.handleFundSelection(fund);
+      }
+      this.goToNext();
+    });
     this.el.querySelector('.navBtn.back').addEventListener('click', this.goBack);
     this.el.querySelector('.navBtn.next').addEventListener('click', this.goToNext);
 
@@ -105,9 +112,9 @@ export default class SelectFund {
       suggestionsEl.innerHTML = suggestions
       suggestionsEl.querySelectorAll('button').forEach(btn => {
         btn.addEventListener('click', (ev) => {
-          const id = parseInt(ev.currentTarget.value);
-          const fund = this.funds.find(currentFund => currentFund.id === id);
-          this.handleFundSelection(fund);
+            const id = parseInt(ev.currentTarget.value);
+            const fund = this.funds.find(currentFund => currentFund.id === id);
+            this.handleFundSelection(fund);
           this.goToNext()
         })
       });

@@ -50,6 +50,24 @@ export default class Buttons {
     }).join('');
   }
 
+  buildBailSection() {
+    if (this.fund.id === 55) {
+      return "";
+    } else {
+
+    return `<div class='centerBail'>
+       <div class='divBail'>
+         <a class="telBail" href="tel:+1${this.fund.number}">
+         <button class="text callBail"> <span class="click">Click to</span> Call Bail Fund</button>
+         </a>
+       </div>
+       <p class='loginInstructionTwo btn'><span class="help name">The bail fund info:</span>
+          Name: ${this.fund.name}, </br>
+           Tel: <a class="loginInstructionTwo btn" href="tel:+1${this.fund.number}">+1${this.fund.number}</a></br>
+           ${this.fund.city}, ${this.fund.state}</p>
+    </div>`;
+    }
+  }
   render() {
     this.el.innerHTML = `
     <div class="generalpage">
@@ -69,18 +87,8 @@ export default class Buttons {
   <div class='buttons'>
  
   <div class="btnSection">
-  <div class='centerBail'>
-       <div class='divBail'>
-         <a class="telBail" href="tel:+1${this.fund.number}">
-         <button class="text callBail"> <span class="click">Click to</span> Call Bail Fund</button>
-         </a>
-       </div>
-       <p class='loginInstructionTwo btn'><span class="help name">The bail fund info:</span>
-          Name: ${this.fund.name}, </br>
-           Tel: <a class="loginInstructionTwo btn" href="tel:+1${this.fund.number}">+1${this.fund.number}</a></br>
-           ${this.fund.city}, ${this.fund.state}</p>
-    </div>
-
+    ${this.buildBailSection()}
+  
       <div class='centerDM'>
         <div class='divDM'>
           <button class="text DM"><span class="click">Click to</span> DM trusted friends</button>
@@ -106,8 +114,8 @@ export default class Buttons {
   }
 
   unmount() {
-    this.el.querySelector('.text.callBail').removeEventListener('click', this.handleCall);
-    this.el.querySelector('.text.DM').removeEventListener('click', this.openModal);
+    //this.el.querySelector('.text.callBail').removeEventListener('click', this.handleCall);
+    //this.el.querySelector('.text.DM').removeEventListener('click', this.openModal);
     //this.el.querySelector('navBtn.End').removeEventListener('click', this.goBack);
 
   }

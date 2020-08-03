@@ -1,5 +1,5 @@
 import express from 'express';
-import logger from 'morgan';
+import pinoLogger from 'express-pino-logger';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import cookieParser from 'cookie-parser'
@@ -23,7 +23,7 @@ const opts = {
 
 const app = express();
 app.set('view engine', 'ejs');
-app.use(logger('dev'));
+app.use(pinoLogger());
 app.use(bodyParser.json());
 app.use(cors(opts));
 app.use(cookieParser());
