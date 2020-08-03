@@ -2,6 +2,7 @@ import axios from 'axios';
 import crypto from 'crypto';
 import Twitter from 'twitter-lite';
 import dotenv from 'dotenv';
+import logger from './logger.js';
 dotenv.config();
 
 const url = 'https://api.twitter.com/oauth/request_token';
@@ -11,7 +12,6 @@ const signing_key = encodeURIComponent(consumer_secret) + '&';
 
 function buildAuthString() {
   const oauth_timestamp = Math.round((new Date()).getTime() / 1000);
-  console.log(oauth_timestamp)
   const hash = crypto.createHash('md5').update(oauth_timestamp.toString()).digest('hex');
   const params = {
     oauth_callback: "https://www.shitgoingdown.com/api/callback",
@@ -59,14 +59,13 @@ export async function getOauthToken() {
     });
     return resp.data;
   } catch (e) {
-    console.error('err: ', e.message);
-    console.log(e.response.data);
+    logger.error(`err: ${e.message} ${e.response.data}-- ${e.stack}`);
   } 
 }
 
 export async function getClient(tokenKey, secret) {
   try {
-  console.log('token: ', tokenKey, ' secret: ', secret)
+  logger.info('token: ', tokenKey, ' secret: ', secret)
   const opts = {
       subdomain: "api",
       version: "1.1",
@@ -79,14 +78,14 @@ export async function getClient(tokenKey, secret) {
   // const results = await client.get("account/verify_credentials");
   return client;
   } catch (e) {
-    console.error(e);
+    logger.error(`${e.message} ${e.stack}`);
     return null;
   }
 }
 
 export async function sendMsg(tokenKey, secret, recipientId, name, fund, userName) {
   const client = await getClient(tokenKey, secret);
-  console.log('send msg: ', tokenKey, secret, recipientId)
+  logger.info(`send msg:  ${tokenKey}, ${secret}, ${recipientId}`);
   try { 
   const response = await client.post('direct_messages/events/new', {
     event: {
@@ -112,26 +111,26 @@ ${userName}`
   });
   return response;
   } catch (e) {
-    console.log(e);
+    logger.error(`${e.message} ${e.stack}`);
   }
 }
 
 export async function verify(token, secret) {
-  console.log(token, secret);
+  logger.info(token, secret);
   const client = await getClient(token, secret);
-  console.log(client);
+  logger.info(JSON.stringify(client));
   try {
     const resp = await client.get("/account/verify_credentials");
     return true;
   } catch (e) {
-    console.log(e);
+    logger.error(e);
     return false;
   }
 }
 
 export async function getUserContacts(token, secret) {
   const client = await getClient(token, secret);
-  console.log('client: ', client);
+  logger.info('client: ', client);
   const users = [];
   const resp = await client.get("followers/list", { count: 200 });
   users.push(...resp.users);
