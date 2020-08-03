@@ -6,12 +6,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <title>Shit Going Down</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
   <script defer type="application/javascript" charset="utf-8">
     window.onload = () => {
       const nameInput = document.querySelector('input#contact');
       const smsInput = document.querySelector('input#contact-sms');
       const storedPhone = localStorage.getItem('sgdPhone');
       const storedName = localStorage.getItem('sgdContactName');
+
       if (storedPhone !== null) {
         smsInput.value = storedPhone;
       }
@@ -33,6 +36,27 @@
         btn.style.visibility = 'hidden';
         //window.location = "/sms/sender"
       }
+
+      /*Dropdown Menu*/
+      $('.dropdown').click(function () {
+        $(this).attr('tabindex', 1).focus();
+        $(this).toggleClass('active');
+        $(this).find('.dropdown-menu').slideToggle(300);
+      });
+      $('.dropdown').focusout(function () {
+        $(this).removeClass('active');
+        $(this).find('.dropdown-menu').slideUp(300);
+      });
+      $('.dropdown .dropdown-menu li').click(function () {
+        $(this).parents('.dropdown').find('span').text($(this).text());
+        $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+      });
+      $('.dropdown-menu li').click(function () {
+        var input = $(this).parents('.dropdown').find('input').val()
+        console.log(input);
+      });
+      /*End Dropdown Menu*/
+
     }
   </script>
 </head>
@@ -47,36 +71,53 @@
       </div>
     </div>
 
-    <div class='thirdPage'>
+    <div class='thirdPage sms'>
 
-    
+
       <form class="search-form" action="#" autocomplete="off">
-        <h2 class="step">Save a friend you would like to SMS</h2>
+        <h2 class="step sms">Save a friend you would like to SMS</h2>
+        
         <div class="divMsg">
-          <div class="names">
-            <label for="selectedContact">NAME:</label>
-            <input class="smsName"
-              name="selectedContact"
-              id="contact"
-              type="text"
-              required />
-              <p class='loginInstructionTwo edit'>retype to edit</p>
+            <label for="selectedContact">NAME:</label><br/></br>
+            <input class="smsName" name="selectedContact" id="contact" type="text" required />
+            <p class='loginInstructionTwo edit'>retype to edit</p>
             </br>
-            <label for="selectedContact">Number:</label>
-            <input class="smsTel" type="number" required value="" name="phone" id="contact-sms" />
-            <p class='loginInstructionTwo Tel'>only numbers(without&mdash;)</p>
+
+            <span class="choose number">Number: </span><br/><br/>
+            <div class="names">
+            <div class= "inputs">
+            <div class="container">
+              <div class="dropdown">
+                <!-- <label for="selectedContact">Number:</label> -->
+                <div class="select">
+                  <span>Select Country</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input type="hidden" name="country">
+                <ul class="dropdown-menu">
+                  <li id="Israel">Israel</li>
+                  <li id="USA">USA</li>
+                </ul>
+              </div>
+              <span class="msg"></span>
+            </div>
+
+            <input class="smsTel" type="tel" required value="" name="phone" id="contact-sms" placeholder="type a number"/>
+
           </div>
         </div>
-       
+        </div>
+
         <button class="goToNextTwo sms" type="submit">SAVE</button>
 
         <div class="modal">
-          <p class='loginInstructionTwo save'><span class="upper">this contact has been saved on your device!</span><br/><br/>
+          <p class='loginInstructionTwo save'><span class="upper">this contact has been saved on your
+              device!</span><br /><br />
             You can close the APP or keep going.</p>
           <div>
-          <a class="goToNextTwo second" href="/sms/sender" target="_self">CONTINUE</a>
+            <a class="goToNextTwo second" href="/sms/sender" target="_self">CONTINUE</a>
+          </div>
         </div>
-      </div>
       </form>
     </div>
 

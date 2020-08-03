@@ -8,6 +8,8 @@ font-family: 'Lalezar', cursive;
 }
 */
 
+
+
 .sms-modal {
   visibility: hidden;
 }
@@ -90,6 +92,11 @@ a {
   margin-top: 2%;
   margin-bottom: 5%;
   width: 100%;
+}
+
+.step.sms{
+  margin-top: 85px;
+  margin-bottom: 60px;
 }
 
 .loginInstructionTwo.info {
@@ -336,10 +343,11 @@ a {
 
 .loginInstructionTwo.edit {
   font-weight: 400;
-  width: 200px;
+  width: 220px;
   text-align: right;
-  margin-top: 5%;
-  margin-bottom: 0;
+  margin-top: 2%;
+  margin-bottom: 8%;
+  text-align: right;
 }
 
 .loginInstructionTwo.add {
@@ -572,7 +580,7 @@ a {
   text-align: center;
 }
 
-.thirdPage {
+.thirdPage.sms {
   max-width: 550px;
   margin: 0 auto;
   text-align: center;
@@ -596,21 +604,6 @@ a {
   padding-left:20px;
 }
 
-.divMsg {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  text-align: center;
-}
-
-.names {
-  max-width: 400px;
-  justify-content: space-around;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  margin-top: 10px;
-}
 
 input {
   display: inline-block;
@@ -634,32 +627,177 @@ input {
 label {
   font-family: Gordita-Bold, 'Lato';
   color: white;
-  padding-right: 10px;
+  /* padding-right: 5px; */
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 13px;
+  font-size: 12px;
   padding-bottom: 0;
   font-weight: 700;
+  margin-left: -30%;
+}
+
+.divMsg {
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.names {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.inputs {
+  display: flex;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  /* display: flex; */
+  justify-content: space-between;
 }
 
 input.smsName {
-  margin-top: 15%;
+  margin-top: 0;
   border: 2px solid white;
-  width: 140px;
+  width: 200px;
   letter-spacing: 1px;
   line-height: 1rem;
-  padding: 6px 4px;
-  margin-left:10px;
+  padding: 10px 4px;
+  margin-left: 10px;
+  height: 18px;
 }
 
 input.smsTel {
-  margin-top: 15%;
+  margin-top: 0;
+  height: 18px;
   border: 2px solid white;
   width: 130px;
   letter-spacing: 1px;
   line-height: 1rem;
-  padding: 6px 4px;
+  padding: 10px 4px;
+  margin-left: 10px;
 }
+
+/* span.msg {
+  color: #555;
+  padding: 5px 0 10px;
+  display: inherit
+} */
+
+span.choose {
+  font-family: Gordita-Bold, 'Lato';
+  color: white;
+  padding-right: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding-bottom: 0;
+  font-weight: 700;
+}
+
+.choose.number {
+  margin-left: -50%;
+}
+
+.container {
+  display: flex;
+  max-width: 450px;
+  height: 26px;
+  /* margin: 48px auto 0; */
+  text-align: center
+}
+
+/*Styling Selectbox*/
+.dropdown {
+  display: inline-block;
+  font-family: 'Roboto';
+  border: 2px solid white;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  font-size: 11px;
+  /* line-height: 1.1rem; */
+  padding: 6px 2px;
+  transition: all .5s ease;
+  width: 130px;
+  outline: none;
+  height: 100%;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgb(204, 204, 204);
+  position: relative;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 10px;
+}
+.dropdown .select {
+    cursor: pointer;
+    display: block;
+    padding: 6px 4px;
+}
+.dropdown .select > i {
+    font-size: 11px;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    float: right;
+    line-height: 10px
+}
+.dropdown:hover {
+  box-shadow: 0 1px 2px rgba(204, 204, 204, 0.166);
+}
+.dropdown:active {
+  background-color: black
+}
+.dropdown.active:hover,
+.dropdown.active {
+  box-shadow: 0 1px 2px rgba(204, 204, 204, 0.166);
+  border-radius: 2px 2px 0 0;
+  background-color: black
+}
+.dropdown.active .select > i {
+    transform: rotate(-90deg)
+}
+.dropdown .dropdown-menu {
+    position: absolute;
+    background-color:  black;
+    width: 100%;
+    left: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 2px rgba(204, 204, 204, 0.166);
+    border-radius: 0 1px 2px 2px;
+    overflow: hidden;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9
+}
+.dropdown .dropdown-menu li {
+    padding: 10px 4px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+} 
+.dropdown .dropdown-menu {
+    padding: 0;
+    list-style: none
+}
+.dropdown .dropdown-menu li:hover {
+    background-color: #B9FB4F;
+    color: black;
+}
+.dropdown .dropdown-menu li:active {
+    background-color: #B9FB4F;
+    color: black;
+}
+
+/* End Styling Selectbox*/
+
 
 .selectFundBtn {
   background-color: black;
@@ -824,7 +962,7 @@ span.place {
 }
 
 .goToNextTwo.sms {
-  margin-top: 15%;
+  margin-top: 20%;
   padding: 10px 10px;
   transition: 0s; 
 }
