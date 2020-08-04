@@ -4,10 +4,17 @@ font-family: 'Noto Serif', serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Lalezar', cursive;
 .Gordita-Bold {
-	font-family: Gordita-Bold;
+  font-family: Gordita-Bold;
+  
+  font-family: 'Arimo', sans-serif;
+font-family: 'Assistant', sans-serif;
+font-family: 'Rubik', sans-serif;
 }
 */
 
+html {
+  scroll-behavior: smooth;
+}
 .sms-modal {
   visibility: hidden;
 }
@@ -501,7 +508,7 @@ a {
   margin-top: 0;
   margin-left: 0;
   letter-spacing: 1px;
-  font-size: 11px;
+  font-size: 12px;
   display: inline-block;
   text-decoration: none;
   font-weight: 300;
@@ -1408,6 +1415,12 @@ span.place {
 
 /*about*/
 
+.about {
+  max-width: 550px;
+  margin: 0 auto;
+  font-family: 'Assistant','Rubik', sans-serif;
+
+}
 
 .innerNav {
   margin-top: 20px;
@@ -1421,17 +1434,39 @@ span.place {
 }
 
 .lang {
+  font-family: 'Assistant','Rubik', sans-serif;
   color: white;
-  margin-left: 40px;
-  margin-top: 0;
-  font-size: 12px;
+  margin-left: 55px;
+  padding-top: 6%;
+  font-size: 14px;
+  border: 2px solid #6DEFF1;
+  border-radius: 40px;
+  padding-left: 10px ;
+  padding-right: 10px;
+  padding-bottom: 2%;
+  display: inline-block;
+  letter-spacing: 4px;
 }
 
+.lang.Heb {
+  font-size: 20px;
+}
 
+.lang.eng {
+  letter-spacing: 2px;
+}
+
+.lang:hover {
+  border: 2px solid #fa2a1f;
+  /* transform: rotate(2deg);  */
+}
 
 .aboutNav {
-  width: 320px;
+  width: 340px;
+}
 
+.aboutNav.eng {
+  margin-top: 20px;
 }
 
 .liInner {
@@ -1439,25 +1474,26 @@ span.place {
   padding: 5px 5px;
   margin-bottom: 0;
   letter-spacing: 2px;
-  margin-left: 32%;
+  margin-left: 20%;
+}
+
+.liInner.heb {
+  padding: 0px 5px;
+  text-align: right;
+  margin-right: 50px;
 }
 
 .innerlink {
   text-decoration: none;
   color: #989898;
-
-  /* text-transform: lowercase; */
-}
+  transition: all .5s ease;
+ }
 
 .innerlink:hover {
   text-decoration: underline;
   color: white;
 }
 
-.about {
-  max-width: 550px;
-  margin: 0 auto;
-}
 
 .loglin {
   display:flex;
@@ -1474,7 +1510,30 @@ span.place {
   width: 180px;
 }
 
+.step.heb {
+  margin-right: 30px;
+  margin-top: 10px;
+  padding: 6px 0;
+  padding-right: 8px;
+  font-size: 22px;
+  width: 200px;
+  text-align: right;
+  letter-spacing: 1px;
+  font-family: 'Assistant', sans-serif;
+}
+
 .step.aboutus{
+  margin-left: 60px;
+  margin-top: 40px;
+  padding: 6px 5px;
+  font-size: 22px;
+  width: 350px;
+}
+
+
+.step.aboutusHeb {
+  font-family: 'Assistant', sans-serif;
+  text-align: right;
   margin-left: 60px;
   margin-top: 40px;
   padding: 6px 5px;
@@ -1486,10 +1545,29 @@ span.place {
   font-family: Gordita-Bold;
 }
 
+.homeInstructionOne.heb {
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #fa2a1f;
+  margin-top: 90px;
+  width: 190px;
+  padding: 2px 15px;
+  margin-left: 20px;
+  text-align: right;
+  font-family: 'Assistant', sans-serif;
+}
+
 .step.subtitle.table {
   font-size: 16px;
   margin: 10px 10px;
   letter-spacing: 3px;
+}
+
+.step.subtitle.tableHeb {
+  font-size: 16px;
+  margin: 10px 10px;
+  letter-spacing: 3px;
+  text-align: right;
 }
 
 .step.subtitle.phone {
@@ -1509,6 +1587,7 @@ span.place {
   text-transform: capitalize;
   padding: 2px 6px;
   margin-left: 0;
+ 
 }
 
 .mainABout {
@@ -1518,11 +1597,21 @@ span.place {
 
 .step.aboutTitle {
   margin-left: 50px;
-  /* text-decoration: underline; */
   color: #6DEFF1;
   margin-top: 10%;
   font-size: 20px;
   width: 250px;
+}
+
+.step.aboutHeb {
+  color: #6DEFF1;
+  margin-top: 10%;
+  margin-bottom: 0;
+  font-size: 20px;
+  width: 380px;
+  text-align: right;
+  font-family: 'Assistant', sans-serif;
+  /* float: right; */
 }
 
 .loginInstructionTwo.about {
@@ -1539,20 +1628,52 @@ span.place {
   text-align: left;
 }
 
+.loginInstructionTwo.heb {
+  font-size: 14px;
+  letter-spacing: 3px;
+  line-height: 1.4rem;
+  width: 360px;
+  margin-top: 0;
+  margin-right: 45px;
+  padding-left: 0;
+  padding-right: 55px;
+  margin-top: 5px;
+  color:  #dfdfdf;
+  font-weight: 400;
+  text-align: right;
+  font-family: 'Assistant', sans-serif;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .loginInstructionTwo.aboutus {
-  font-size: 12px;
-  letter-spacing: 2px;
-  line-height: 1.5rem;
-  width: 400px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 1.3rem;
+  width: 350px;
   margin-left: 60px;
   padding-left: 0;
-  padding-right: 15px;
+  /* padding-right: 15px; */
   margin-top: 5px;
   color:  #ffffff;
   font-weight: 400;
   text-align: left;
 } 
 
+.loginInstructionTwo.aboutusHeb {
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 1.3rem;
+  width: 350px;
+  margin-left: 60px;
+  padding-left: 0;
+  /* padding-right: 15px; */
+  margin-top: 5px;
+  color:  #ffffff;
+  font-weight: 400;
+  text-align: right;
+  font-family: 'Assistant', sans-serif;
+} 
 
 .imgabout {
   margin-left: auto;
@@ -1564,6 +1685,13 @@ span.place {
   border-bottom: 1px solid #B9FB4F;
   border-radius: 2px;
   font-weight: 700;
+}
+
+.underline.aboutHeb {
+  border-bottom: 1px solid #B9FB4F;
+  border-radius: 2px;
+  font-weight: 700;
+  text-align: right;
 }
 
 .underline.number {
@@ -1629,6 +1757,23 @@ span.place {
   margin-bottom: 0;
 }
 
+.loginInstructionTwo.aboutInfoHeb {
+  font-size: 14px;
+  letter-spacing: 4px;
+  line-height: 1.2rem;
+  width: 180px;
+  margin-left: 10px;
+  padding-left: 0;
+  padding-right:0;
+  margin-top: -2px;
+  color:  #ffffff;
+  font-weight: 400;
+  margin-bottom: 0;
+  text-align: right;
+  font-family: 'Assistant', sans-serif;
+
+}
+
 .loginInstructionTwo.aboutInstruction {
   color:white;
   margin-left: 15px;
@@ -1646,6 +1791,24 @@ span.place {
   font-family: 'Lato';
 }
 
+.loginInstructionTwo.aboutInstructionHeb {
+  color:white;
+  margin-left: 15px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: left;
+  margin-bottom: 5px;
+  padding-bottom: 0;
+  padding-top:0;
+  margin-top: 15px;
+  padding-right: 5px;
+  margin-right: 0;
+  width: 180px;
+  font-family: 'Assistant', sans-serif;
+  text-align: right;
+}
+
 .imgAbout {
   padding: 15px 5px;
   margin-top: 0;
@@ -1657,11 +1820,12 @@ span.place {
   border: 1px dotted white;
   border-radius: 80px;
   object-fit: cover;
+  margin-left: 20px;
 }
 
 .loginInstructionTwo.smallAbout {
   font-size: 11px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.63);
   color:black;
   font-weight: 400;
   line-height: 0.5;
@@ -1670,6 +1834,22 @@ span.place {
   padding-right: 10px;
   padding-left: 20px;
   margin-left: 0;
+  margin-right: 0;
+}
+
+.loginInstructionTwo.smallHeb {
+  font-size: 10px;
+  background-color: rgba(255, 255, 255, 0.63);
+  color:black;
+  font-weight: 400;
+  line-height: 0.5;
+  text-align: left;
+  font-family: 'Assistant', sans-serif;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: right;
 }
 
 .homescreen {
@@ -1699,6 +1879,24 @@ span.place {
   text-transform: capitalize;
 }
 
+.loginInstructionTwo.phoneHeb {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-top: 2px;
+  line-height: 1.5rem;
+  width: 180px;
+  margin-left: 12%;
+  padding-left: 0;
+  padding-right:0;
+  margin-top: 50px;
+  color:  #6DEFF1;
+  font-weight: 400;
+  width: 380px;
+  padding-bottom: 20px;
+  text-align: right;
+  font-family: 'Assistant', sans-serif;
+}
+
 .phones {
   display: flex;
   margin-top: -2%;
@@ -1710,14 +1908,14 @@ span.place {
 
 .success {
   display: flex;
-  width: 280px;
-  padding-left: quto;
+  width: 400px;
   margin-right: auto;
-  margin-top: 5%;
+  margin-top: auto;
   padding-left: 10%;
   border-bottom: 3px solid white;
   /* width: 350px; */
   padding-bottom: 5%;
+  padding-top: 5%;
 }
 
 .yay {
@@ -1743,16 +1941,21 @@ span.place {
 
 .homeInstructionOne.thank {
     font-size: 14px;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     color: #fa2a1f;
     margin-top: 40px;
     margin-bottom: 50px;
     font-weight: 400;
-    width: 350px;
+    width: 320px;
     text-transform: capitalize;
     padding: 2px 6px;
-    margin-left: 15%;
+    margin-left: auto;
     margin-right: auto;
     font-family: Gordita-Bold;
     text-align: center;
 }
+
+
+
+/*HEBREW*/
+

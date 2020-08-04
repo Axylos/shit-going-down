@@ -145,6 +145,11 @@ export default class Welcome {
       </div>
         
         <div class="animationPage">
+            <div class="nav">
+         
+              <img class="question" src="/images/question.png" height="40">
+            
+          </div>
             <div class="textHome animate-this">
               <div class="titlediv "> 
                   <div class="divInsta"> 

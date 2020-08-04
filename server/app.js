@@ -33,8 +33,12 @@ app.use(createLocaleMiddleware());
 
 app.use('/sms', SmsController);
 
-app.get('/about', (req, res) => {
+app.get('/info/about', (req, res) => {
   res.render("about")
+})
+
+app.get('/info/about-hebrew', (req, res) => {
+  res.render("aboutHebrew")
 })
 
 app.get('/url/:externalId', async (req, res) => {
