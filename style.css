@@ -1407,6 +1407,53 @@ span.place {
 }
 
 /*about*/
+
+
+.innerNav {
+  margin-top: 20px;
+  max-width: 400px;
+  padding-bottom: 0;
+  margin-bottom: 40px; 
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+}
+
+.lang {
+  color: white;
+  margin-left: 40px;
+  margin-top: 0;
+  font-size: 12px;
+}
+
+
+
+.aboutNav {
+  width: 320px;
+
+}
+
+.liInner {
+  color: #989898;
+  padding: 5px 5px;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+  margin-left: 32%;
+}
+
+.innerlink {
+  text-decoration: none;
+  color: #989898;
+
+  /* text-transform: lowercase; */
+}
+
+.innerlink:hover {
+  text-decoration: underline;
+  color: white;
+}
+
 .about {
   max-width: 550px;
   margin: 0 auto;
@@ -1420,8 +1467,9 @@ span.place {
 
 .step.subtitle {
   margin-left: 60px;
-  margin-top: 40px;
-  padding: 6px 5px;
+  margin-top: 10px;
+  padding: 6px 0;
+  padding-right: 12px;
   font-size: 22px;
   width: 180px;
 }
@@ -1439,8 +1487,9 @@ span.place {
 }
 
 .step.subtitle.table {
-  font-size: 18px;
-  margin: 0px 10px;
+  font-size: 16px;
+  margin: 10px 10px;
+  letter-spacing: 3px;
 }
 
 .step.subtitle.phone {
@@ -1481,7 +1530,7 @@ span.place {
   letter-spacing: 3px;
   line-height: 1.2rem;
   width: 400px;
-  margin-left: 40px;
+  margin-left: 45px;
   padding-left: 0;
   padding-right: 15px;
   margin-top: 5px;
@@ -1702,7 +1751,7 @@ span.place {
     width: 350px;
     text-transform: capitalize;
     padding: 2px 6px;
-    margin-left: auto;
+    margin-left: 15%;
     margin-right: auto;
     font-family: Gordita-Bold;
     text-align: center;
