@@ -147,11 +147,9 @@ export default class Welcome {
         <div class="animationPage">
             <div class="textHome animate-this">
               <div class="titlediv "> 
-
                   <div class="divInsta"> 
                     <p class='homeInstructionOne'> <strong>Contact your friends at the push of a button in case</strong></p>
                   </div>
-
                   <div class="mainTitle">
                     <h2 class="shit">SHIT GOING <span class="shit down">DOWN</span></h2>
                   </div>
