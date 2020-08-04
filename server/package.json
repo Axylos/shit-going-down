@@ -5,8 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "node app.js | pino-gelf log -h draketalley.com -p 12201 -t -v",
-    "dev": "nodemon app.js | pino-gelf log -m 8192 -h draketalley.com -p 12201 -t -v"
+    "start": "node app.js | pino-gelf log -m 8192 -h draketalley.com -p 12201 -t -v | pino-pretty",
+    "dev": "nodemon app.js | pino-gelf log -m 8192 -h draketalley.com -p 12201 -t -v | pino-pretty"
   },
   "dependencies": {
     "axios": "^0.19.2",

@@ -65,7 +65,7 @@ export async function getOauthToken() {
 
 export async function getClient(tokenKey, secret) {
   try {
-  logger.info('token: ', tokenKey, ' secret: ', secret)
+  logger.info('token: ' +  tokenKey +  ' secret: ' +  secret)
   const opts = {
       subdomain: "api",
       version: "1.1",
