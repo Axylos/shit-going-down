@@ -17,7 +17,7 @@ export default class Buttons {
       fund: this.fund
     }
 
-    const resp = await fetch('https://www.shitgoingdown.com/api/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json'}, credentials: 'include'});
+    const resp = await fetch('/api/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json'}, credentials: 'include'});
     if (resp.ok) {
       const data = resp.json();
     }

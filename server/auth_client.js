@@ -90,6 +90,14 @@ export async function sendMsg(tokenKey, secret, recipientId, name, fund, userNam
   const client = await getClient(tokenKey, secret);
   logger.info(`send msg:  ${tokenKey}, ${secret}, ${recipientId}`);
   try { 
+    const bailStr = fund.id === 55 ? '' : `
+I chose the local bail fund below in advance, please contact them on my behalf
+if you feel comfortable.
+${fund.name} in ${fund.city}, ${fund.state}
+${fund.number} -- ${fund.url}
+
+${userName}`
+
   const response = await client.post('direct_messages/events/new', {
     event: {
       type: 'message_create',
@@ -102,12 +110,8 @@ I'm sending you this message as a trusted friend - I have reason to believe that
 
 Please cheack on me soon! If I'm not answering there is a chance I just got arrested.
 
-I chose the local bail fund below in advance, please contact them on my behalf
-if you feel comfortable.
-${fund.name} in ${fund.city}, ${fund.state}
-${fund.number} -- ${fund.url}
-
-${userName}`
+${bailStr}
+`
         }
       },
     }

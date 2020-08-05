@@ -99,7 +99,7 @@ export default class SelectFund {
     const suggestionsEl = this.el.querySelector('.suggestions');
 
     this.el.querySelector('.goToNextTwo').addEventListener('click', () => {
-      if (this.fund === null) {
+      if (this.selectedFund === null) {
 
       const fund = this.funds.find(currentFund => currentFund.id === 55);
       this.handleFundSelection(fund);
