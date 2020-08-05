@@ -1494,7 +1494,7 @@ span.place {
 .about {
   max-width: 550px;
   margin: 0 auto;
-  font-family: 'Roboto', 'Lato' sans-serif;
+  font-family: 'Roboto', 'Lato', sans-serif;
 }
 
 .about.heb {
@@ -1692,6 +1692,7 @@ span.place {
   text-transform: capitalize;
   padding: 2px 6px;
   margin-left: 0;
+  font-family: 'Roboto', 'Lato', sans-serif;
 }
 
 .mainABout {
@@ -1729,6 +1730,8 @@ span.place {
   color:  #dfdfdf;
   font-weight: 400;
   text-align: left;
+  font-family: 'Roboto', 'Lato', sans-serif;
+
 }
 
 .loginInstructionTwo.heb {
@@ -1760,6 +1763,8 @@ span.place {
   color:  #ffffff;
   font-weight: 400;
   text-align: left;
+  font-family: 'Roboto', 'Lato', sans-serif;
+
 } 
 
 .loginInstructionTwo.aboutusHeb {
@@ -1786,6 +1791,8 @@ span.place {
   border-bottom: 1px solid #B9FB4F;
   border-radius: 2px;
   font-weight: 700;
+  font-family: 'Roboto', 'Lato', sans-serif;
+
 }
 
 .underline.aboutHeb {
@@ -1800,6 +1807,8 @@ span.place {
   border-radius: 2px;
   font-weight: 700;
   font-size: 16px;
+  font-family: 'Roboto', 'Lato', sans-serif;
+
 }
 
 /* .underline.circle {
@@ -1818,6 +1827,8 @@ span.place {
   margin-right: auto;
   text-align: center;
   max-width: 600px;
+  font-family: 'Roboto', 'Lato', sans-serif;
+
 }
 
 .stepsDiv {
@@ -1856,6 +1867,8 @@ span.place {
   color:  #ffffff;
   font-weight: 400;
   margin-bottom: 0;
+  font-family: 'Roboto', 'Lato', sans-serif;
+
 }
 
 .loginInstructionTwo.aboutInfoHeb {
@@ -1889,7 +1902,7 @@ span.place {
   padding-right: 5px;
   margin-right: 0;
   width: 180px;
-  font-family: 'Lato';
+  font-family:  'Lato', sans-serif;
 }
 
 .loginInstructionTwo.aboutInstructionHeb {
@@ -2018,7 +2031,7 @@ span.place {
 }
 
 .yay {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Lato', sans-serif;
   font-size: 18px;
   color: rgb(205, 205, 205);
   padding-right:10px;
@@ -2029,7 +2042,7 @@ span.place {
 .with.yay {
   margin-left:15%;
   font-size: 16px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Lato', sans-serif;
   letter-spacing: 0;
   /* width: 80px; */
 }
