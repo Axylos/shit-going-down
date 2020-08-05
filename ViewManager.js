@@ -24,7 +24,10 @@ class ViewManager {
   }
 
   getInitial(verifiedResponse) {
-    if (verifiedResponse === "verified") {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('cmd') === 'twitter-auth') {
+      return SELECT_CONTACTS;
+    } else if (verifiedResponse === "verified") {
       if (this.selectedContacts.length === 0) {
         return SELECT_CONTACTS;
       } else if (this.fund === null) {
@@ -75,7 +78,7 @@ class ViewManager {
       this.current = SELECT_CONTACTS;
       this.render();
     } else {
-      window.location = "https://www.shitgoingdown.com/api/login";
+      window.location.href = "/api/login";
     }
   }
 

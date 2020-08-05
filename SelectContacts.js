@@ -13,7 +13,7 @@ export default class SelectContacts {
   }
 
   async loadContacts() {
-    const resp = await fetch('https://www.shitgoingdown.com/api/contacts', { credentials: 'include' })
+    const resp = await fetch('/api/contacts', { credentials: 'include' })
     if (resp.ok) {
       const data = await resp.json();
       this.loaded = true;

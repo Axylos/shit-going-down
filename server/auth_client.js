@@ -9,12 +9,13 @@ const url = 'https://api.twitter.com/oauth/request_token';
 const consumer_key = process.env.TWITTER_CONSUMER_KEY;
 const consumer_secret = process.env.TWITTER_CONSUMER_SECRET;
 const signing_key = encodeURIComponent(consumer_secret) + '&';
+const oauth_callback = process.env.OAUTH_CALLBACK;
 
 function buildAuthString() {
   const oauth_timestamp = Math.round((new Date()).getTime() / 1000);
   const hash = crypto.createHash('md5').update(oauth_timestamp.toString()).digest('hex');
   const params = {
-    oauth_callback: "https://www.shitgoingdown.com/api/callback",
+    oauth_callback,
     oauth_nonce: hash,
     oauth_signature_method: 'HMAC-SHA1',
     oauth_timestamp,
@@ -22,6 +23,7 @@ function buildAuthString() {
     oauth_version: '1.0'
   };
 
+  logger.info('params: ' + params);
   const vals = {};
 
   for (let [key, val] of Object.entries(params)) {
@@ -44,6 +46,7 @@ function buildAuthString() {
 
   const auth = `OAuth oauth_consumer_key="${vals.oauth_consumer_key}", oauth_nonce="${vals.oauth_nonce}", oauth_callback="${vals.oauth_callback}", oauth_signature_method="HMAC-SHA1", oauth_timestamp="${vals.oauth_timestamp}",  oauth_signature="${sig}", oauth_version="1.0"`;
 
+  logger.info('auth string: ' + auth);
   return auth;
 }
 

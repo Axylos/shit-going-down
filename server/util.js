@@ -1,6 +1,10 @@
 export function parsePhone(phone, country) {
-  const intPhone = phone.replace(/\D/g, '');
+  let intPhone = phone.replace(/\D/g, '');
 
-  const countryCode = country === "Israel" ? "972" : "1"; 
+  if (country === "USA" && phone.match(/^0/)) {
+    intPhone = intPhone.slice(1); 
+  }
+
+  const countryCode = country === "Israel" ? "972" : "1";
   return `+${countryCode}${intPhone}`;
 }

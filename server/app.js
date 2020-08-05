@@ -125,9 +125,9 @@ app.get('/api/callback', async (req, res) => {
   res.set('Access-Control-Allow-Credentials', 'true');
   res.cookie('hash', userData.hash, {
     maxAge: 86_400_000,
-    domain: 'www.shitgoingdown.com'
   })
-    .sendFile(path.join(path.resolve(path.dirname('')) + '/redirect.html'));
+
+  res.redirect(303, '/?cmd=twitter-auth');
 });
 
 app.get('/api/contacts', async (req, res) => {
@@ -148,7 +148,8 @@ app.get('/api/contacts', async (req, res) => {
 
 app.get('/api/login', async (req, res) => {
   const token = await getOauthToken();
-  req.log.info(JSON.stringify(token));
+  req.log.error('got here');
+  req.log.info('token: ' + JSON.stringify(token));
 
   try {
 
