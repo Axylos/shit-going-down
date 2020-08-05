@@ -7,7 +7,13 @@ function storeCreds() {
     console.log(resp);
     localStorage.setItem('sgdName', resp.name);
     localStorage.setItem('sgdFbId', resp.id);
-    window.location = "/sms/select-contacts";
+    if (localStorage.getItem('sgdPhone') !== null &&
+      localStorage.getItem('sgdCountryCode') !== null &&
+      localStorage.getItem('sgdContactName') !== null) {
+        window.location = "/sms/sender";
+      } else {
+        window.location = "/sms/select-contacts";
+      }
   });
 }
 

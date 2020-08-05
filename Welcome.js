@@ -147,9 +147,8 @@ export default class Welcome {
         <div class="animationPage">
         
         <div class="navQ">
-          <a class="navQuestion mainQuestion" href="/info/about"> ? </a>
+          <a class="navQuestion mainQuestion" href="/info/about?cmd=first-about"> ? </a>
         </div>
-
             <div class="textHome animate-this">
               <div class="titlediv "> 
                   <div class="divInsta"> 

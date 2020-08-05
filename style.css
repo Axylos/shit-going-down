@@ -15,7 +15,19 @@ font-family: 'Rubik', sans-serif;
 html {
   scroll-behavior: smooth;
 }
+
 .sms-modal {
+  visibility: hidden
+}
+
+.validation-error {
+  visibility: hidden;
+  color: red;
+  font-size: 12px;
+}
+
+.mobile-modal {
+  color: blue;
   visibility: hidden;
 }
 

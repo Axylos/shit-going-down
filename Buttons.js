@@ -17,7 +17,7 @@ export default class Buttons {
       fund: this.fund
     }
 
-    const resp = await fetch('https://www.shitgoingdown.com/api/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json'}, credentials: 'include'});
+    const resp = await fetch('/api/message', {method: 'POST', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json'}, credentials: 'include'});
     if (resp.ok) {
       const data = resp.json();
     }
@@ -76,11 +76,11 @@ export default class Buttons {
       <div class="nav">
         <div class="upButtons">
           <a class="navQuestion" href="/info/about"> ? </a>
-          <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
+          <a class="logo" href="/">www.shitgoingdown.com</a>
           <a class="navBtn nextEnd" href="#"> ► </a>
         </div>
       </div>
-      <a class="navBtn back" href="https://shitgoingdown.com">◄◄ </a>
+      <a class="navBtn back" href="/?cmd=twitter-fund">◄◄ </a>
     </div>
 
   <div class='finalPage'>
@@ -109,7 +109,7 @@ export default class Buttons {
    </div>
      
     `;
-    this.el.querySelector('.navBtn.End').addEventListener('click', this.goBack)
+    this.el.querySelector('.navBtn.nextEnd').addEventListener('click', this.goBack)
     //this.el.querySelector('.callBail').addEventListener('click', this.handleCall);
     this.el.querySelector('.text.DM').addEventListener('click', e => {
       this.openModal(e);

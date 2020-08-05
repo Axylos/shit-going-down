@@ -34,8 +34,14 @@ app.use(createLocaleMiddleware());
 app.use('/sms', SmsController);
 
 app.get('/info/about', (req, res) => {
+  logger.info(JSON.stringify(req.locale));
+  if (req.params.cmd === "first-about" && req.locale.region === "IL") {
+      res.render("aboutHebrew")
+      return;
+  }
+
   res.render("about")
-})
+});
 
 app.get('/info/about-hebrew', (req, res) => {
   res.render("aboutHebrew")
@@ -125,9 +131,9 @@ app.get('/api/callback', async (req, res) => {
   res.set('Access-Control-Allow-Credentials', 'true');
   res.cookie('hash', userData.hash, {
     maxAge: 86_400_000,
-    domain: 'www.shitgoingdown.com'
   })
-    .sendFile(path.join(path.resolve(path.dirname('')) + '/redirect.html'));
+
+  res.redirect(303, '/?cmd=twitter-auth');
 });
 
 app.get('/api/contacts', async (req, res) => {
@@ -137,7 +143,7 @@ app.get('/api/contacts', async (req, res) => {
     req.log.info(hash);
     const { oauth_token, oauth_secret } = await getUser(hash);
 
-    const contacts = await getUserContacts(oauth_token, oauth_secret);
+    const contacts = await getUserContacts(oauth_token, oauth_secret, req.log);
     res.set('Access-Control-Allow-Credentials', 'true')
     res.json(contacts);
   } catch (e) {
@@ -148,7 +154,8 @@ app.get('/api/contacts', async (req, res) => {
 
 app.get('/api/login', async (req, res) => {
   const token = await getOauthToken();
-  req.log.info(JSON.stringify(token));
+  req.log.error('got here');
+  req.log.info('token: ' + JSON.stringify(token));
 
   try {
 

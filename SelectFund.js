@@ -57,6 +57,9 @@ export default class SelectFund {
   }
 
   getFundDisplay() {
+    if (this.selectedFund.id === 55) {
+      return;
+    }
     return `
     <div>
     <h3 class="chosen-contacts-fund">You have selected: ${this.selectedFund.name}</h3>
@@ -73,10 +76,10 @@ export default class SelectFund {
         <div class="upButtons">
           <a class="navQuestion" href="/info/about"> ? </a>
           <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
-          <a class="navBtn nextEnd" href="#"> ► </a>
+          <a class="navBtn next" href="#"> ► </a>
         </div>
       </div>
-      <a class="navBtn back" href="https://shitgoingdown.com">◄◄ </a>
+      <a class="navBtn back" href="#">◄◄ </a>
     </div>
 
       <div class='secondPage'>
@@ -88,8 +91,7 @@ export default class SelectFund {
         ${this.selectedFund !== null ? this.getFundDisplay() : ''}
         <div class="list">
           <div class="suggestions"></div>
-          <button class="goToNextTwo"> SKIP </button> 
-
+          <button class="goToNextTwo"> ${this.selectedFund === null || this.selectedFund.id === 55 ? "SKIP" : "CONTINUE"} </button> 
         </div>
       </div>
     </div>
@@ -99,7 +101,7 @@ export default class SelectFund {
     const suggestionsEl = this.el.querySelector('.suggestions');
 
     this.el.querySelector('.goToNextTwo').addEventListener('click', () => {
-      if (this.fund === null) {
+      if (this.selectedFund === null) {
 
       const fund = this.funds.find(currentFund => currentFund.id === 55);
       this.handleFundSelection(fund);
