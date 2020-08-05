@@ -27,6 +27,8 @@ class ViewManager {
     const params = new URLSearchParams(window.location.search);
     if (params.get('cmd') === 'twitter-auth') {
       return SELECT_CONTACTS;
+    } else if (params.get('cmd') === "twitter-fund") {
+        return SELECT_FUND;
     } else if (verifiedResponse === "verified") {
       if (this.selectedContacts.length === 0) {
         return SELECT_CONTACTS;
@@ -75,7 +77,12 @@ class ViewManager {
 
   twitterNext() {
     if (this.verified === "verified") {
-      this.current = SELECT_CONTACTS;
+      if (localStorage.getItem('fund') !== null && localStorage.contacts !== null) {
+        this.current = BUTTONS;
+      } else {
+        this.current = SELECT_CONTACTS;
+      }
+
       this.render();
     } else {
       window.location.href = "/api/login";
