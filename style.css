@@ -515,10 +515,13 @@ position: absolute;
   font-weight: 200;
   font-size: 32px;
   right:0;
-  margin-right: 0;
-  padding-right: 30px;
-  padding-top: 5px;
-  margin-top: 0;
+  border: 1px solid #fa2a1f96;
+  border-radius: 100px;
+  /* margin-right: 0; */
+  padding: 5px 18px;
+  margin-right: 30px;
+  /* padding-top: 5px; */
+  /* margin-top: 10%; */
   background: -webkit-linear-gradient(#fa2a1f, #B9FB4F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
@@ -2059,3 +2062,18 @@ span.place {
     text-align: center;
 }
 
+
+@media only screen and (min-width: 600px) {
+  .navQ {
+    margin-right:450px;
+    margin-top: 10px;
+    padding-top: 0;
+    position: absolute;
+    }
+
+    .navQuestion.mainQuestion:hover {
+     
+      border: 1px solid #B9FB4F;
+     
+    }
+}
