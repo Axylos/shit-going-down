@@ -10,9 +10,7 @@ A web-mobile app that allows contacting your trusted friends, via Twitter or SMS
 
 ## Contributing / Future Roadmap:
 1. [Our bail fund list](https://github.com/Axylos/shit-going-down/blob/master/phones.json) is in complete and limited to USA - this can be expanded easily.
-2. Currently the app is using Twitter API, we would love to know if there might a need to an addinoal third-party service.
-3. There are additional feature that yet we had the chance to develop, such as: sending location to the trusted friends, having the app works offline and so on.
-4. Manage rate limiting of fetching user contacts.
+2. Currently supported in the USA and Israel, would be happy to expand it.
 
 ## Intention:
 * This app was built during a few days in a fast paced, we were hoping to assist the heaten situation and strengthen the trusted network.
