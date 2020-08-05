@@ -1,10 +1,10 @@
 # [shit-going-down](https://www.shitgoingdown.com) 🚔 👀
-A web-mobile app that allows contacting your trusted friends and local bail funds at a push of a button in case of an emergency.
-The goal is to make people feel safer with a faster means of communication in times of protests and clashes with authority.
+A web-mobile app that allows contacting your trusted friends, via Twitter or SMS at a push of a button in case of an emergency.It is for protesters or anyone who feels threatened in public. It provides a means to trigger a last-minute alert to a trusted friend or contact with a request for help. if available, the alert will contain a location via Google Maps and optionally a local Bail Fund that may be able to provide assistance. 
 
-![home-screen]https://i.imgur.com/TzZ66Dd.png)
+![home-screen](https://i.imgur.com/TzZ66Dd.png)
 
 ## installation:
+***information can we find in the about page [https://shitgoingdown.com/info/about]***
 1. Open the app on your mobile - [https://shitgoingdown.com](https://shitgoingdown.com) - and add the app to your mobile home-screen. Here is an explanation how to do so for [android](https://browserhow.com/how-to-add-to-home-screen-shortcut-links-with-chrome-android/) and [ios](https://browserhow.com/how-to-add-to-home-screen-shortcut-links-with-chrome-android/).
 2. We recommend doing so before exiting the field in order to best protect yourself and your contacts. 
 
