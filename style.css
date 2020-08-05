@@ -1564,6 +1564,8 @@ span.place {
 
 .aboutNav {
   width: 250px;
+  font-size: 18px;
+  padding-bottom: 5px;
 }
 
 .aboutNav.heb {
@@ -1571,12 +1573,12 @@ span.place {
 }
 
 .aboutNav.eng {
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .liInner {
   color: #989898;
-  padding: 5px 5px;
+  padding: 5px 15px;
   margin-bottom: 0;
   /* letter-spacing: 2px; */
   margin-left: 10%;
@@ -1587,6 +1589,7 @@ span.place {
   text-align: right;
   margin-right: 40px;
   letter-spacing: 2px;
+  line-height: 0.7;
 }
 
 .innerlink {
