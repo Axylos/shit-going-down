@@ -95,7 +95,7 @@ a {
 }
 
 .step.sms{
-  margin-top: 85px;
+  margin-top: 65px;
   margin-bottom: 60px;
 }
 
@@ -196,7 +196,7 @@ a {
   font-size: 15px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #656565;
+  color: #b3b3b3;
   line-height: 2rem;
   font-weight: 500;
   padding: 8px;
@@ -488,19 +488,63 @@ a {
   justify-content: space-around;
   text-align: center;
   margin-top: 15px;
+  width: vw;
+}
+
+.navQ {
+float: right;
+margin-top: -5%;
+padding-top: 0;
+}
+
+.navQuestion.mainQuestion {
+  font-weight: 200;
+  font-size: 32px;
+}
+
+.containNav {
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .upButtons {
   display: inline-block;
   background-color: transparent;
-  padding-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: -2%;
 }
 
 .upButtons.sender {
   margin-top: -25px;
 }
+
+
+.navQuestion {
+  font-size: 36px;
+  font-family: "lato";
+  font-weight: 300;
+  color:#fa2a1f;
+  padding-left: 20px;
+  height: 20px;
+  /* background: -webkit-linear-gradient(#fa2a1f, #B9FB4F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  padding-bottom: 0;
+  padding-right: 40px;
+  transition: 0.3s;
+  outline: none;
+}
+
+.navQuestion:hover {
+  font-size: 38px;
+  opacity: 0.5;
+  /* background: -webkit-linear-gradient(#B9FB4F,#fa2a1f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  
+  }
 
 .logo {
   color: #B9FB4F;
@@ -512,6 +556,7 @@ a {
   display: inline-block;
   text-decoration: none;
   font-weight: 300;
+
 }
 
 .logo:hover {
@@ -526,11 +571,15 @@ a {
 }
 
 .navBtn.next {
-  margin-left: 50px;
+  margin-top: 10px;
+  font-size: 24px;
+  margin-left: 40px;
 }
 
 .navBtn.back {
   margin-right: 50px;
+  margin-left: 40px;
+  margin-top: 0;
 }
 
 .navBtn.End {
@@ -538,7 +587,17 @@ a {
 }
 
 .navBtn.nextEnd {
-  margin-left: 50px;
+  margin-top: 10px;
+  font-size: 24px;
+  margin-left: 40px;
+  cursor: none;
+  color: black;
+}
+
+navBtn.backEnd {
+  margin-right: 50px;
+  margin-left: 40px;
+  margin-top: 0;
   cursor: none;
   color: black;
 }
@@ -587,6 +646,12 @@ a {
 }
 
 .thirdPage.sms {
+  max-width: 550px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thirdPage.DM {
   max-width: 550px;
   margin: 0 auto;
   text-align: center;
@@ -937,6 +1002,7 @@ span.place {
     border-bottom: 2px solid #fa2a1f;
     border-radius: 2px;
     transition: 0.12s;   
+  
 }
 
 .goToNextTwo:hover {
@@ -1150,7 +1216,7 @@ span.place {
 .smsCointainer{
   display: flex;
  text-align: center;
- margin-top: 50px;
+ margin-top: 35px;
 }
 
 .smsPage {
@@ -1933,6 +1999,7 @@ span.place {
   font-size: 16px;
   font-family: 'Roboto';
   letter-spacing: 0;
+  width: 80px;
 }
 
 .link.about {

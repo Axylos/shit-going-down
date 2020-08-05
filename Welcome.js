@@ -145,11 +145,11 @@ export default class Welcome {
       </div>
         
         <div class="animationPage">
-            <div class="nav">
-         
-              <img class="question" src="/images/question.png" height="40">
-            
-          </div>
+        <div class="navQ">
+          <a class="navQuestion mainQuestion" href="/info/about"> ? </a>
+        </div>
+
+
             <div class="textHome animate-this">
               <div class="titlediv "> 
                   <div class="divInsta"> 
@@ -190,7 +190,7 @@ export default class Welcome {
               <p class='loginInstructionTwo'>Your information & activities will not be shared outside this application</p>
             </div>
             <div class-"text add">
-            <p class='loginInstructionTwo add'>It's recommended adding the app to your mobile home screen, so you locate it quickly in case of an emergency. It is easy to do that through your phone's menu - <a class="how" href="https://natomasunified.org/kb/add-website-to-mobile-device-home-screen/" target="_blank"> here is how</a>.</p>
+            <p class='loginInstructionTwo add'>It's recommended adding the app to your home screen. read more at the - <a class="how" href="/info/about" target="_blank"> ABOUT PAGE</a>.</p>
           </div>  
 
         </div>

@@ -52,15 +52,19 @@ export default class SelectContacts {
   render() {
     this.el.innerHTML = `
     <div class="generalpage">
-      <div class="nav">
-        <div class="upButtons">
-          <a class="navBtn back" href="#">◄◄  </a>
-          <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
-          <a class="navBtn next" href="#"> ► </a>
+    
+        <div class="containNav">
+        <div class="nav">
+          <div class="upButtons">
+            <a class="navQuestion" href="/info/about"> ? </a>
+            <a class="logo" href="https://www.shitgoingdown.com">www.shitgoingdown.com</a>
+            <a class="navBtn next" href="#"> ► </a>
+          </div>
         </div>
+        <a class="navBtn back" href="https://shitgoingdown.com">◄◄ </a>
       </div>
 
-       <div class='thirdPage'>
+       <div class='thirdPage DM'>
         <form class="search-form" autocomplete="off">
           <h2 class="step">Step one:</br> Select trusted friends you would like to DM </h2>
           <input name="selectedContact" type="text" required class="contactSearch" placeholder="Type name or user name">
