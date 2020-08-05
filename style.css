@@ -1494,7 +1494,6 @@ span.place {
 .about {
   max-width: 550px;
   margin: 0 auto;
-
 }
 
 .about.heb {
@@ -2073,5 +2072,9 @@ span.place {
 
     .navQuestion.mainQuestion:hover {
       border: 1px solid #B9FB4F;
+    }
+
+    .nav {
+      margin-top: 50px;
     }
 }
