@@ -1494,6 +1494,7 @@ span.place {
 .about {
   max-width: 550px;
   margin: 0 auto;
+  font-family: 'Roboto', 'Lato' sans-serif;
 }
 
 .about.heb {
@@ -1543,12 +1544,10 @@ span.place {
   letter-spacing: 2px;
   text-align: left;
   font-family: 'Roboto';
-
 }
 
 .lang:hover {
   border: 2px solid #fa2a1f;
-  /* transform: rotate(2deg);  */
 }
 
 .aboutNav {
@@ -1569,8 +1568,7 @@ span.place {
   color: #989898;
   padding: 5px 15px;
   margin-bottom: 0;
-  /* letter-spacing: 2px; */
-  margin-left: 6%;
+  margin-left: 8%;
 }
 
 .liInner.heb {
@@ -1585,15 +1583,12 @@ span.place {
   text-decoration: none;
   color: #989898;
   transition: all .5s ease;
-
  }
 
 .innerlink:hover {
   text-decoration: underline;
   color: white;
 }
-
-
 
 .loglin {
   display:flex;
