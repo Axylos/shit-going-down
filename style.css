@@ -184,11 +184,12 @@ a {
 }
 
 .divInsta {
-  padding-bottom: 0;
+  padding-bottom: 8px;
   margin-left: 35px;
   text-align: left;
-  margin-top: 15px;
+  margin-top: 10px;
   padding-left: 20px;
+  color: #b3b3b3;
 }
 
 .homeInstructionOne {
@@ -196,7 +197,7 @@ a {
   font-size: 15px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #b3b3b3;
+  color: #9f9f9f !important;
   line-height: 2rem;
   font-weight: 500;
   padding: 8px;
@@ -232,8 +233,8 @@ a {
   background-color: transparent;
   color: white;
   font-weight: 500;
-  /* letter-spacing: 2px; */
-  font-size: 14px;
+  letter-spacing: 1px;
+  font-size: 13px;
   line-height: 1.8rem;
   padding: 18px 3px;
   border-radius: 2px;
@@ -287,7 +288,7 @@ a {
 .loginInstructionTwo {
   font-size: 10px;
   letter-spacing: 4px;
-  margin-top: 80px;
+  margin-top: 70px;
   color:  #949494;
   line-height: 0.8rem;
   text-align: center;
@@ -492,14 +493,23 @@ a {
 }
 
 .navQ {
-float: right;
+right:0;
 margin-top: -5%;
 padding-top: 0;
+position: absolute;
 }
 
 .navQuestion.mainQuestion {
   font-weight: 200;
   font-size: 32px;
+  right:0;
+  margin-right: 0;
+  padding-right: 30px;
+  padding-top: 5px;
+  margin-top: 0;
+  background: -webkit-linear-gradient(#fa2a1f, #B9FB4F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
 }
 
 .containNav {
@@ -519,7 +529,6 @@ padding-top: 0;
 .upButtons.sender {
   margin-top: -25px;
 }
-
 
 .navQuestion {
   font-size: 36px;

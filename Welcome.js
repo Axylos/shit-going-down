@@ -145,10 +145,10 @@ export default class Welcome {
       </div>
         
         <div class="animationPage">
+        
         <div class="navQ">
           <a class="navQuestion mainQuestion" href="/info/about"> ? </a>
         </div>
-
 
             <div class="textHome animate-this">
               <div class="titlediv "> 
