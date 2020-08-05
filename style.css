@@ -1570,7 +1570,7 @@ span.place {
   padding: 5px 15px;
   margin-bottom: 0;
   /* letter-spacing: 2px; */
-  margin-left: 10%;
+  margin-left: 6%;
 }
 
 .liInner.heb {
@@ -1761,7 +1761,6 @@ span.place {
   width: 350px;
   margin-left: 60px;
   padding-left: 0;
-  /* padding-right: 15px; */
   margin-top: 5px;
   color:  #ffffff;
   font-weight: 400;
@@ -1775,7 +1774,6 @@ span.place {
   width: 340px;
   margin-left: 60px;
   padding-left: 0;
-  /* padding-right: 15px; */
   margin-top: 5px;
   color:  #ffffff;
   font-weight: 400;
