@@ -16,7 +16,7 @@
     "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-locale": "^2.0.0",
     "express-pino-logger": "^5.0.0",
     "libphonenumber-js": "^1.7.55",
